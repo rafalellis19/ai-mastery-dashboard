@@ -1,0 +1,52 @@
+name: Update dashboard
+
+on:
+  schedule:
+    - cron: "0 7 * * *"   # daily 07:00 UTC — news digest
+    - cron: "0 6 * * 1"   # Mondays 06:00 UTC — deep digest + pricing re-verify
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "--daily or --weekly"
+        default: "--daily"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install anthropic requests
+
+      - name: Decide mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "$(date -u +%u)" = "1" ] && [ "$(date -u +%H)" = "06" ]; then
+            echo "mode=--weekly" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=--daily" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run updater
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 reading_updater.py ${{ steps.mode.outputs.mode }}
+
+      - name: Health check (fails the run if the dashboard is stale or broken)
+        run: python3 health_check.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "actions@github.com"
+          git add dashboard.html
+          git diff --cached --quiet || git commit -m "auto: dashboard update (${{ steps.mode.outputs.mode }})"
+          git push

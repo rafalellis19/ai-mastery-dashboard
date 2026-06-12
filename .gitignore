@@ -1,0 +1,12 @@
+*
+!dashboard.html
+!server.py
+!reading_updater.py
+!setup_auto_update.sh
+!health_check.py
+!publish.sh
+!PUBLISH.md
+!.gitignore
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
