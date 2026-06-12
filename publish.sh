@@ -75,11 +75,18 @@ else
 fi
 
 echo "── 5/7 GitHub Pages ────────────────────────────"
-gh api -X POST "repos/$GH_USER/$REPO_NAME/pages" \
-  -f "source[branch]=main" -f "source[path]=/" >/dev/null 2>&1 \
-  || gh api -X PUT "repos/$GH_USER/$REPO_NAME/pages" \
-  -f "source[branch]=main" -f "source[path]=/" >/dev/null 2>&1 \
-  || echo "   (Pages may already be enabled — fine)"
+PAGES_JSON='{"source":{"branch":"main","path":"/"}}'
+if gh api "repos/$GH_USER/$REPO_NAME/pages" >/dev/null 2>&1; then
+  echo "$PAGES_JSON" | gh api -X PUT "repos/$GH_USER/$REPO_NAME/pages" --input - >/dev/null 2>&1 || true
+  echo "   ✅ Pages already enabled"
+else
+  if echo "$PAGES_JSON" | gh api -X POST "repos/$GH_USER/$REPO_NAME/pages" --input - >/dev/null 2>&1; then
+    echo "   ✅ Pages enabled now"
+  else
+    echo "   ❌ Could not enable Pages via API."
+    echo "      Manual (2 clicks): https://github.com/$GH_USER/$REPO_NAME/settings/pages → Source: Deploy from a branch → main / (root) → Save"
+  fi
+fi
 
 echo "── 6/7 API key secret (read from your ~/.zshrc — never printed) ──"
 KEY=$(zsh -ic 'echo $ANTHROPIC_API_KEY' 2>/dev/null | tail -1)
@@ -100,9 +107,22 @@ gh workflow run "Update dashboard" --repo "$GH_USER/$REPO_NAME" -f mode=--daily 
 echo "── 8/8 Local auto-update (launchd, 4:30am daily) ──"
 bash "$DIR/setup_auto_update.sh" || echo "   ⚠️ launchd setup skipped — run later: bash setup_auto_update.sh"
 
+echo "── Verifying the live page (can take a couple of minutes) ──"
+URL="https://$GH_USER.github.io/$REPO_NAME/dashboard.html"
+CODE="000"
+for i in $(seq 1 20); do
+  CODE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+  if [ "$CODE" = "200" ]; then break; fi
+  printf "   waiting deploy… (%s, HTTP %s)\r" "$i" "$CODE"
+  sleep 15
+done
+echo ""
+if [ "$CODE" = "200" ]; then echo "   ✅ LIVE — confirmed with HTTP 200"
+else echo "   ⚠️ Still HTTP $CODE after 5 min — check https://github.com/$GH_USER/$REPO_NAME/settings/pages and the Actions tab"; fi
+
 echo ""
 echo "════════════════════════════════════════════════"
 echo "🚀 Published: https://$GH_USER.github.io/$REPO_NAME/dashboard.html"
-echo "   (first deploy takes ~1-2 min; add to iPad Home Screen from Safari)"
+echo "   (add to iPad Home Screen from Safari)"
 echo "   Cloud auto-update: daily 07:00 UTC + Mondays deep refresh."
 echo "════════════════════════════════════════════════"
