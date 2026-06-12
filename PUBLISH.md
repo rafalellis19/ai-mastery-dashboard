@@ -17,7 +17,7 @@ git add dashboard.html server.py reading_updater.py setup_auto_update.sh PUBLISH
 git commit -m "intelligence dashboard"
 
 # 2. Push to your existing repo (or create a new one on github.com)
-git remote add origin https://github.com/rafalellis19/intuit-intelligence-dashboard.git
+git remote add origin https://github.com/rafalellis19/ai-mastery-dashboard.git
 git branch -M main
 git push -u origin main --force   # only use --force if replacing the old repo content
 ```
@@ -29,7 +29,7 @@ Repo → Settings → Secrets and variables → Actions → New repository secre
 **4. Enable Pages:**
 Repo → Settings → Pages → Source: "Deploy from a branch" → Branch `main`, folder `/ (root)`.
 After ~1 min your dashboard is live at:
-`https://rafalellis19.github.io/intuit-intelligence-dashboard/dashboard.html`
+`https://rafalellis19.github.io/ai-mastery-dashboard/dashboard.html`
 
 **5. Done — it stays current by itself:** the included workflow
 (`.github/workflows/update_dashboard.yml`) runs daily at 07:00 UTC (news) and

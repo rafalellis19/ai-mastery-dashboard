@@ -5,7 +5,8 @@
 set -e
 DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$DIR"
-REPO_NAME="intuit-intelligence-dashboard"
+REPO_NAME="ai-mastery-dashboard"
+OLD_REPO_NAME="intuit-intelligence-dashboard"
 
 echo "── 1/7 GitHub CLI ──────────────────────────────"
 if ! command -v gh >/dev/null 2>&1; then
@@ -31,6 +32,11 @@ echo "── 2/7 GitHub login (browser opens — just authorize) ──"
 gh auth status >/dev/null 2>&1 || gh auth login --hostname github.com --git-protocol https --web
 GH_USER=$(gh api user -q .login)
 echo "   Logged in as: $GH_USER"
+# One-time: rename the old Intuit-branded repo if present
+if gh repo view "$GH_USER/$OLD_REPO_NAME" >/dev/null 2>&1 && ! gh repo view "$GH_USER/$REPO_NAME" >/dev/null 2>&1; then
+  echo "   Renaming repo: $OLD_REPO_NAME → $REPO_NAME"
+  gh repo rename "$REPO_NAME" --repo "$GH_USER/$OLD_REPO_NAME" --yes
+fi
 
 echo "── 3/7 Git repo (ONLY dashboard files — your other documents are NOT included) ──"
 # Deny-all gitignore with explicit whitelist: this folder contains unrelated

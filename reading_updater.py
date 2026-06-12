@@ -65,20 +65,20 @@ def fetch_feed_items(max_per_feed: int = 8) -> list[dict]:
     return items
 
 
-DIGEST_SYSTEM = """You write the news digest for an Intuit Corporate Strategy intern's
-learning dashboard (focus: SMB accounting — Xero, FreshBooks, Wave, Sage — plus the
-Claude/AI ecosystem). From the raw feed items, select the genuinely relevant ones
+DIGEST_SYSTEM = """You write the news digest for a corporate-strategy learning dashboard
+focused on the SMB accounting market (QuickBooks/Intuit, Xero, FreshBooks, Wave, Sage)
+plus the Claude/AI ecosystem. Never address the reader as an employee of any company. From the raw feed items, select the genuinely relevant ones
 (usually 5-7), deduplicate, and produce HTML ONLY (no markdown, no commentary) with
 EXACTLY this structure — three cards, same inline styles:
 
 <div class="card" style="border-left:4px solid #0369a1;margin-bottom:12px">
-  <div style="font-weight:700;font-size:14px;color:#0369a1;margin-bottom:10px">🏦 Intuit &amp; Fintech SMB <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· {date_label}</span></div>
+  <div style="font-weight:700;font-size:14px;color:#0369a1;margin-bottom:10px">🏦 SMB Fintech Watch <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· {date_label}</span></div>
   <div style="display:flex;flex-direction:column;gap:8px">
     <!-- 1-3 items, each: -->
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
       <div style="font-weight:600;font-size:13px;margin-bottom:4px">{headline}</div>
       <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">{2-3 sentence summary with concrete facts}</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 {implication for an Intuit Corp Strategy intern}</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 {implication for a corporate strategy analyst covering this market}</div>
     </div>
   </div>
 </div>
