@@ -6,6 +6,8 @@
 !health_check.py
 !publish.sh
 !PUBLISH.md
+!index.html
+!.nojekyll
 !.gitignore
 !.github/
 !.github/workflows/

@@ -1,6 +1,6 @@
 #!/bin/bash
 # publish.sh — one-command publish to GitHub Pages with cloud auto-update.
-# Run:  bash "/Users/rafaellalellis/Documents/Piloto IA Laser Dream/publish.sh"
+# Run:  bash "/Users/rafaellalellis/Documents/Projetos IA/publish.sh"
 # You'll only be asked to authorize GitHub in the browser (one click).
 set -e
 DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -50,6 +50,8 @@ cat > .gitignore <<'EOF'
 !health_check.py
 !publish.sh
 !PUBLISH.md
+!index.html
+!.nojekyll
 !.gitignore
 !.github/
 !.github/workflows/
@@ -61,7 +63,7 @@ git config user.email "rafa.lellis@gmail.com"
 git add -A
 git -c core.hooksPath=/dev/null commit -m "intelligence dashboard $(date +%F)" || echo "   (nothing new to commit)"
 # Safety: verify no private files staged
-TRACKED=$(git ls-files | grep -vE '^(dashboard\.html|server\.py|reading_updater\.py|setup_auto_update\.sh|health_check\.py|publish\.sh|PUBLISH\.md|\.gitignore|\.github/)' || true)
+TRACKED=$(git ls-files | grep -vE '^(dashboard\.html|server\.py|reading_updater\.py|setup_auto_update\.sh|health_check\.py|publish\.sh|PUBLISH\.md|index\.html|\.nojekyll|\.gitignore|\.github/)' || true)
 if [ -n "$TRACKED" ]; then echo "❌ Unexpected files tracked — aborting:"; echo "$TRACKED"; exit 1; fi
 echo "   Files going public:"; git ls-files | sed 's/^/     /'
 

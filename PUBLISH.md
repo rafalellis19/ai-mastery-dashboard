@@ -8,7 +8,7 @@ Goal: open the dashboard from any computer, and have it update itself in the clo
 **One-time setup (~10 min):**
 
 ```bash
-cd "/Users/rafaellalellis/Documents/Piloto IA Laser Dream"
+cd "/Users/rafaellalellis/Documents/Projetos IA"
 
 # 1. Init repo (the .github/workflows folder is already here)
 git init
