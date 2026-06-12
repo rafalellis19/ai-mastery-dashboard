@@ -5251,7 +5251,7 @@ The lever that kills you: sending everything to the frontier model
   <div id="reading-thisweek" class="tab-pane active">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
       <div style="font-size:13px;color:var(--gray-500)">🔄 <strong>News:</strong> updates daily · <strong>Strategic digest:</strong> every Monday — <a href="#" onclick="showSection('reading');switchTab('reading','system',document.querySelector('[onclick*=system]'));return false" style="color:var(--primary)">ver script →</a></div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap"><span id="reading-lastupdate" class="badge badge-green">Today: 11 Jun 2026</span><span class="badge badge-blue">Auto-update ativo</span></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap"><span id="reading-lastupdate" class="badge badge-green">Today: 12 Jun 2026</span><span class="badge badge-blue">Auto-update ativo</span></div>
     </div>
 
     <!-- DAILY + WEEKLY DIGEST — replaced by update script -->
@@ -5267,53 +5267,63 @@ The lever that kills you: sending everything to the frontier model
     <div id="weekly-digest-content">
 <!-- AUTO:DIGEST:BEGIN -->
 
-      <div class="card" style="border-left:4px solid #0369a1;margin-bottom:12px">
-        <div style="font-weight:700;font-size:14px;color:#0369a1;margin-bottom:10px">🏦 SMB Fintech Watch <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· week of Jun 8, 2026</span></div>
-        <div style="display:flex;flex-direction:column;gap:8px" id="digest-fintech">
-          <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Cloud accounting is now the default: 80%+ of SMBs, AI features are table stakes</div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">2026 surveys put cloud accounting adoption above 80% of SMBs. Auto-categorization, automated reconciliation and predictive cash flow are now offered by QuickBooks AND Xero alike; NetSuite/Dynamics push AI forecasting upmarket. Cost scrutiny is up — free tiers (Wave, Patriot) gaining among micro-businesses.</div>
-            <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Implication: AI feature parity is arriving faster than expected — differentiation shifts to the accountant network, bank rails, and data moats. Useful framing for any "why will we win" deck.</div>
-          </div>
-          <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Market structure check: QB Desktop ~62% share, Sage 50 ~10%, Xero ~9%</div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Desktop still dominates installed base while QBO holds ~4.4% — the desktop-to-cloud migration remains the battleground. Sage de-emphasizing legacy tiers creates migration windows.</div>
-            <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Implication for Corp Dev: every desktop sunset (ours or competitors') is a switching event — track them as M&amp;A and win-back triggers.</div>
-          </div>
-        </div>
-      </div>
+<div class="card" style="border-left:4px solid #0369a1;margin-bottom:12px">
+  <div style="font-weight:700;font-size:14px;color:#0369a1;margin-bottom:10px">🏦 SMB Fintech Watch <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· week of Jun 12, 2026</span></div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Intuit faces stock pressure, resets cost base with 17% workforce reduction</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Intuit announced significant layoffs to prioritize AI-driven growth, causing stock price decline. Multiple analyst commentaries debate whether the pullback represents a buying opportunity or signals deeper product-market challenges.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Strategic pivot toward AI competitiveness in SMB accounting may require investor patience as cost structure resets; watch execution speed on AI-native features vs. legacy QuickBooks maintenance.</div>
+    </div>
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Xero stock down 60%, navigates CEO pay negotiations amid share plunge</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Xero chair courting investors for executive compensation adjustments following significant stock decline. Company simultaneously launching product upgrades including free standard ACH and Claude AI integration.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Xero's dual challenge—investor confidence repair + Claude integration rollout—signals competitive pressure from AI-augmented competitors; execution on free ACH may indicate pricing strategy shift to defend SMB wallet share.</div>
+    </div>
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Sage acquires Doyen AI to accelerate ERP data migration &amp; go-lives</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Sage completed acquisition of Doyen AI to streamline SMB ERP implementation workflows and reduce migration friction. Reflects broader strategic focus on AI-powered migration tooling in ERP space.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 M&amp;A signals Sage's recognition that go-live speed &amp; data quality are sticky competitive levers; similar moves likely coming from Intuit &amp; Xero if they lack native migration AI capabilities.</div>
+    </div>
+  </div>
+</div>
 
-      <div class="card" style="border-left:4px solid #7c3aed;margin-bottom:12px">
-        <div style="font-weight:700;font-size:14px;color:#7c3aed;margin-bottom:10px">🤖 AI — What Changed This Week</div>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Anthropic files S-1 (Jun 1); OpenAI follows with confidential IPO filing (Jun 8)</div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Anthropic: last valued ~$965B, ~$44B annualized run-rate, first operating profit expected Q2 2026. OpenAI last valued ~$852B. The two largest model providers heading to public markets within weeks of each other.</div>
-            <div style="font-size:11px;color:#7c3aed;font-weight:600">💡 Public-market scrutiny = pricing discipline and enterprise focus from both. Expect more stable contracts — and more aggressive enterprise sales motions toward companies like Intuit.</div>
-          </div>
-          <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Claude Fable 5 released (Jun 9) — Mythos-class capability, publicly available</div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Anthropic's most capable public model at $10/$50 per 1M tokens (~2× Opus 4.8), with safety-classifier routing. Early reports: finishes complex tasks in fewer turns, narrowing the effective cost gap on hard work.</div>
-            <div style="font-size:11px;color:#7c3aed;font-weight:600">💡 For you: route experiments — keep Sonnet 4.6 as workhorse, benchmark Fable 5 on your hardest M&amp;A analysis against your golden set (Prompting → Evals).</div>
-          </div>
-          <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">Apple WWDC (Jun 8): Gemini-powered Siri + multi-AI Extensions — Claude on iPhone</div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Apple opened iOS to multiple AI providers via an Extensions system; Google won the default-Siri deal. Distribution of AI assistants is consolidating into OS-level choices.</div>
-            <div style="font-size:11px;color:#7c3aed;font-weight:600">💡 OS-level AI distribution will shape consumer fintech UX expectations — relevant to Credit Karma and any consumer-facing AI roadmap.</div>
-          </div>
-        </div>
-      </div>
+<div class="card" style="border-left:4px solid #7c3aed;margin-bottom:12px">
+  <div style="font-weight:700;font-size:14px;color:#7c3aed;margin-bottom:10px">🤖 AI — What Changed <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· week of Jun 12, 2026</span></div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Anthropic launches Claude Fable 5 &amp; Mythos 5; Claude Corps nonprofit program announced</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Anthropic released Claude Fable 5 and Claude Mythos 5 models publicly two months after private rollout. Simultaneously announced Claude Corps initiative to teach nonprofits AI implementation, with enterprise deployment scaling via TCS partnership.</div>
+      <div style="font-size:11px;color:#7c3aed;font-weight:600">💡 Release of newer Claude models + nonprofit/enterprise ecosystem play suggests Anthropic readying for public markets (IPO rumors) while securing distribution. SMB accounting vendors must prepare for Claude API parity expectations.</div>
+    </div>
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Xero deepens Claude integration; Anthropic-SMB accounting alignment signals market direction</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Xero integrated Anthropic's Claude AI directly into SMB accounting workflows. Reflects broader ecosystem pattern: major accounting platforms adopting frontier AI models as competitive necessity.</div>
+      <div style="font-size:11px;color:#7c3aed;font-weight:600">💡 Claude becoming table-stakes for SMB accounting platforms; vendors without Anthropic/OpenAI integration risk commoditization; watch margin compression as AI feature parity accelerates.</div>
+    </div>
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Mistral raises €3B at €20B valuation; frontier model funding accelerates IPO cycle</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Mistral AI closing €3 billion funding round at €20 billion valuation (~$23.15B), nearly doubling prior €11.7B Series C valuation. Part of broader "MANGOS" IPO cohort (Anthropic, OpenAI, SpaceX heading public).</div>
+      <div style="font-size:11px;color:#7c3aed;font-weight:600">💡 Frontier model consolidation accelerating; SMB platforms must lock in API partnerships before pricing power concentrates among Anthropic/OpenAI/Google. Monitor Mistral's SMB GTM strategy as #3 player.</div>
+    </div>
+  </div>
+</div>
 
-      <div class="card" style="border-left:4px solid #059669;margin-bottom:12px">
-        <div style="font-weight:700;font-size:14px;color:#059669;margin-bottom:10px">⚔️ Strategy &amp; M&amp;A</div>
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-            <div style="font-weight:600;font-size:13px;margin-bottom:4px">OpenAI pushes Codex up the application stack: sales, data analytics, even investment-banking plugins</div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Six new business plugins announced. Model providers are no longer just selling tokens — they're shipping vertical workflows that overlap with SaaS incumbents' roadmaps.</div>
-            <div style="font-size:11px;color:#059669;font-weight:600">💡 The "will foundation models eat our category?" question is now concrete. Watch for accounting/tax-adjacent plugins — that's a direct strategic trigger for Intuit.</div>
-          </div>
-        </div>
-      </div>
+<div class="card" style="border-left:4px solid #059669;margin-bottom:12px">
+  <div style="font-weight:700;font-size:14px;color:#059669;margin-bottom:10px">⚔️ Strategy &amp; M&amp;A <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· week of Jun 12, 2026</span></div>
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Anthropic IPO momentum intensifies; enterprise/nonprofit distribution secured ahead of public debut</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Anthropic tapping TCS for enterprise deployments, launching Claude Corps nonprofit program, and releasing new model versions in June 2026—classic pre-IPO market capture play. Part of reported "hot IPO summer" cohort alongside SpaceX &amp; OpenAI.</div>
+      <div style="font-size:11px;color:#059669;font-weight:600">💡 Anthropic's public-market preparation via channel partnerships &amp; nonprofit programs signals confidence in IPO timing; SMB accounting platforms should expect pricing pressure once Anthropic goes public &amp; institutional capital deploys at scale.</div>
+    </div>
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Cybersecurity risk: Google sues Chinese operation using AI for mass text scams (2.5M messages)</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Google filed lawsuit against "Outsider Enterprise," a Chinese cybercrime group using AI to send 2.5 million scam text messages over two weeks. Demonstrates emerging threat vector: AI-powered mass fraud targeting mobile SMB users.</div>
+      <div style="font-size:11px;color:#059669;font-weight:600">💡 SMB accounting platforms must prepare fraud/abuse detection infrastructure; expect regulatory scrutiny on AI-mediated SMS &amp; communication features; insurance &amp; compliance liability for platforms enabling account takeover via AI scams.</div>
+    </div>
+  </div>
+</div>
 
 <!-- AUTO:DIGEST:END -->
 
