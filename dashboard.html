@@ -9257,9 +9257,11 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
 // ══════════════════════════════════════════════
 // NAVIGATION
 // ══════════════════════════════════════════════
+console.log('🟢 Dashboard JS loaded OK');
 const SECTIONS = ['expert','playbook','toolmap','strategy','prompting','memory','infra','agents','tokenmastery','design','ecosystem','founder','produto','reading','videos','studyplan','quiz','lab','responsible','tips'];
 
 function showSection(id) {
+  console.log('showSection called:', id);
   SECTIONS.forEach(s => {
     const el = document.getElementById(s);
     if (el) el.classList.toggle('active', s === id);
@@ -10845,6 +10847,7 @@ function buildSearchIndex() {
 }
 
 function openSearch() {
+  console.log('openSearch called');
   if (!searchIndex.length) buildSearchIndex();
   document.getElementById('search-overlay').classList.add('open');
   const inp = document.getElementById('search-input');
