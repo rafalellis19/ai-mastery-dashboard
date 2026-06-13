@@ -71,7 +71,16 @@ echo "── 4/7 Push ───────────────────�
 if gh repo view "$GH_USER/$REPO_NAME" >/dev/null 2>&1; then
   git remote remove origin 2>/dev/null || true
   git remote add origin "https://github.com/$GH_USER/$REPO_NAME.git"
-  git push -u origin main --force
+  # Pull cloud-bot commits first — prevents overwriting the bot's daily updates
+  git fetch origin main 2>/dev/null || true
+  if git rev-parse origin/main >/dev/null 2>&1; then
+    git rebase origin/main 2>/dev/null \
+      || { echo "❌  Merge conflict after rebase — run: git rebase --abort && git pull origin main --rebase && bash publish.sh"; exit 1; }
+    git push -u origin main
+  else
+    # First push to empty remote — force safe here
+    git push -u origin main --force
+  fi
 else
   gh repo create "$REPO_NAME" --public --source . --remote origin --push
 fi

@@ -73,6 +73,12 @@ nav::-webkit-scrollbar { display: none; }
   background: linear-gradient(135deg, var(--primary), #34d399);
   color: white; border-color: transparent;
 }
+.nav-btn.nav-founder-top {
+  background: #fef9c3; border: 1.5px solid #ca8a04; color: #92400e; font-weight: 700;
+}
+.nav-btn.nav-founder-top:hover, .nav-btn.nav-founder-top.active {
+  background: #ca8a04; color: white; border-color: transparent;
+}
 
 /* GROUPED NAV */
 nav { overflow: visible; }
@@ -612,9 +618,9 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
       <button class="nav-btn" data-sec="agents" onclick="showSection('agents')">🤖 Agents & Tools</button>
       <button class="nav-btn" data-sec="design" onclick="showSection('design')">🎨 Design & Artifacts</button>
       <button class="nav-btn" data-sec="ecosystem" onclick="showSection('ecosystem')">🌐 Ecosystem</button>
-      <button class="nav-btn" data-sec="founder" onclick="showSection('founder')">🚀 Founder Track</button>
     </div>
   </div>
+  <button class="nav-btn nav-founder-top" data-sec="founder" onclick="showSection('founder')">🚀 Founder</button>
   <div class="nav-group">
     <button class="nav-group-btn" type="button" onclick="toggleNavGroup(this)">🏋️ Practice</button>
     <div class="nav-dropdown">
@@ -700,7 +706,7 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
         <div style="font-weight:700;font-size:13px;color:#16a34a;margin-bottom:8px">Week 1 — Build your intelligence infrastructure</div>
         <div style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:#1e293b">
           <div style="display:flex;gap:8px"><span style="color:#16a34a;font-weight:700;flex-shrink:0">□</span> Find out which competitors your company tracks most closely — add them to your Project Knowledge</div>
-          <div style="display:flex;gap:8px"><span style="color:#16a34a;font-weight:700;flex-shrink:0">□</span> Set up a Google Alert for: "your company" + each competitor + "SMB accounting" — weekly digest</div>
+          <div style="display:flex;gap:8px"><span style="color:#16a34a;font-weight:700;flex-shrink:0">□</span> Set up a Google Alert for: "Intuit" + each competitor + "SMB accounting" — weekly digest</div>
           <div style="display:flex;gap:8px"><span style="color:#16a34a;font-weight:700;flex-shrink:0">□</span> After every meeting: run the Meeting Follow-Up template (below) before leaving the room</div>
           <div style="display:flex;gap:8px"><span style="color:#16a34a;font-weight:700;flex-shrink:0">□</span> Start a running doc: "Things I don't understand yet" — Claude explains each one daily</div>
         </div>
@@ -861,7 +867,7 @@ This week's news: [paste 3-5 article headlines you saw]
 
 Analyze:
 1. What moved in the competitive landscape vs last week?
-2. Which of these is most relevant to your company's QuickBooks / TurboTax / Credit Karma?
+2. Which of these is most relevant to Intuit's QuickBooks / TurboTax / Credit Karma?
 3. Is there anything my team should know about this week?
 4. Rate the week: Hot / Normal / Quiet for your company's competitive environment</div>
       <button onclick="navigator.clipboard.writeText(document.getElementById('pw-monday').innerText)" style="margin-top:8px;padding:4px 10px;background:#0369a1;color:white;border:none;border-radius:4px;font-size:11px;cursor:pointer">📋 Copy</button>
@@ -935,7 +941,7 @@ What I'm offering / angle: [what makes this interesting for them, not just for m
 Tone: warm and direct. Not sycophantic. Respects their time.
 
 Email rules:
-- Subject line: specific, not generic ("Question from HBS intern" → bad. "your company's SMB strategy + your piece on fintech consolidation" → good)
+- Subject line: specific, not generic ("Question from HBS intern" → bad. "Intuit's SMB strategy + your piece on fintech consolidation" → good)
 - Under 100 words in the body
 - One clear ask at the end (30-min call / async question / specific intro)
 - No "I hope this email finds you well"
@@ -1245,7 +1251,7 @@ For each answer:
         </div>
         <div class="intuit-box">
           <h4>🔷 your company use case</h4>
-          <p>Long-term vision: connect Claude to your company's internal data warehouse via an MCP server. Ask natural language questions like "Which QuickBooks segments had the highest churn in Q2?" and Claude queries the DB, runs the analysis, and formats the output — no SQL skills needed on your end.</p>
+          <p>Long-term vision: connect Claude to Intuit's internal data warehouse via an MCP server. Ask natural language questions like "Which QuickBooks segments had the highest churn in Q2?" and Claude queries the DB, runs the analysis, and formats the output — no SQL skills needed on your end.</p>
         </div>
       </div>
     </div>
@@ -1334,7 +1340,7 @@ For each answer:
       <div style="background:#eff6ff;border-radius:8px;padding:10px 14px;font-size:12px;flex:1;min-width:150px"><strong>4. Brief (Sonnet)</strong><br>1-pager: 3 headlines, implications, recommended watch-items</div>
     </div>
     <div class="code-wrap">
-      <pre><code class="language-text">&lt;role&gt;Senior competitive intelligence analyst at your company, covering SMB accounting.&lt;/role&gt;
+      <pre><code class="language-text">&lt;role&gt;Senior competitive intelligence analyst at Intuit, covering SMB accounting.&lt;/role&gt;
 &lt;context&gt;
 Attached: {competitor} earnings call transcript + press releases since {date}.
 Your company's priorities this quarter: QBO subscriber growth, mid-market push, AI features.
@@ -1512,11 +1518,11 @@ all market data comes from me.&lt;/role&gt;
   <div class="compare-grid">
     <div class="compare-box bad">
       <div class="compare-title">❌ No CoT</div>
-      <p>"Should your company acquire Xero?"</p>
+      <p>"Should Intuit acquire Xero?"</p>
     </div>
     <div class="compare-box good">
       <div class="compare-title">✅ With CoT</div>
-      <p>"Should your company acquire Xero? Think through this step by step: 1) Strategic fit, 2) Financial implications, 3) Integration risk, 4) Competitive response. Then give your final recommendation with confidence level."</p>
+      <p>"Should Intuit acquire Xero? Think through this step by step: 1) Strategic fit, 2) Financial implications, 3) Integration risk, 4) Competitive response. Then give your final recommendation with confidence level."</p>
     </div>
   </div>
 
@@ -1569,7 +1575,7 @@ all market data comes from me.&lt;/role&gt;
   <div id="sysp-anatomy" class="tab-pane active">
     <div class="code-wrap">
       <pre><code class="language-markdown"># [1] IDENTITY — Who Claude is in this context
-You are a senior Corporate Strategy analyst at your company (QuickBooks, TurboTax, Credit Karma).
+You are a senior Corporate Strategy analyst at Intuit (QuickBooks, TurboTax, Credit Karma).
 You specialize in competitive intelligence, M&A screening, and SMB market dynamics.
 
 # [2] BEHAVIORAL RULES — How Claude should act
@@ -2574,9 +2580,9 @@ def analyze_competitors(company_context: str, competitors: list[str]) -> str:
     )
     return message.content[0].text
 
-# Example usage — your company Corp Strategy scenario
+# Example usage — Intuit Corp Strategy scenario
 result = analyze_competitors(
-    company_context="your company QuickBooks, SMB accounting leader, $6B revenue",
+    company_context="Intuit QuickBooks, SMB accounting leader, $6B revenue",
     competitors=["Xero", "Wave", "FreshBooks"]
 )
 print(result)</code></pre>
@@ -3172,7 +3178,7 @@ claude
 # Then tell it: "Build a DCF model for Xero using yfinance data"</code></pre><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
         </div>
         <div style="display:flex;flex-direction:column;gap:6px;min-width:180px">
-          <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--gray-900);color:white;border-radius:7px;text-decoration:none;font-size:12px;font-weight:600">📖 Claude Code Docs →</a>
+          <a href="https://code.claude.com/docs/en/overview" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:var(--gray-900);color:white;border-radius:7px;text-decoration:none;font-size:12px;font-weight:600">📖 Claude Code Docs →</a>
           <div class="detail-box" style="margin:0;padding:10px"><h4>Your company use case</h4><p>"Build a 3-scenario DCF model for a $200M SaaS acquisition target. Assumptions: base/bull/bear on growth rates."</p></div>
         </div>
       </div>
@@ -3929,7 +3935,7 @@ def compact_messages(messages: list, keep_recent: int = 4) -> list:
 # System prompt tokens are cached → cheaper than re-sending in messages
 PERSISTENT_CONTEXT = """
 Key facts established in this session:
-- Analyzing your company Corp Strategy, SMB segment focus
+- Analyzing Intuit Corp Strategy, SMB segment focus
 - Q1 2025: Revenue $3.3B, +10% YoY, QuickBooks Online ARR $1.1B
 - Xero growing faster (18% YoY) but 8x smaller
 - Decision under review: accelerate international expansion vs. deepen US
@@ -4371,7 +4377,7 @@ Data:
 Requirements:
 - Use Chart.js from CDN (no install)
 - Two charts side by side: ARR bar chart + Growth rate bar chart
-- Color scheme: teal (#1D9E75) for your company/QuickBooks, gray for others
+- Color scheme: teal (#1D9E75) for Intuit/QuickBooks, gray for others
 - Clean, executive-presentation style — no chart junk
 - Hover tooltips showing exact values
 - Title: "SMB Accounting: ARR vs Growth Rate — Q3 2025"
@@ -4403,7 +4409,7 @@ Style:
 - Competitors: filled light gray with dark border
 - Clean sans-serif font, white background
 - 800x600px viewBox
-- Add a subtle shaded rectangle showing "your company's current focus zone"
+- Add a subtle shaded rectangle showing "Intuit's current focus zone"
 
 Return only the SVG code.</code></pre>
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
@@ -4711,7 +4717,7 @@ client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
 
 # Fetch real financial data
 xero = yf.Ticker("XRO.AX")    # Xero (ASX-listed)
-intu = yf.Ticker("INTU")      # your company (NASDAQ)
+intu = yf.Ticker("INTU")      # Intuit (NASDAQ)
 
 xero_info = xero.info
 intu_info = intu.info
@@ -5166,67 +5172,340 @@ print(response.content[0].text)</code></pre>
 <section id="founder" class="section">
   <div class="section-header">
     <div class="section-label">Section · Founder Track</div>
-    <h1 class="section-title">Building With LLMs as a Founder</h1>
-    <p class="section-subtitle">Cost-aware architecture, LGPD, and the unit economics of AI features — for the fintech you'll build after HBS.</p>
+    <h1 class="section-title">🚀 Fundando uma Fintech com IA</h1>
+    <p class="section-subtitle">GTM, pricing de features, MVP, casos brasileiros, arquitetura e fundraising — para a empresa que você vai construir depois do HBS.</p>
   </div>
 
-  <div class="info-box"><p>Everything else here makes you a better <em>user</em> of Claude. This section is about being a <strong>builder</strong>: when an LLM feature ships in a product, tokens become COGS, latency becomes UX, and data flows become regulatory exposure. The intern skills and the founder skills are the same skills — applied with different stakes.</p></div>
+  <div class="info-box"><p>Tudo no resto deste dashboard te faz melhor <em>usuária</em> de Claude. Esta aba é sobre ser <strong>builder</strong>: quando um feature de IA entra num produto, tokens viram COGS, latência vira UX, e fluxos de dados viram exposição regulatória. As habilidades de analista e as de fundadora são as mesmas — com stakes diferentes.</p></div>
 
-  <h2 class="subsec">💸 Unit Economics of an AI Feature</h2>
+  <!-- ─── UNIT ECONOMICS ─────────────────────────────────── -->
+  <h2 class="subsec">💸 Unit Economics de um Feature de IA</h2>
   <div class="card">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">The question is never "what does the API cost?" — it's <strong>cost per user per month vs what the feature lets you charge</strong>. Work it backwards:</p>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">A pergunta nunca é "quanto custa a API?" — é <strong>custo por usuário por mês vs o quanto o feature permite cobrar a mais</strong>. Trabalhe de trás pra frente:</p>
     <div class="code-wrap">
-      <pre><code class="language-text">Example: AI bookkeeping assistant in a Brazilian SMB fintech
+      <pre><code class="language-text">Exemplo: assistente de bookkeeping em uma fintech SMB brasileira
 
-Usage assumption:   30 interactions/user/month
-Tokens per call:    2k in + 500 out (after prompt-compression work)
-Model mix:          80% small model (routing!) / 20% frontier
-→ Cost per user:    R$ ~0.50–2/month   (sensitive to the model mix above)
+Premissa de uso:    30 interações/usuário/mês
+Tokens por call:    2k in + 500 out (após compressão de prompt)
+Mix de modelos:     80% small (routing) / 20% frontier
+→ Custo por usuário: R$ ~0,50–2/mês   (sensível ao mix acima)
 
-Pricing power:      feature supports +R$ 15/month on the plan
-Gross margin room:  healthy — IF the 80/20 routing holds.
-The lever that kills you: sending everything to the frontier model
-"because quality" → 10-15× the COGS, same price point.</code></pre>
+Poder de pricing:   feature justifica +R$ 15/mês no plano
+Espaço de margem:   saudável — SE o roteamento 80/20 se mantiver.
+O que te mata:      mandar tudo pro frontier "por qualidade"
+                    → 10–15× o COGS, mesmo preço de venda.</code></pre>
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
     </div>
-    <p style="font-size:13px;color:var(--gray-600);margin-top:10px">The 7 levers in <strong>Token Mastery</strong> read differently as a founder: routing, caching and output constraints aren't optimization tips, they're your gross margin. Model your own feature with the Token Cost Calculator (Tips section) — and connect this to your UnitEconomics spreadsheets.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px">
+      <div style="background:#f0f9ff;border-radius:8px;padding:12px;border-left:3px solid #0284c7">
+        <div style="font-weight:700;font-size:12px;color:#0284c7;margin-bottom:4px">Lever 1 — Routing</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Classifier pequeno na frente: 80% das queries vão pro Haiku/Flash. Fronteir só para raciocínio complexo.</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:12px;border-left:3px solid #16a34a">
+        <div style="font-weight:700;font-size:12px;color:#16a34a;margin-bottom:4px">Lever 2 — Caching</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">System prompt + contexto de produto = ~90% de desconto nos tokens cached. Projeta pra usar prompt caching desde o dia 1.</p>
+      </div>
+      <div style="background:#fef9c3;border-radius:8px;padding:12px;border-left:3px solid #ca8a04">
+        <div style="font-weight:700;font-size:12px;color:#ca8a04;margin-bottom:4px">Lever 3 — Output caps</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Respostas mais curtas = menos tokens de saída (caro). "Responda em até 3 linhas" pode cortar 50% do output cost.</p>
+      </div>
+      <div style="background:#fdf4ff;border-radius:8px;padding:12px;border-left:3px solid #9333ea">
+        <div style="font-weight:700;font-size:12px;color:#9333ea;margin-bottom:4px">Lever 4 — Batch API</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Jobs não-urgentes (categorização noturna, relatórios semanais) → 50% off. Muita fintech paga preço cheio desnecessariamente.</p>
+      </div>
+    </div>
   </div>
 
-  <h2 class="subsec">🏗️ Architecture Decisions That Matter Early</h2>
+  <!-- ─── GTM ──────────────────────────────────────────────── -->
+  <h2 class="subsec">🎯 GTM — Go-to-Market para AI Fintech no Brasil</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">A maior decisão de GTM não é "qual canal de marketing" — é <strong>quem é o seu buyer real</strong>. Em fintech SMB brasileira há três modelos com perfis de custo e defensibilidade muito diferentes:</p>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--gray-100)">
+            <th style="padding:10px 12px;text-align:left;font-weight:700">Modelo GTM</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">Buyer / Influenciador</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">CAC</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">Defensibilidade</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">Quem usa hoje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-200)">
+            <td style="padding:10px 12px;font-weight:600">Canal do Contador</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Contabilistas indicam / vendem para SMBs</td>
+            <td style="padding:10px 12px;color:#16a34a;font-weight:600">Baixo</td>
+            <td style="padding:10px 12px;color:#16a34a;font-weight:600">Alta</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">QuickBooks, Conta Azul, Omie</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-200)">
+            <td style="padding:10px 12px;font-weight:600">Direct-to-SMB (PLG)</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Dono do negócio adota sozinho</td>
+            <td style="padding:10px 12px;color:#ca8a04;font-weight:600">Médio</td>
+            <td style="padding:10px 12px;color:#ca8a04;font-weight:600">Média</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Wave, Nibo free tier</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;font-weight:600">Embedded B2B2B</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Banco/adquirente distribui seu produto</td>
+            <td style="padding:10px 12px;color:#dc2626;font-weight:600">Alto setup</td>
+            <td style="padding:10px 12px;color:#16a34a;font-weight:600">Altíssima</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Stone Conta, Inter Empresas</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#eff6ff;border-radius:8px;padding:12px;margin-top:14px">
+      <div style="font-weight:700;font-size:12px;color:#1d4ed8;margin-bottom:6px">💡 O canal do contador é sub-explorado para AI fintech</div>
+      <p style="font-size:12px;color:var(--gray-600);margin:0">Há ~500 mil contabilistas no Brasil (CFC). Um contador com 100 clientes SMB que adota sua plataforma = 100 contratos sem custo de ads. O feature de IA que resolve a dor do <em>contador</em> (reconciliação, NOF de clientes, geração de balancete) tem distribuição natural pelo canal — muito mais barato que B2C. O risco: churn segue o contador, não o SMB.</p>
+    </div>
+  </div>
+
+  <!-- ─── PRICING ────────────────────────────────────────── -->
+  <h2 class="subsec">💰 Pricing de Features de IA</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">Três modelos dominam fintech SaaS. A escolha define seu modelo de COGS e o sinal de valor que você entrega ao usuário:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px">
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #0284c7">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📦 Bundle (incluído no plano)</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">IA como feature, não produto. "Categorização automática inclusa". Custo de IA entra no COGS do plano.</p>
+        <div style="font-size:11px;font-weight:600;color:#0284c7">Pros: adoção alta, menos fricção<br>Cons: custo variável num modelo fixo</div>
+        <div style="font-size:11px;color:var(--gray-500);margin-top:6px">Ex: Nubank Roxinho, Conta Azul categorização</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #7c3aed">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">⬆️ Premium Tier</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Plano Pro/Plus com acesso a features de IA avançadas. Claro para o usuário, monetizável, protege margem no plano base.</p>
+        <div style="font-size:11px;font-weight:600;color:#7c3aed">Pros: margem previsível, sinal de valor<br>Cons: barreira de upgrade, menor adoção</div>
+        <div style="font-size:11px;color:var(--gray-500);margin-top:6px">Ex: QuickBooks AI features em planos Plus+</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #059669">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">⚡ Consumo (pay-per-use)</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Usuário paga por chamada/crédito. Custo de IA 100% transferido. Funciona em casos de uso esporádicos e alto valor por transação.</p>
+        <div style="font-size:11px;font-weight:600;color:#059669">Pros: COGS zero em meses de baixo uso<br>Cons: fricção, previsibilidade de receita baixa</div>
+        <div style="font-size:11px;color:var(--gray-500);margin-top:6px">Ex: análises de crédito sob demanda</div>
+      </div>
+    </div>
+    <div style="background:#fef2f2;border-radius:8px;padding:12px">
+      <div style="font-weight:700;font-size:12px;color:#b91c1c;margin-bottom:4px">⚠️ Armadilha comum</div>
+      <p style="font-size:12px;color:var(--gray-600);margin:0">Lançar com "bundle" sem modelar o custo por coorte de uso. Usuários power (30+ interações/dia) podem consumir 50× o custo médio. Monitore AI cost per active user por segmento desde o dia 1 — não só a média.</p>
+    </div>
+  </div>
+
+  <!-- ─── MVP ────────────────────────────────────────────── -->
+  <h2 class="subsec">🏗️ MVP — O que Construir Primeiro</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">O erro mais caro: construir o produto completo antes de validar o wedge. Em AI fintech, o wedge é o feature que resolve uma dor tão específica que o usuário muda comportamento só por ele.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:14px">
+      <div>
+        <div style="font-weight:700;font-size:13px;margin-bottom:10px;color:#16a34a">✅ Bom wedge de IA</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:#f0fdf4;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">Tarefa repetitiva e manual que o usuário já faz hoje (categorização, conciliação)</div>
+          <div style="background:#f0fdf4;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">Output verificável: usuário consegue checar se IA errou</div>
+          <div style="background:#f0fdf4;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">Frequência alta: acontece toda semana, não uma vez por ano</div>
+          <div style="background:#f0fdf4;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">Dados proprietários criam moat natural (transações, histórico)</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:13px;margin-bottom:10px;color:#dc2626">❌ Anti-patterns</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:#fef2f2;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">"Chatbot geral financeiro" — sem tarefa específica, sem diferenciação</div>
+          <div style="background:#fef2f2;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">Feature que exige dados que você não tem ainda</div>
+          <div style="background:#fef2f2;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">Automação de decisão de alto risco sem human-in-the-loop (crédito, FGTS)</div>
+          <div style="background:#fef2f2;border-radius:6px;padding:10px;font-size:12px;color:var(--gray-700)">Competir com o contador em vez de empoderar ele</div>
+        </div>
+      </div>
+    </div>
+    <h3 style="font-size:13px;font-weight:700;margin-bottom:10px">🔄 Build vs Buy — Checklist</h3>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--gray-100)">
+            <th style="padding:8px 12px;text-align:left">Dimensão</th>
+            <th style="padding:8px 12px;text-align:left">Build (próprio/open-source)</th>
+            <th style="padding:8px 12px;text-align:left">Buy (API frontier)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">PII intenso</td>
+            <td style="padding:8px 12px;color:#16a34a">✅ Self-hosted open-weight</td>
+            <td style="padding:8px 12px;color:#dc2626">⚠️ Verificar DPA e termos</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">Raciocínio complexo</td>
+            <td style="padding:8px 12px;color:#dc2626">❌ Custo humano alto, qualidade inferior</td>
+            <td style="padding:8px 12px;color:#16a34a">✅ Frontier API (Fable 5, GPT-5.5)</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">Volume alto, baixa complexidade</td>
+            <td style="padding:8px 12px;color:#16a34a">✅ Fine-tuned pequeno ou regra + LLM</td>
+            <td style="padding:8px 12px;color:#ca8a04">⚠️ Frontier caro no escala</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px;font-weight:600">Diferenciação core</td>
+            <td style="padding:8px 12px;color:#16a34a">✅ Fine-tune em dados proprietários</td>
+            <td style="padding:8px 12px;color:#dc2626">❌ Qualquer concorrente pode fazer igual</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ─── CASES BR ──────────────────────────────────────── -->
+  <h2 class="subsec">🇧🇷 Cases BR — Como as Fintechs Brasileiras Usam IA</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">Referências concretas para benchmarking e para conversas com investidores que cobram "o que existe no mercado":</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <div style="background:#8a05be;color:white;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700">Nubank</div>
+          <div style="font-size:12px;color:var(--gray-500)">~100M clientes · público NYSE</div>
+        </div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px"><strong>Roxinho (GenAI no app):</strong> assistente conversacional para dúvidas de fatura, limites e negociação de dívida, integrado ao app em 2024. Reduz volume de CS humano em queries simples. Estratégia: IA no front-end como deflexão de custo, não como produto principal.</p>
+        <div style="font-size:11px;color:#8a05be;font-weight:600">💡 Lição: mesmo com escala enorme, começaram em deflexão de CS. Prova que o wedge não precisa ser o produto — pode ser operação.</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <div style="background:#00a651;color:white;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700">Stone / Linx</div>
+          <div style="font-size:12px;color:var(--gray-500)">Adquirência + SaaS · público Nasdaq</div>
+        </div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px"><strong>IA em cobrança e suporte:</strong> automação de régua de cobrança e triagem de suporte técnico para lojistas. Usam dados de transação + histórico para personalizar abordagem. Linx (ERP/PDV) integra categorização automática fiscal.</p>
+        <div style="font-size:11px;color:#00a651;font-weight:600">💡 Lição: dados transacionais são o moat. IA sem dados proprietários é comodity — IA com histórico de venda do lojista é defensível.</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <div style="background:#f97316;color:white;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700">Conta Azul / Omie</div>
+          <div style="font-size:12px;color:var(--gray-500)">ERP/contabilidade SMB · privados</div>
+        </div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px"><strong>Categorização automática de lançamentos:</strong> classifica despesas/receitas sem input manual, integrado via OFX e APIs bancárias. Omie tem assistente para geração de NFe e consultas tributárias simples. Bundle nos planos pagos.</p>
+        <div style="font-size:11px;color:#f97316;font-weight:600">💡 Lição: o canal do contador é o distribuidor. Features que poupam tempo do contador (não do SMB direto) têm adoção mais rápida nesse segmento.</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <div style="background:#0050a0;color:white;border-radius:6px;padding:3px 10px;font-size:11px;font-weight:700">Banco Inter</div>
+          <div style="font-size:12px;color:var(--gray-500)">Banco digital · público B3/Nasdaq</div>
+        </div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px"><strong>Inter IA (assistente financeiro):</strong> análise de gastos, metas e projeções financeiras integradas ao app PF e PJ. Estratégia de "super-app" onde IA é o hub entre segmentos (banco, seguros, investimentos).</p>
+        <div style="font-size:11px;color:#0050a0;font-weight:600">💡 Lição: em super-app, IA como orquestrador cross-produto é mais valioso que um feature isolado. Modelo difícil de replicar para startup — mas instrui o design de integrações.</div>
+      </div>
+    </div>
+    <div style="background:#fffbeb;border-radius:8px;padding:12px;margin-top:12px">
+      <div style="font-weight:700;font-size:12px;color:#92400e;margin-bottom:4px">🏦 Ângulo Pix — oportunidade sub-explorada</div>
+      <p style="font-size:12px;color:var(--gray-600);margin:0">Pix criou um dataset de transações em tempo real que não existe em mercados desenvolvidos. AI fintech que usa metadados de Pix (hora, valor, frequência, contador da parte) para categorização, crédito ou detecção de fraude tem vantagem estrutural vs competidores globais que tentam entrar no Brasil.</p>
+    </div>
+  </div>
+
+  <!-- ─── ARCHITECTURE ──────────────────────────────────── -->
+  <h2 class="subsec">⚙️ Decisões de Arquitetura que Importam Cedo</h2>
   <div class="card">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
       <div style="background:var(--gray-50);border-radius:8px;padding:14px">
-        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🔀 Route by default</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">Classifier (small model) in front of everything; frontier model only for what needs it. Build this on day 1 — retrofitting routing into a product that calls Opus for everything is painful.</p>
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🔀 Routing desde o dia 1</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">Classifier pequeno na frente de tudo; frontier só para o que precisa. Retrofitar routing num produto que chama Opus para tudo é doloroso — e caro até o retrofitting acontecer.</p>
       </div>
       <div style="background:var(--gray-50);border-radius:8px;padding:14px">
-        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🔌 Provider-agnostic layer</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">Wrap LLM calls behind one internal interface. Models leapfrog every 6 months; with evals (Prompting → Evals) + an abstraction layer, switching is a config change, not a rewrite.</p>
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🔌 Camada agnóstica de provider</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">Envolva chamadas LLM numa interface interna. Modelos se superam a cada 6 meses — com evals + abstração, trocar de provider é uma mudança de config, não um rewrite.</p>
       </div>
       <div style="background:var(--gray-50);border-radius:8px;padding:14px">
-        <div style="font-weight:700;font-size:13px;margin-bottom:6px">📉 Degrade gracefully</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">API down ≠ product down. Queue non-urgent jobs (Batch API mindset), cache aggressively, and design UX so AI is an accelerator, not a single point of failure.</p>
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">📉 Degrade com graciosidade</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">API fora do ar ≠ produto fora do ar. Filas para jobs não-urgentes, cache agressivo, UX que posiciona IA como acelerador — não single point of failure.</p>
       </div>
       <div style="background:var(--gray-50);border-radius:8px;padding:14px">
-        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🧾 Log everything from day 1</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">Every call: tokens, cost, latency, model, prompt version. This is your COGS dashboard, your eval data source, and your audit trail for regulators — three birds, one table.</p>
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🧾 Logue tudo desde o início</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.7">Cada chamada: tokens, custo, latência, modelo, versão do prompt. Isso é seu dashboard de COGS, sua fonte de dados de eval e seu audit trail para reguladores — três problemas, uma tabela.</p>
       </div>
     </div>
   </div>
 
-  <h2 class="subsec">🇧🇷 LGPD &amp; Data Strategy for a Brazilian Fintech</h2>
+  <!-- ─── LGPD ───────────────────────────────────────────── -->
+  <h2 class="subsec">🇧🇷 LGPD &amp; Estratégia de Dados para Fintech</h2>
   <div class="card">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">Not legal advice — a strategic checklist for conversations with your future DPO and counsel:</p>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">Não é assessoria jurídica — é um checklist estratégico para conversas com seu futuro DPO e advogado:</p>
     <ul style="font-size:13px;color:var(--gray-600);padding-left:18px;line-height:2">
-      <li><strong>Map the data flow before building.</strong> What PII reaches the LLM? Bank statements and CPF-linked data sent to a US API is a different conversation than anonymized aggregates.</li>
-      <li><strong>Minimize and anonymize at the boundary.</strong> Strip identifiers <em>before</em> the API call (deterministic code, not an LLM). Often the model only needs "merchant, amount, date" — not who the customer is.</li>
-      <li><strong>Hybrid architecture as compliance tool.</strong> Self-hosted open-weight models for PII-heavy routine extraction; frontier API for reasoning on cleaned data (see Infra → Running Models Locally). This is a defensible answer in due diligence.</li>
-      <li><strong>Check provider terms.</strong> Commercial API terms (training-data usage, retention, DPAs) change — verify current terms when you architect, and pin them in contracts.</li>
-      <li><strong>LGPD bases legais.</strong> Legítimo interesse vs consentimento for AI processing is exactly the kind of question to resolve with counsel before launch, not after a BACEN inquiry.</li>
+      <li><strong>Mapeie o fluxo de dados antes de construir.</strong> Qual PII chega ao LLM? Extratos bancários e dados vinculados a CPF enviados para uma API nos EUA é uma conversa diferente de agregados anonimizados.</li>
+      <li><strong>Minimize e anonimize na fronteira.</strong> Strip de identificadores <em>antes</em> da chamada (código determinístico, não um LLM). O modelo muitas vezes só precisa de "estabelecimento, valor, data" — não quem é o cliente.</li>
+      <li><strong>Arquitetura híbrida como ferramenta de compliance.</strong> Modelos open-weight self-hosted para extração de rotina com PII pesado; API frontier para raciocínio em dados limpos. Essa é uma resposta defensável em due diligence.</li>
+      <li><strong>Verifique os termos do provider.</strong> Termos comerciais (uso de dados para treinamento, retenção, DPAs) mudam — verifique ao arquitetar e fixe em contratos.</li>
+      <li><strong>Bases legais LGPD.</strong> Legítimo interesse vs consentimento para processamento por IA é exatamente o tipo de questão para resolver com advogado antes do lançamento, não depois de uma consulta do BACEN.</li>
     </ul>
-    <div style="background:#f0fdf4;border-radius:8px;padding:12px;margin-top:10px"><p style="font-size:12px;color:#15803d;margin:0"><strong>💡 The your company internship is your lab:</strong> watch how a regulated fintech at scale handles model governance, audit trails, and AI feature pricing. Those notes are worth more than the stipend.</p></div>
+    <div style="background:#f0fdf4;border-radius:8px;padding:12px;margin-top:10px">
+      <p style="font-size:12px;color:#15803d;margin:0"><strong>💡 Seu estágio é seu laboratório:</strong> observe como uma fintech regulada em escala lida com governança de modelos, audit trails e pricing de features de IA. Essas anotações valem mais que o salário.</p>
+    </div>
+  </div>
+
+  <!-- ─── FUNDRAISING ────────────────────────────────────── -->
+  <h2 class="subsec">💬 Fundraising Narrative para AI Fintech</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">Em 2025–26, todo pitch tem "usamos IA". O que diferencia no fundraising é <strong>especificidade + defensibilidade + métricas</strong>:</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+      <div style="background:#eff6ff;border-radius:8px;padding:12px">
+        <div style="font-weight:700;font-size:12px;color:#1d4ed8;margin-bottom:6px">❓ O que VCs perguntam sobre AI-native fintechs</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px">
+          <div style="color:var(--gray-600)">• Qual % das features usa IA ativamente? (AI attachment rate)</div>
+          <div style="color:var(--gray-600)">• Qual o custo de IA por usuário ativo por mês?</div>
+          <div style="color:var(--gray-600)">• O que impede o OpenAI/Anthropic de distribuir diretamente?</div>
+          <div style="color:var(--gray-600)">• Quão proprietários são os dados que treinam/fine-tunam seu modelo?</div>
+          <div style="color:var(--gray-600)">• Qual a acurácia do seu modelo de risco/crédito vs benchmark de mercado?</div>
+          <div style="color:var(--gray-600)">• Como você previne alucinações em outputs financeiros?</div>
+        </div>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:12px">
+        <div style="font-weight:700;font-size:12px;color:#16a34a;margin-bottom:6px">✅ Posicionamento que funciona</div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--gray-600)">
+          <div>• <strong>"Somos AI-native"</strong> — arquitetura pensada para IA, não IA parafusada em cima de produto legacy</div>
+          <div>• <strong>Dado proprietário como moat</strong> — "nosso modelo de categorização é treinado em X transações/mês do nosso corpus; nenhum player externo tem acesso"</div>
+          <div>• <strong>Regulação como vantagem, não risco</strong> — "nosso design de LGPD/BACEN é um filtro competitivo; novos entrantes levam 18 meses para aprovar"</div>
+          <div>• <strong>Contador como força multiplicadora</strong> — "cada contabilista é um SDR que distribui por 80–150 SMBs sem custo de aquisição nosso"</div>
+        </div>
+      </div>
+      <div style="background:#fef2f2;border-radius:8px;padding:12px">
+        <div style="font-weight:700;font-size:12px;color:#b91c1c;margin-bottom:6px">❌ Red flags no pitch (o que evitar)</div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--gray-600)">
+          <div>• "Usamos ChatGPT" — nenhuma defensibilidade, qualquer concorrente replica amanhã</div>
+          <div>• IA como diferenciador sem métricas — "nossa IA é melhor" sem benchmark ou eval data</div>
+          <div>• Mercado definido como "todos os SMBs do Brasil" — sem segmento claro = sem GTM claro</div>
+        </div>
+      </div>
+    </div>
+    <h3 style="font-size:13px;font-weight:700;margin-bottom:10px">📊 Métricas que investidores de AI fintech rastreiam</h3>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--gray-100)">
+            <th style="padding:8px 12px;text-align:left">Métrica</th>
+            <th style="padding:8px 12px;text-align:left">O que mede</th>
+            <th style="padding:8px 12px;text-align:left">Benchmark saudável</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">AI Attachment Rate</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">% de usuários ativos que usam features de IA</td>
+            <td style="padding:8px 12px;color:#16a34a">≥ 40% early-stage</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">AI Cost per MAU</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Custo de IA por usuário ativo/mês (COGS de IA)</td>
+            <td style="padding:8px 12px;color:#16a34a">&lt; 15% do ARPU</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">AI Feature NPS</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">NPS específico do feature de IA (separado do produto)</td>
+            <td style="padding:8px 12px;color:#16a34a">≥ 40</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px;font-weight:600">AI-attributed Retention</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Delta de churn entre usuários de IA vs não-usuários</td>
+            <td style="padding:8px 12px;color:#16a34a">≥ 20pp de diferença</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
+
 
 <section id="reading" class="section">
   <div class="section-header">
@@ -5278,7 +5557,7 @@ The lever that kills you: sending everything to the frontier model
           <div style="background:var(--gray-50);border-radius:6px;padding:12px">
             <div style="font-weight:600;font-size:13px;margin-bottom:4px">Market structure check: QB Desktop ~62% share, Sage 50 ~10%, Xero ~9%</div>
             <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Desktop still dominates installed base while QBO holds ~4.4% — the desktop-to-cloud migration remains the battleground. Sage de-emphasizing legacy tiers creates migration windows.</div>
-            <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Implication for Corp Dev: every desktop sunset (ours or competitors') is a switching event — track them as M&amp;A and win-back triggers.</div>
+            <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Implication for Corp Dev: every desktop sunset (any vendor's) is a switching event — track them as M&amp;A and win-back triggers.</div>
           </div>
         </div>
       </div>
@@ -5288,7 +5567,7 @@ The lever that kills you: sending everything to the frontier model
         <div style="display:flex;flex-direction:column;gap:8px">
           <div style="background:var(--gray-50);border-radius:6px;padding:12px">
             <div style="font-weight:600;font-size:13px;margin-bottom:4px">Anthropic files S-1 (Jun 1); OpenAI follows with confidential IPO filing (Jun 8)</div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Anthropic: last valued ~$965B, ~$44B annualized run-rate, first operating profit expected Q2 2026. OpenAI last valued ~$852B. The two largest model providers heading to public markets within weeks of each other.</div>
+            <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Anthropic: last valued ~$965B, ~$47B annualized run-rate, first operating profit expected Q2 2026. OpenAI last valued ~$852B. The two largest model providers heading to public markets within weeks of each other.</div>
             <div style="font-size:11px;color:#7c3aed;font-weight:600">💡 Public-market scrutiny = pricing discipline and enterprise focus from both. Expect more stable contracts — and more aggressive enterprise sales motions toward companies like Intuit.</div>
           </div>
           <div style="background:var(--gray-50);border-radius:6px;padding:12px">
@@ -5310,7 +5589,7 @@ The lever that kills you: sending everything to the frontier model
           <div style="background:var(--gray-50);border-radius:6px;padding:12px">
             <div style="font-weight:600;font-size:13px;margin-bottom:4px">OpenAI pushes Codex up the application stack: sales, data analytics, even investment-banking plugins</div>
             <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Six new business plugins announced. Model providers are no longer just selling tokens — they're shipping vertical workflows that overlap with SaaS incumbents' roadmaps.</div>
-            <div style="font-size:11px;color:#059669;font-weight:600">💡 The "will foundation models eat our category?" question is now concrete. Watch for accounting/tax-adjacent plugins — that's a direct strategic trigger for Intuit.</div>
+            <div style="font-size:11px;color:#059669;font-weight:600">💡 The "will foundation models eat this category?" question is now concrete. Watch for accounting/tax-adjacent plugins — that's a direct strategic trigger for Intuit.</div>
           </div>
         </div>
       </div>
@@ -5354,7 +5633,7 @@ The lever that kills you: sending everything to the frontier model
             <table style="width:100%;border-collapse:collapse;font-size:12px">
               <thead><tr style="background:var(--gray-50)"><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Player</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Revenue est.</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Clientes</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Força principal</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Vulnerabilidade</th></tr></thead>
               <tbody>
-                <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">QuickBooks (your company)</td><td style="padding:8px">$6B+</td><td style="padding:8px">7M+</td><td style="padding:8px">Accountant network, bank integration, brand</td><td style="padding:8px">UX legada, preço premium</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">QuickBooks (Intuit)</td><td style="padding:8px">$6B+</td><td style="padding:8px">7M+</td><td style="padding:8px">Accountant network, bank integration, brand</td><td style="padding:8px">UX legada, preço premium</td></tr>
                 <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">Xero</td><td style="padding:8px">~$1.4B</td><td style="padding:8px">4M+</td><td style="padding:8px">UX superior, ecossistema de apps, internacional</td><td style="padding:8px">Pequeno no US, sem payroll nativo forte</td></tr>
                 <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">FreshBooks</td><td style="padding:8px">~$300M</td><td style="padding:8px">30M users</td><td style="padding:8px">UX simples, foco em freelancers/service biz</td><td style="padding:8px">Funcionalidades limitadas para crescimento</td></tr>
                 <tr><td style="padding:8px;font-weight:600">Wave</td><td style="padding:8px">~$100M</td><td style="padding:8px">Milhões</td><td style="padding:8px">Gratuito (freemium), simplicidade</td><td style="padding:8px">Modelo de negócio frágil, features básicas</td></tr>
@@ -5504,8 +5783,8 @@ The lever that kills you: sending everything to the frontier model
 
           <div style="border:1px solid var(--gray-200);border-radius:8px;padding:12px">
             <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px"><a href="https://stratechery.com/2015/aggregation-theory/" target="_blank" style="font-weight:700;font-size:13px;color:var(--primary)">Aggregation Theory — Ben Thompson ↗</a><span style="font-size:11px;color:var(--gray-400)">15 min</span></div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Key takeaways:</strong> Platforms win by controlling the relationship com o usuário final e commoditizando os fornecedores acima delas. Para your company: QuickBooks é o agregador entre SMBs e contadores — quem controla essa interface controla o valor. Xero tenta ser o contra-agregador.</div>
-            <div style="background:#eff6ff;border-radius:5px;padding:8px;font-size:11px;color:#1e40af"><strong>After reading, ask Claude:</strong> "Como a aggregation theory explica por que your company comprou a Mailchimp? E por que Credit Karma? What was the aggregation logic in each case?"</div>
+            <div style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Key takeaways:</strong> Platforms win by controlling the relationship com o usuário final e commoditizando os fornecedores acima delas. Para a Intuit: QuickBooks é o agregador entre SMBs e contadores — quem controla essa interface controla o valor. Xero tenta ser o contra-agregador.</div>
+            <div style="background:#eff6ff;border-radius:5px;padding:8px;font-size:11px;color:#1e40af"><strong>After reading, ask Claude:</strong> "Como a aggregation theory explica por que Intuit comprou a Mailchimp? E por que Credit Karma? What was the aggregation logic in each case?"</div>
           </div>
 
           <div style="border:1px solid var(--gray-200);border-radius:8px;padding:12px">
@@ -5516,7 +5795,7 @@ The lever that kills you: sending everything to the frontier model
 
           <div style="border:1px solid var(--gray-200);border-radius:8px;padding:12px">
             <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px"><a href="https://www.acquired.fm/episodes/intuit" target="_blank" style="font-weight:700;font-size:13px;color:var(--primary)">Acquired Podcast: Your company Episode ↗</a><span style="font-size:11px;color:var(--gray-400)">3-4h — ouça a 1.5×</span></div>
-            <div style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Key takeaways:</strong> Como o QuickBooks quase matou your company (cannibalization do Quicken) e por que Sasan Goodarzi foi a aposta certa. A história do Mint.com e por que your company o comprou para matar (defensive M&A). A tese de plataforma: por que your company vai de volta para os dados fiscais como motor de crescimento. <strong>You'll reference stories from this episode throughout the internship.</strong></div>
+            <div style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Key takeaways:</strong> Como o QuickBooks quase matou Intuit (cannibalization do Quicken) e por que Sasan Goodarzi foi a aposta certa. A história do Mint.com e por que Intuit o comprou para matar (defensive M&A). A tese de plataforma: por que Intuit vai de volta para os dados fiscais como motor de crescimento. <strong>You'll reference stories from this episode throughout the internship.</strong></div>
           </div>
         </div>
       </div>
@@ -5603,12 +5882,12 @@ Create reading_updater.py com dois modos: --daily e --weekly
 ════ MODO DIÁRIO (runs every day at 7h UTC) ════
 
 1. Sources de notícias (últimas 24h):
-   - NewsAPI: "your company OR QuickBooks OR Xero", "fintech M&A", "SMB software"
+   - NewsAPI: "Intuit OR QuickBooks OR Xero", "fintech M&A", "SMB software"
    - RSS Anthropic: https://www.anthropic.com/feed.rss
    - RSS Stratechery (se assinante): feed RSS do email
 
 2. Filtra com Haiku (barato, rápido):
-   "Relevante para analista de Corp Strategy na your company? SKIP ou YES + 1 linha"
+   "Relevante para analista de Corp Strategy na empresa? SKIP ou YES + 1 linha"
 
 3. Para os YES, extrai com Haiku:
    {titulo, fonte, url, resumo_1_linha, implicacao_intuit_1_linha, urgencia: Alta/Media}
@@ -5621,7 +5900,7 @@ Create reading_updater.py com dois modos: --daily e --weekly
 1. Puxa os 7 dias de artigos filtrados pelo daily (lê de cache daily_cache.json)
 
 2. Análise profunda com Sonnet:
-   "Você é analista de Corp Strategy na your company.
+   "Você é analista de Corp Strategy na empresa.
     Analise as notícias desta semana e gere:
     1. O movimento mais importante que aconteceu (1 parágrafo)
     2. Strategic implication for your company (bullets)
@@ -5988,10 +6267,10 @@ claude --version   # deve retornar a versão</div>
 
 # Cria o CLAUDE.md com seu contexto base
 cat > CLAUDE.md << 'MDEOF'
-# AI Workspace — Rafa Lellis · your company Corp Strategy 2025
+# AI Workspace — Rafa · Corp Strategy 2026
 
 ## Meu contexto
-- Analista de Corporate Strategy & Development na your company
+- Analista de Corporate Strategy & Development em uma fintech de grande porte
 - Background: McKinsey Digital (ML/QuantumBlack), fintech
 - I prefer: direct outputs, bullets, data where possible, no long intros
 
@@ -6079,10 +6358,10 @@ Constraint: No intro or conclusion — just the 3 risks.</div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
       <div style="background:var(--gray-50);border-radius:6px;padding:10px;font-size:12px;color:#1e293b"><strong>1.</strong> Nomeie o Project "your company Strategy 2025"</div>
       <div style="background:var(--gray-50);border-radius:6px;padding:10px;font-size:12px;color:#1e293b"><strong>2.</strong> Cole o system prompt abaixo em "Project Instructions"</div>
-      <div style="background:var(--gray-50);border-radius:6px;padding:10px;font-size:12px;color:#1e293b"><strong>3.</strong> Suba qualquer doc público da your company (ex: relatório anual) em "Project Knowledge"</div>
-      <div style="background:var(--gray-50);border-radius:6px;padding:10px;font-size:12px;color:#1e293b"><strong>4.</strong> Teste: "Quais os 3 principais riscos estratégicos da your company hoje?"</div>
+      <div style="background:var(--gray-50);border-radius:6px;padding:10px;font-size:12px;color:#1e293b"><strong>3.</strong> Suba qualquer doc público da empresa (ex: relatório anual) em "Project Knowledge"</div>
+      <div style="background:var(--gray-50);border-radius:6px;padding:10px;font-size:12px;color:#1e293b"><strong>4.</strong> Teste: "Quais os 3 principais riscos estratégicos da empresa hoje?"</div>
     </div>
-    <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e2">Você é uma analista sênior de Corporate Strategy & Development na your company.
+    <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e2">Você é uma analista sênior de Corporate Strategy & Development em uma fintech de grande porte.
 
 Perfil da usuária: MBA HBS Class 2027, background em McKinsey Digital (ML/QuantumBlack) e fintech. Prefere outputs diretos, frameworks claros e análises acionáveis.
 
@@ -6109,7 +6388,7 @@ Formato padrão de análise estratégica:
     <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e3">Create um dashboard HTML completo e auto-contido de competitive intelligence para o mercado de accounting software SMB nos EUA.
 
 Inclua:
-1. KPI cards: Market size (~$15B), Growth rate (~8%), your company market share (~35%)
+1. KPI cards: Market size (~$15B), Growth rate (~8%), Intuit market share (~35%)
 2. Tabela: QuickBooks vs FreshBooks vs Xero vs Wave — Preço/mês, Força principal, Fraqueza, NPS estimado
 3. Gráfico de barras em SVG puro (sem libs externas): market share por player
 4. A "Strategic Implications" section with 3 actionable bullets
@@ -6134,7 +6413,7 @@ Zero dependências externas — tudo inline no HTML.</div>
     </div>
     <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e4">Create meu_primeiro_claude.py que:
 1. Chama a Claude API com modelo claude-haiku-4-5 e max_tokens=300
-2. Envia esse texto para análise: "A your company reportou crescimento de 15% em receita recorrente, impulsionado por QuickBooks Online. TurboTax teve queda de 3% YoY."
+2. Envia esse texto para análise: "A Intuit reportou crescimento de 15% em receita recorrente, impulsionado por QuickBooks Online. TurboTax teve queda de 3% YoY."
 3. Pede 3 insights estratégicos em bullets
 4. Imprime o resultado e os tokens usados
 
@@ -6257,7 +6536,7 @@ def ask_claude(prompt: str, model: str = "claude-haiku-4-5", max_tokens: int = 5
             <div style="color:#34d399;font-size:11px;font-weight:700;margin-bottom:6px">STEP 6 — Save your preferences permanently</div>
             <div style="font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="slash-p6">/memory sempre usar try/except em chamadas de rede
 /memory outputs CSV sempre no formato: url, price, date, status
-/memory este projeto é para análise competitiva na your company</div>
+/memory este projeto é para análise competitiva na empresa</div>
             <button onclick="navigator.clipboard.writeText(document.getElementById('slash-p6').innerText.trim())" style="margin-top:8px;padding:4px 10px;background:#374151;color:white;border:none;border-radius:4px;font-size:11px;cursor:pointer">📋 Copy</button>
             <div style="font-size:11px;color:#94a3b8;margin-top:6px">👁️ Notice: open CLAUDE.md afterwards — you will see these notes added. Nexóxima session, Claude already knows it without you repeating yourself.</div>
           </div>
@@ -6400,7 +6679,7 @@ tools = [
             "properties": {
                 "company": {
                     "type": "string",
-                    "description": "Nome da empresa (ex: 'your company', 'Xero', 'FreshBooks')"
+                    "description": "Nome da empresa (ex: 'Intuit', 'Xero', 'FreshBooks')"
                 },
                 "metric": {
                     "type": "string",
@@ -6421,7 +6700,7 @@ tools = [
 def get_company_metrics(company: str, metric: str, year: int = 2024) -> dict:
     """Simula um banco de dados de métricas. Substitua por dados reais."""
     db = {
-        "your company":    {"revenue": 16_000, "growth_rate": 15, "market_share": 35, "nps": 52},
+        "Intuit":    {"revenue": 16_000, "growth_rate": 15, "market_share": 35, "nps": 52},
         "Xero":      {"revenue": 1_400,  "growth_rate": 22, "market_share": 8,  "nps": 61},
         "FreshBooks":{"revenue": 290,    "growth_rate": 18, "market_share": 3,  "nps": 67},
     }
@@ -6435,7 +6714,7 @@ response = client.messages.create(
     max_tokens=1024,
     tools=tools,
     messages=[{"role": "user", "content":
-        "Compare your company and Xero on market share and NPS. What is the strategic implication?"}]
+        "Compare Intuit and Xero on market share and NPS. What is the strategic implication?"}]
 )
 
 print(f"Stop reason: {response.stop_reason}")   # deve ser 'tool_use'
@@ -6526,7 +6805,7 @@ client = anthropic.Anthropic()
 # (paste the tool definitions and get_company_metrics from E6 here)
 
 messages = [{"role": "user", "content":
-    "Compare your company and Xero on market share and NPS. What is the strategic implication?"}]
+    "Compare Intuit and Xero on market share and NPS. What is the strategic implication?"}]
 
 # ── LOOP: continua até Claude terminar ────────────────────────
 while True:
@@ -6591,8 +6870,8 @@ while True:
           <div style="background:var(--gray-50);border-radius:6px;padding:12px;font-size:12px;color:#1e293b;white-space:pre-wrap;line-height:1.8">1. cd ~/Documents/ai-projects && claude
 2. Diga: "crie tool_loop.py com o código completo do E7 (inclui o E6)"
 3. Aprove (y) e observe no terminal:
-   → Claude chamou: get_company_metrics({'company': 'your company', 'metric': 'market_share'})
-     Resultado: {'company': 'your company', 'metric': 'market_share', 'value': 35, 'year': 2024}
+   → Claude chamou: get_company_metrics({'company': 'Intuit', 'metric': 'market_share'})
+     Resultado: {'company': 'Intuit', 'metric': 'market_share', 'value': 35, 'year': 2024}
    → Claude chamou: get_company_metrics({'company': 'Xero', 'metric': 'nps'})
      ...
    ── RESPOSTA FINAL ──
@@ -6638,7 +6917,7 @@ def run_agent(user_message: str, tools: list, tool_functions: dict) -> str:
                                  "content": json.dumps(result)})
             messages.append({"role": "user", "content": results})
 
-# Uso: resposta = run_agent("Analise your company vs Xero", tools, {"get_company_metrics": get_company_metrics})</div>
+# Uso: resposta = run_agent("Analise Intuit vs Xero", tools, {"get_company_metrics": get_company_metrics})</div>
           <button onclick="navigator.clipboard.writeText(document.getElementById('claudemd-e7').innerText)" style="margin-top:6px;padding:4px 10px;background:#7c3aed;color:white;border:none;border-radius:4px;font-size:11px;cursor:pointer">📋 Copy CLAUDE.md snippet</button>
         </div>
 
@@ -6669,7 +6948,7 @@ TOOL 3 — save_insight(title: str, insight: str, priority: str) → dict
 Implemente o loop completo de tool use (como no E7).
 
 Mensagem de teste para o agente:
-"Analise como your company se compara com Xero e FreshBooks em crescimento e NPS.
+"Analise como Intuit se compara com Xero e FreshBooks em crescimento e NPS.
  Identify the 2 biggest gaps and save each as a High-priority insight."
 
 O agente deve usar as 3 tools automaticamente, na ordem que fizer mais sentido.
@@ -6685,7 +6964,7 @@ Print each tool call in the terminal as it happens.</div>
   <div class="card">
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px"><strong>What:</strong> Processar múltiplos relatórios com roteamento de modelos (Haiku para triagem, Sonnet só para o que importa) — e calcular a economia real.<br><strong>Where:</strong> Claude Code</p>
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px"><strong>What:</strong> Processar múltiplos relatórios com roteamento de modelos (Haiku para triagem, Sonnet só para o que importa) — e calcular a economia real.<br><strong>Where:</strong> Claude Code</p>
-    <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e6">Create report_pipeline.py que processa relatórios de earnings de empresas tech:
+    <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e6b">Create report_pipeline.py que processa relatórios de earnings de empresas tech:
 
 Fluxo em 2 etapas:
 ETAPA 1 — Triagem com Haiku (barato):
@@ -6703,9 +6982,9 @@ Ao final, imprime:
 - Custo estimado da abordagem ingênua (todos no Sonnet)
 - Custo real com roteamento
 - Economia em % e em USD</div>
-    <button onclick="navigator.clipboard.writeText(document.getElementById('e6').innerText)" style="margin-top:10px;padding:6px 14px;background:#6b21a8;color:white;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">📋 Copy request for Claude Code</button>
+    <button onclick="navigator.clipboard.writeText(document.getElementById('e6b').innerText)" style="margin-top:10px;padding:6px 14px;background:#6b21a8;color:white;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">📋 Copy request for Claude Code</button>
     <div style="background:#fdf4ff;border-radius:6px;padding:10px;margin-top:10px;font-size:12px;color:#6b21a8">
-      <strong>What you learn:</strong> Model routing na prática — a estratégia que reduz custo de API em 60-80% sem perda de qualidade. Esse número vai impressionar qualquer engenheiro de AI na your company.
+      <strong>What you learn:</strong> Model routing na prática — a estratégia que reduz custo de API em 60-80% sem perda de qualidade. Esse número vai impressionar qualquer engenheiro de AI na empresa.
     </div>
   </div>
 
@@ -6716,7 +6995,7 @@ Ao final, imprime:
     <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e7">Create um projeto Python chamado weekly_digest com:
 
 1. digest.py:
-   - Busca notícias dos últimos 7 dias sobre "your company" e "fintech SMB" usando NewsAPI (chave gratuita em newsapi.org)
+   - Busca notícias dos últimos 7 dias sobre "Intuit" e "fintech SMB" usando NewsAPI (chave gratuita em newsapi.org)
    - Envia títulos + descrições para Claude API (Sonnet) com o prompt:
      "Você é analista de estratégia. Analise essas notícias de fintech da última semana.
       Retorne um digest executivo: (1) Top 3 movimentos do mercado, (2) Impacto potencial para your company,
@@ -6749,12 +7028,12 @@ claude mcp add @modelcontextprotocol/server-brave-search</div>
     </div>
     <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e8">Usando as ferramentas disponíveis, faça o seguinte em sequência:
 
-1. Use Brave Search para buscar "your company Q4 2024 earnings" e "your company competitors 2025 strategy"
+1. Use Brave Search para buscar "Intuit Q4 2024 earnings" e "Intuit competitors 2025 strategy"
 2. Salve um resumo em memória como "intuit_research_[data_de_hoje]"
 3. Create um arquivo intuit_brief.md na pasta atual com:
    - Data e fonte das informações
    - Resultados financeiros chave encontrados
-   - 3 movimentos estratégicos recentes da your company
+   - 3 movimentos estratégicos recentes da empresa
    - 2 ameaças competitivas identificadas
    - 1 oportunidade que os dados sugerem
 4. Confirme que o arquivo foi criado e mostre o conteúdo
@@ -6777,7 +7056,7 @@ For anything you cannot find, document it as "not found — verify manually".</d
     <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e12">Create prompt_chain.py com um pipeline de 3 etapas para analisar earnings de uma empresa:
 
 STAGE 1 — Extraction (Haiku, cheap):
-  Input: texto bruto de earnings (crie um exemplo fictício de ~500 palavras sobre "your company Q4 2024")
+  Input: texto bruto de earnings (crie um exemplo fictício de ~500 palavras sobre "Intuit Q4 2024")
   Prompt: "Extraia APENAS os fatos numéricos desse earnings report. Retorne JSON com: receita, crescimento_yoy, lucro_liquido, guidance_proximo_trimestre, segmentos{}."
   Output: JSON com dados estruturados
 
@@ -6867,7 +7146,7 @@ def chain(steps: list[dict], initial_input: str) -> str:
 
 PARTE 1 — Ingesta de PDF:
   - Usa PyPDF2 (pip install PyPDF2) para extrair texto de qualquer PDF
-  - Baixa o Annual Report 2024 da your company (SEC EDGAR, link público) ou usa qualquer PDF local
+  - Baixa o Annual Report 2024 da Intuit (SEC EDGAR, link público) ou usa qualquer PDF local
   - Split into ~2000-token chunks to avoid blowing the context
   - For each chunk: ask Claude (Haiku) "Is there any strategic-risk information in this excerpt? If yes, extract as bullets. Se não, responda SKIP."
   - Coleta só os chunks com conteúdo relevante
@@ -6885,7 +7164,7 @@ PARTE 3 — Síntese final (Sonnet):
 Install dependencies: pip install PyPDF2 requests beautifulsoup4</div>
     <button onclick="navigator.clipboard.writeText(document.getElementById('e13').innerText)" style="margin-top:10px;padding:6px 14px;background:#991b1b;color:white;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">📋 Copy request for Claude Code</button>
     <div style="background:#fef2f2;border-radius:6px;padding:10px;margin-top:10px;font-size:12px;color:#991b1b">
-      <strong>Expected output:</strong> <code>risk_analysis.md</code> com riscos extraídos de documentos reais da your company — com citações. Esse é o núcleo de qualquer due diligence ou competitive intelligence automatizado.
+      <strong>Expected output:</strong> <code>risk_analysis.md</code> com riscos extraídos de documentos reais da empresa — com citações. Esse é o núcleo de qualquer due diligence ou competitive intelligence automatizado.
     </div>
     <details style="margin-top:14px;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden">
       <summary style="background:var(--gray-50);padding:12px 16px;cursor:pointer;font-weight:700;font-size:13px;list-style:none;display:flex;align-items:center;gap:8px">
@@ -6908,7 +7187,7 @@ python3 -c "import PyPDF2, bs4, requests; print('OK')" </div>
 2. Diga: "crie doc_ingester.py com o código completo do E13"
 3. Aprove (y) — Claude vai criar o script e instalar as dependências se faltar
 4. Para testar com um PDF real:
-   - Baixe qualquer relatório anual da your company em PDF do site deles
+   - Baixe qualquer relatório anual da empresa em PDF do site deles
    - Coloque na pasta ai-projects/
    - Diga ao Claude Code: "rode o script com o arquivo intuit_annual_2024.pdf"
 5. Output: risk_analysis.md com riscos extraídos e citações</div>
@@ -6958,7 +7237,7 @@ def analyze_doc(text: str, question: str) -> str:
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px"><strong>What:</strong> Puxar dados financeiros reais com yfinance, alimentar o Claude para análise e gerar um dashboard HTML automaticamente — pipeline de ponta a ponta com dados ao vivo.<br><strong>Where:</strong> Claude Code</p>
     <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e14">Create market_dashboard.py que:
 
-1. Usa yfinance para puxar dados reais de: INTU, XRO.AX, FRES.L (your company, Xero, FreshBooks)
+1. Usa yfinance para puxar dados reais de: INTU, XRO.AX, FRES.L (Intuit, Xero, FreshBooks)
    - Current price, 52-week range, P/E ratio, TTM revenue, market cap
 
 2. Formata os dados como JSON estruturado e envia para Claude Sonnet:
@@ -7109,7 +7388,7 @@ ESTRUTURA DA BASE:
     "entries": [
       {
         "id": "uuid",
-        "topic": "your company Q4 2024",
+        "topic": "Intuit Q4 2024",
         "summary": "...",
         "key_facts": ["...", "..."],
         "source": "earnings call transcript",
@@ -7134,7 +7413,7 @@ AGENTE PRINCIPAL (Sonnet com as 2 ferramentas):
   Após responder, salva o novo conhecimento gerado
 
 Teste com 3 sessões simuladas:
-  Sessão 1: "Analise o Q3 2024 da your company" → salva na base
+  Sessão 1: "Analise o Q3 2024 da Intuit" → salva na base
   Sessão 2: "Como foi o Q4 2024 comparado ao Q3?" → busca Q3 da base, analisa
   Sessão 3: "Qual é a tendência dos últimos 2 trimestres?" → usa ambos da base</div>
     <button onclick="navigator.clipboard.writeText(document.getElementById('e16').innerText)" style="margin-top:10px;padding:6px 14px;background:#991b1b;color:white;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">📋 Copy request for Claude Code</button>
@@ -7186,7 +7465,7 @@ Use Batch API para rodar todos os 10 casos em paralelo (50% desconto).</div>
     <div style="background:linear-gradient(135deg,#1e1b4b,#0f172a);border-radius:8px;padding:16px;margin-bottom:14px">
       <div style="color:#a5b4fc;font-weight:700;font-size:13px;margin-bottom:10px">🔁 Arquitetura do sistema</div>
       <div style="display:flex;flex-direction:column;gap:6px;font-size:12px;font-family:monospace;color:#e2e8f0">
-        <div style="display:flex;align-items:center;gap:8px"><span style="background:#3730a3;padding:2px 8px;border-radius:4px">INPUT</span> Uma empresa ou tema (ex: "your company vs Xero")</div>
+        <div style="display:flex;align-items:center;gap:8px"><span style="background:#3730a3;padding:2px 8px;border-radius:4px">INPUT</span> Uma empresa ou tema (ex: "Intuit vs Xero")</div>
         <div style="padding-left:20px;color:#6366f1">↓ yfinance + NewsAPI + BeautifulSoup</div>
         <div style="display:flex;align-items:center;gap:8px"><span style="background:#1d4ed8;padding:2px 8px;border-radius:4px">STEP 1</span> Coleta dados: preços, métricas, notícias recentes, páginas de produto</div>
         <div style="padding-left:20px;color:#6366f1">↓ Haiku (triage and extraction)</div>
@@ -7243,10 +7522,10 @@ ORQUESTRADOR — main.py:
     print(f"✅ Report delivered. Total cost: ${calculate_total_cost():.4f}")
 
   if __name__ == "__main__":
-    run("your company", "Xero", "seu@email.com")
+    run("Intuit", "Xero", "seu@email.com")
 
 Also create a GitHub Actions workflow that runs every Sunday at 9am with
-company_a="your company", company_b="Xero" e manda para o seu email.</div>
+company_a="Intuit", company_b="Xero" e manda para o seu email.</div>
     <button onclick="navigator.clipboard.writeText(document.getElementById('e18').innerText)" style="margin-top:10px;padding:6px 14px;background:linear-gradient(135deg,#dc2626,#7c3aed);color:white;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">📋 Copy request for Claude Code</button>
     <div style="background:linear-gradient(135deg,#f5f3ff,#fef2f2);border-radius:8px;padding:14px;margin-top:12px">
       <div style="font-weight:700;font-size:13px;color:#4c1d95;margin-bottom:6px">✅ Expected output — what yoê terá ao terminar</div>
@@ -7264,7 +7543,7 @@ company_a="your company", company_b="Xero" e manda para o seu email.</div>
   <!-- ── E19 — CAPSTONE 2 ── -->
   <h2 class="subsec" style="margin-top:32px"><span style="background:linear-gradient(135deg,#0369a1,#0891b2);color:white;padding:4px 14px;border-radius:20px;font-size:13px;margin-right:8px">E19 · CAPSTONE · 3-4 hours</span>Customer Voice Engine — Reviews → Trends → Product Team Alert</h2>
   <div class="card" style="border:2px solid #0891b2">
-    <p style="font-size:14px;color:var(--gray-600);margin-bottom:14px"><strong>What:</strong> System that monitors  que clientes estão dizendo sobre o QuickBooks (App Store, Google Play, Reddit, G2) — classifica automaticamente, detecta tendências emergentes, e alerta o time de produto quando algo novo aparece. Unlike E18: internal focus, based on customer voice, not competitive intelligence.<br><strong>Why it matters in the internship:</strong> Times de produto na your company monitoram NPS e reviews manualmente. Você entrega isso automatizado.</p>
+    <p style="font-size:14px;color:var(--gray-600);margin-bottom:14px"><strong>What:</strong> System that monitors  que clientes estão dizendo sobre o QuickBooks (App Store, Google Play, Reddit, G2) — classifica automaticamente, detecta tendências emergentes, e alerta o time de produto quando algo novo aparece. Unlike E18: internal focus, based on customer voice, not competitive intelligence.<br><strong>Why it matters in the internship:</strong> Times de produto na empresa monitoram NPS e reviews manualmente. Você entrega isso automatizado.</p>
 
     <div style="background:linear-gradient(135deg,#0c4a6e,#164e63);border-radius:8px;padding:14px;margin-bottom:14px">
       <div style="color:#7dd3fc;font-weight:700;font-size:13px;margin-bottom:10px">🔁 Arquitetura</div>
@@ -7315,7 +7594,7 @@ MÓDULO 3 — trend_detector.py:
 
 MÓDULO 4 — brief_generator.py (Sonnet):
   generate_product_brief(classified: list, trends: dict) → str
-    Prompt: "Você é analista de produto sênior da your company.
+    Prompt: "Você é analista de produto sênior da empresa.
     Dados desta semana: {N} reviews coletadas de {fontes}.
 
     Escreva um Product Intelligence Brief com:
@@ -7362,7 +7641,7 @@ pip install app-store-scraper praw beautifulsoup4 requests anthropic</div>
   <!-- ── E20 — CAPSTONE 3 ── -->
   <h2 class="subsec" style="margin-top:32px"><span style="background:linear-gradient(135deg,#065f46,#047857);color:white;padding:4px 14px;border-radius:20px;font-size:13px;margin-right:8px">E20 · CAPSTONE · 4-5 hours</span>M&A Target Screener — Critérios → Score → Investment Memo → Deck</h2>
   <div class="card" style="border:2px solid #047857">
-    <p style="font-size:14px;color:var(--gray-600);margin-bottom:14px"><strong>What:</strong> System that takes acquisition criteria, scans a universe of companies, scores themua com um scorecard, e gera um investment memo completo + deck para as top 3. Diretamente relevante par Corporate Development — what analysts do in weeks, you do in hours.<br><strong>Why it matta:</strong> Corp Dev na your company avalia dezenas de targets por trimestre. Esse sistema automatiza o screening inicial.</p>
+    <p style="font-size:14px;color:var(--gray-600);margin-bottom:14px"><strong>What:</strong> System that takes acquisition criteria, scans a universe of companies, scores themua com um scorecard, e gera um investment memo completo + deck para as top 3. Diretamente relevante par Corporate Development — what analysts do in weeks, you do in hours.<br><strong>Why it matta:</strong> Corp Dev na empresa avalia dezenas de targets por trimestre. Esse sistema automatiza o screening inicial.</p>
 
     <div style="background:linear-gradient(135deg,#022c22,#064e3b);border-radius:8px;padding:14px;margin-bottom:14px">
       <div style="color:#6ee7b7;font-weight:700;font-size:13px;margin-bottom:10px">🔁 Arquitetura</div>
@@ -7382,7 +7661,7 @@ pip install app-store-scraper praw beautifulsoup4 requests anthropic</div>
 MÓDULO 1 — universe_generator.py (Sonnet):
   generate_targets(criteria: dict) → list[str]
   criteria = {
-    "acquirer": "your company",
+    "acquirer": "Intuit",
     "strategic_fit": "SMB financial tools, payroll, or expense management",
     "revenue_range_usd_m": [10, 500],
     "geography": ["US", "Canada", "UK"],
@@ -7426,7 +7705,7 @@ MÓDULO 4 — memo_generator.py (Sonnet):
   Estrutura do memo (formato McKinsey):
   1. HEADLINE: "We recommend / do not recommend acquiring {X} because {1-line reason}"
   2. TESE DE AQUISIÇÃO: por que faz sentido estrategicamente (3 bullets)
-  3. FIT ESTRATÉGICO: como se encaixa no portfólio da your company (QuickBooks, TurboTax, etc)
+  3. FIT ESTRATÉGICO: como se encaixa no portfólio da Intuit (QuickBooks, TurboTax, etc)
   4. ESTIMATED SYNERGIES: cross-sell revenue, CAC reduction, product acceleration
   5. KEY RISKS: top 3 risks with proposed mitigation
   6. VALUATION RANGE: múltiplo de receita aplicado ao setor (EV/Revenue 4x-8x)
@@ -7475,7 +7754,7 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px"><strong>What:</strong> Build the loop from Agents &amp; Tools → "One Prompt or a Loop?": a generator call drafts a competitive-intel brief, a judge call scores it against your rubric, and the draft revises until score ≥ 8 (max 3 iterations).<br><strong>Where:</strong> Python script, after E5 (you need structured JSON output working)</p>
     <ol style="font-size:13px;color:var(--gray-600);padding-left:18px;line-height:2">
       <li>Copy the evaluator-optimizer code from the Agents section. Run it as-is — watch the score evolve across iterations.</li>
-      <li>Replace the task with a real one: "Write a 1-page brief on Xero's latest quarterly results for your company's strategy team."</li>
+      <li>Replace the task with a real one: "Write a 1-page brief on Xero's latest quarterly results for Intuit's strategy team."</li>
       <li><strong>The real exercise:</strong> rewrite the RUBRIC. Add your own bar: every claim sourced, explicit so-what, risks section. Run again — the output should visibly improve.</li>
       <li>Break it on purpose: make the rubric vague ("score the quality 1-10"). Notice the loop converges instantly with no improvement. Lesson: <em>the rubric is the product</em>.</li>
       <li>Add cost logging: print input/output tokens per iteration (<code>msg.usage</code>). Calculate what 3 iterations cost vs 1 prompt.</li>
@@ -9028,7 +9307,7 @@ const REC = {
       cost_est: '~$0.03–0.08 per artifact (included in Claude Pro)',
       cheaper: 'Pro subscription ($20/mo) — no per-token billing for claude.ai'
     },
-    template: `# Prompt for a chart artifact (paste in Claude.ai)\n\n"Generate a self-contained HTML file with:\n- An interactive Chart.js bar chart\n- Data: [PASTE YOUR TABLE OR CSV HERE]\n- Color: teal (#1D9E75) for your company/QuickBooks, light gray for competitors\n- Clean executive style — no chart junk, hover tooltips showing exact values\n- Title: [YOUR TITLE]\n- Single file, works by opening in any browser"\n\n# Prompt for an SVG positioning map\n\n"Generate an SVG (800x600px) competitive positioning map.\nX-axis: SMB Focus → Enterprise Focus\nY-axis: Accounting Core → Full Suite\nPlot: [LIST COMPANIES WITH X,Y COORDINATES]\nStyle: filled teal circle for your company, gray for others.\nReturn only the SVG code."`
+    template: `# Prompt for a chart artifact (paste in Claude.ai)\n\n"Generate a self-contained HTML file with:\n- An interactive Chart.js bar chart\n- Data: [PASTE YOUR TABLE OR CSV HERE]\n- Color: teal (#1D9E75) for Intuit/QuickBooks, light gray for competitors\n- Clean executive style — no chart junk, hover tooltips showing exact values\n- Title: [YOUR TITLE]\n- Single file, works by opening in any browser"\n\n# Prompt for an SVG positioning map\n\n"Generate an SVG (800x600px) competitive positioning map.\nX-axis: SMB Focus → Enterprise Focus\nY-axis: Accounting Core → Full Suite\nPlot: [LIST COMPANIES WITH X,Y COORDINATES]\nStyle: filled teal circle for your company, gray for others.\nReturn only the SVG code."`
   }),
 
   makeMeeting: (s) => ({

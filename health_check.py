@@ -72,12 +72,33 @@ def main() -> int:
     stale = re.findall(r"claude-sonnet-4-5|claude-opus-4(?![\.\d-])", s)
     check("no stale model ids", not stale, f"found {len(stale)}" if stale else "")
 
+    # 5b. Public-page hygiene — broken sanitization / insider voice must never ship
+    FORBIDDEN = ["the your company", "na your company", "da your company",
+                 "your company internship", "(ours or", "eat our category",
+                 "Rafa Lellis"]
+    hits = [f for f in FORBIDDEN if f in s]
+    check("no forbidden/broken strings (public page)", not hits, ", ".join(hits))
+
+    # 5c. No real API keys in the published file (placeholders are fine)
+    keys = [k for k in re.findall(r"sk-ant-[A-Za-z0-9_-]{12,}", s)
+            if not re.search(r"your|sua|key-here|xxx", k, re.I)]
+    check("no real API keys leaked", not keys, f"found {len(keys)}" if keys else "")
+
     # 6. Updater ran recently (local machine only — skipped on CI)
     if os.environ.get("GITHUB_ACTIONS") != "true":
         if os.path.exists(LOG):
             age_h = (datetime.datetime.now()
                      - datetime.datetime.fromtimestamp(os.path.getmtime(LOG))).total_seconds() / 3600
             check("updater ran in the last 26h (updater.log)", age_h <= 26, f"{age_h:.0f}h ago")
+
+            # 6b. ...and ran WITHOUT errors — a log full of failures still has a
+            # fresh mtime, which fooled this check before (Jun 2026).
+            tail = open(LOG, encoding="utf-8", errors="replace").read()[-4000:]
+            bad = re.findall(r"Operation not permitted|Traceback|can't open file|Error",
+                             tail, re.I)
+            check("updater.log has no errors (last run succeeded)", not bad,
+                  f"{len(bad)} error line(s) — grant Full Disk Access to python3/cron "
+                  "or rely on the GitHub Action (cloud-first)")
         else:
             check("updater.log exists (has the updater ever run?)", False,
                   "run: python3 reading_updater.py --daily")
