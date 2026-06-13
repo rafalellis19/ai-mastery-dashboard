@@ -1121,6 +1121,36 @@ For each answer:
     </div>
   </div>
 
+
+<div class="mini-quiz" id="mq-block-playbook" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-playbook"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-playbook-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Quando e o momento certo de abrir o Playbook?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'playbook',0,0,1,3)" ><span class="mq-letter">A</span>Quando estudando IA no fim de semana</button><button class="mq-option" onclick="mqAnswer(this,'playbook',0,1,1,3)" ><span class="mq-letter">B</span>Numa segunda de manha antes de comecar o dia de trabalho</button><button class="mq-option" onclick="mqAnswer(this,'playbook',0,2,1,3)" ><span class="mq-letter">C</span>Quando receber um projeto novo e nao souber por onde comecar</button></div>
+    <div class="mq-explanation" id="mq-expl-playbook-0">O Playbook e organizado por situacao de trabalho, nao por ferramenta — abra no momento de uso, nao de estudo. 'Open this on Monday morning — not when studying.'</div>
+    <div class="mq-footer" id="mq-foot-playbook-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('playbook',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-playbook-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; O Playbook e organizado por:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'playbook',1,0,1,3)" ><span class="mq-letter">A</span>Ferramenta (Claude.ai, API, Claude Code)</button><button class="mq-option" onclick="mqAnswer(this,'playbook',1,1,1,3)" ><span class="mq-letter">B</span>Situacao real de trabalho (analisar doc, escrever entregavel, pesquisar mercado)</button><button class="mq-option" onclick="mqAnswer(this,'playbook',1,2,1,3)" ><span class="mq-letter">C</span>Nivel de dificuldade da tarefa</button></div>
+    <div class="mq-explanation" id="mq-expl-playbook-1">Organizacao por situacao significa que voce nao precisa saber qual ferramenta usar — voce descreve o que precisa e o Playbook indica o caminho.</div>
+    <div class="mq-footer" id="mq-foot-playbook-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('playbook',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-playbook-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Qual secao consultar ANTES de uma reuniao importante com stakeholder?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'playbook',2,0,1,3)" ><span class="mq-letter">A</span>Token Mastery para otimizar custo</button><button class="mq-option" onclick="mqAnswer(this,'playbook',2,1,1,3)" ><span class="mq-letter">B</span>Playbook > Situational Prompts: 'I need to prepare for a meeting'</button><button class="mq-option" onclick="mqAnswer(this,'playbook',2,2,1,3)" ><span class="mq-letter">C</span>Agents & Tools para automatizar o prep</button></div>
+    <div class="mq-explanation" id="mq-expl-playbook-2">Os Situational Prompts do Playbook cobrem exatamente isso — prompts prontos para prep de reuniao, resumo de briefing e mais.</div>
+    <div class="mq-footer" id="mq-foot-playbook-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('playbook',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-playbook">
+    <div class="mq-result-score" id="mq-rscore-playbook"></div>
+    <div class="mq-result-msg" id="mq-rmsg-playbook"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('playbook',3)">&#8635; Tentar novamente</button>
+  </div>
+</div>
 </section>
 
 <section id="toolmap" class="section">
@@ -1375,6 +1405,36 @@ For each answer:
   </div>
 
 
+
+<div class="mini-quiz" id="mq-block-toolmap" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-toolmap"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-toolmap-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Qual e a progressao correta de ferramentas Claude por complexidade?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'toolmap',0,0,1,3)" ><span class="mq-letter">A</span>Claude Code → API Python → Claude.ai → Agents</button><button class="mq-option" onclick="mqAnswer(this,'toolmap',0,1,1,3)" ><span class="mq-letter">B</span>Claude.ai → API Python → Claude Code → Agents</button><button class="mq-option" onclick="mqAnswer(this,'toolmap',0,2,1,3)" ><span class="mq-letter">C</span>API Python → Claude.ai → Agents → Claude Code</button></div>
+    <div class="mq-explanation" id="mq-expl-toolmap-0">A progressao e: Claude.ai (chat interativo) → API Python (automacao programatica) → Claude Code (desenvolvimento com acesso ao sistema) → Agents (workflows autonomos multi-step).</div>
+    <div class="mq-footer" id="mq-foot-toolmap-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('toolmap',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-toolmap-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Para uma analise competitiva recorrente que roda toda semana, qual ferramenta usar?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'toolmap',1,0,1,3)" ><span class="mq-letter">A</span>Claude.ai chat — mais facil de usar</button><button class="mq-option" onclick="mqAnswer(this,'toolmap',1,1,1,3)" ><span class="mq-letter">B</span>API Python com script agendado</button><button class="mq-option" onclick="mqAnswer(this,'toolmap',1,2,1,3)" ><span class="mq-letter">C</span>Claude Code pelo terminal</button></div>
+    <div class="mq-explanation" id="mq-expl-toolmap-1">API Python permite automacao, agendamento e integracao com outras ferramentas — ideal para qualquer tarefa recorrente. Claude.ai exigiria executar manualmente toda semana.</div>
+    <div class="mq-footer" id="mq-foot-toolmap-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('toolmap',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-toolmap-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Quando Claude Code tem vantagem clara sobre a API Python?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'toolmap',2,0,1,3)" ><span class="mq-letter">A</span>Quando o custo e uma preocupacao</button><button class="mq-option" onclick="mqAnswer(this,'toolmap',2,1,1,3)" ><span class="mq-letter">B</span>Quando o workflow precisa ler/escrever arquivos, rodar testes e usar o terminal</button><button class="mq-option" onclick="mqAnswer(this,'toolmap',2,2,1,3)" ><span class="mq-letter">C</span>Quando a tarefa e simples e rapida</button></div>
+    <div class="mq-explanation" id="mq-expl-toolmap-2">Claude Code tem acesso direto ao filesystem, terminal e ferramentas do dev — e a escolha certa para tarefas de engenharia que vao alem de gerar texto.</div>
+    <div class="mq-footer" id="mq-foot-toolmap-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('toolmap',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-toolmap">
+    <div class="mq-result-score" id="mq-rscore-toolmap"></div>
+    <div class="mq-result-msg" id="mq-rmsg-toolmap"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('toolmap',3)">&#8635; Tentar novamente</button>
+  </div>
+</div>
 </section>
 
 
@@ -1473,8 +1533,6 @@ all market data comes from me.&lt;/role&gt;
     <div style="background:#fef2f2;border-radius:8px;padding:12px;margin-top:10px"><p style="font-size:12px;color:#b91c1c;margin:0"><strong>⚠️ Never</strong> let Claude supply TAM figures, market shares, or growth rates from memory. They sound precise and are frequently wrong or stale. Numbers in, logic out. See Responsible Use → Hallucination.</p></div>
   </div>
 
-<div class="mini-quiz" id="mq-block-strategy" data-total="1" data-score="0">
-<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
 <div class="mq-q" id="mq-strategy-0" style="">
 <div class="mq-question">Q1/1 &mdash; Qual pipeline e mais adequado para screening de M&A?</div>
 <div class="mq-options">
@@ -1486,6 +1544,36 @@ all market data comes from me.&lt;/role&gt;
 <div class="mq-nav" id="mq-nav-strategy-0" style="display:none">
 <span class="mq-score" id="mq-score-strategy"></span>
 </div></div>
+</div>
+
+<div class="mini-quiz" id="mq-block-strategy" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-strategy"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-strategy-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Qual pipeline usar para monitorar movimentos competitivos semanalmente?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'strategy',0,0,1,3)" ><span class="mq-letter">A</span>Pipeline 2 - M&A Screening</button><button class="mq-option" onclick="mqAnswer(this,'strategy',0,1,1,3)" ><span class="mq-letter">B</span>Pipeline 1 - Weekly Competitive Intel Brief</button><button class="mq-option" onclick="mqAnswer(this,'strategy',0,2,1,3)" ><span class="mq-letter">C</span>Pipeline 3 - Market Sizing</button></div>
+    <div class="mq-explanation" id="mq-expl-strategy-0">O Pipeline 1 foi desenhado para producao recorrente de intel competitivo — busca, sintese e formatacao de brief semanal sobre Xero, FreshBooks, Wave e Sage.</div>
+    <div class="mq-footer" id="mq-foot-strategy-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('strategy',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-strategy-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Para estimar o tamanho do mercado SMB de contabilidade no Brasil, qual pipeline e o ponto de partida?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'strategy',1,0,2,3)" ><span class="mq-letter">A</span>Pipeline 1 - Competitive Intel</button><button class="mq-option" onclick="mqAnswer(this,'strategy',1,1,2,3)" ><span class="mq-letter">B</span>Pipeline 2 - M&A Screening</button><button class="mq-option" onclick="mqAnswer(this,'strategy',1,2,2,3)" ><span class="mq-letter">C</span>Pipeline 3 - Market Sizing</button></div>
+    <div class="mq-explanation" id="mq-expl-strategy-1">Pipeline 3 estrutura o raciocinio de market sizing (top-down e bottom-up) com dados publicos. Voce define o segmento e o Claude ajuda a construir as hipoteses e calculos.</div>
+    <div class="mq-footer" id="mq-foot-strategy-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('strategy',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-strategy-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Ao usar Claude para M&A screening, qual o output mais util para apresentar ao time?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'strategy',2,0,1,3)" ><span class="mq-letter">A</span>Transcricao completa da analise do modelo</button><button class="mq-option" onclick="mqAnswer(this,'strategy',2,1,1,3)" ><span class="mq-letter">B</span>Scorecard estruturado com criterios ponderados e ranking de targets</button><button class="mq-option" onclick="mqAnswer(this,'strategy',2,2,1,3)" ><span class="mq-letter">C</span>Lista de targets sem avaliacao</button></div>
+    <div class="mq-explanation" id="mq-expl-strategy-2">Scorecard com criterios pre-definidos (fit estrategico, tamanho, tecnologia, geografia) permite comparacao objetiva e e facilmente defensavel em reuniao de revisao de portfolio.</div>
+    <div class="mq-footer" id="mq-foot-strategy-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('strategy',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-strategy">
+    <div class="mq-result-score" id="mq-rscore-strategy"></div>
+    <div class="mq-result-msg" id="mq-rmsg-strategy"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('strategy',3)">&#8635; Tentar novamente</button>
+  </div>
 </div>
 </section>
 
@@ -2452,8 +2540,6 @@ Context and constraints:
   </div>
 
 
-<div class="mini-quiz" id="mq-block-prompting" data-total="2" data-score="0">
-<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
 <div class="mq-q" id="mq-prompting-0" style="">
 <div class="mq-question">Q1/2 &mdash; O framework RCTF significa:</div>
 <div class="mq-options">
@@ -2477,6 +2563,36 @@ Context and constraints:
 <div class="mq-nav" id="mq-nav-prompting-1" style="display:none">
 <span class="mq-score" id="mq-score-prompting"></span>
 </div></div>
+</div>
+
+<div class="mini-quiz" id="mq-block-prompting" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-prompting"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-prompting-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; O framework RCTF significa:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'prompting',0,0,0,3)" ><span class="mq-letter">A</span>Role, Context, Task, Format</button><button class="mq-option" onclick="mqAnswer(this,'prompting',0,1,0,3)" ><span class="mq-letter">B</span>Reason, Chain, Tool, Flow</button><button class="mq-option" onclick="mqAnswer(this,'prompting',0,2,0,3)" ><span class="mq-letter">C</span>Role, Content, Type, Function</button></div>
+    <div class="mq-explanation" id="mq-expl-prompting-0">RCTF = Role (quem e o modelo), Context (o que ele precisa saber), Task (o que fazer), Format (como entregar). E a espinha dorsal de qualquer prompt eficaz.</div>
+    <div class="mq-footer" id="mq-foot-prompting-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('prompting',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-prompting-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Chain-of-thought prompting serve para:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'prompting',1,0,1,3)" ><span class="mq-letter">A</span>Fazer o modelo responder mais rapido reduzindo tokens</button><button class="mq-option" onclick="mqAnswer(this,'prompting',1,1,1,3)" ><span class="mq-letter">B</span>Forcar raciocinio passo a passo antes da conclusao final</button><button class="mq-option" onclick="mqAnswer(this,'prompting',1,2,1,3)" ><span class="mq-letter">C</span>Encadear multiplas chamadas de API automaticamente</button></div>
+    <div class="mq-explanation" id="mq-expl-prompting-1">CoT ('pense passo a passo') melhora acuracia em tarefas complexas como matematica, logica e analise estrategica — o modelo 'mostra o trabalho' antes de concluir.</div>
+    <div class="mq-footer" id="mq-foot-prompting-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('prompting',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-prompting-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Few-shot prompting significa:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'prompting',2,0,1,3)" ><span class="mq-letter">A</span>Usar poucos tokens no prompt</button><button class="mq-option" onclick="mqAnswer(this,'prompting',2,1,1,3)" ><span class="mq-letter">B</span>Dar exemplos concretos do output desejado dentro do prompt</button><button class="mq-option" onclick="mqAnswer(this,'prompting',2,2,1,3)" ><span class="mq-letter">C</span>Fazer chamadas rapidas de baixo custo</button></div>
+    <div class="mq-explanation" id="mq-expl-prompting-2">Few-shot = incluir 2-5 exemplos de input/output no proprio prompt. E a forma mais rapida de calibrar tom, formato e nivel de detalhe sem fine-tuning.</div>
+    <div class="mq-footer" id="mq-foot-prompting-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('prompting',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-prompting">
+    <div class="mq-result-score" id="mq-rscore-prompting"></div>
+    <div class="mq-result-msg" id="mq-rmsg-prompting"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('prompting',3)">&#8635; Tentar novamente</button>
+  </div>
 </div>
 </section>
 
@@ -2591,6 +2707,36 @@ You specialize in competitive intelligence, M&A analysis, and SMB market dynamic
 - Flag if you need more data to answer well</code></pre>
     <button class="copy-btn" onclick="copyCode(this)">Copy</button>
   </div>
+
+<div class="mini-quiz" id="mq-block-memory" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-memory"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-memory-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Por que Claude nao lembra de conversas anteriores por padrao?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'memory',0,0,1,3)" ><span class="mq-letter">A</span>Bug de implementacao que sera corrigido</button><button class="mq-option" onclick="mqAnswer(this,'memory',0,1,1,3)" ><span class="mq-letter">B</span>Arquitetura de contexto: cada sessao comeca do zero por design</button><button class="mq-option" onclick="mqAnswer(this,'memory',0,2,1,3)" ><span class="mq-letter">C</span>Politica de privacidade que impede retencao</button></div>
+    <div class="mq-explanation" id="mq-expl-memory-0">Claude processa apenas o contexto da conversa atual — sem persistencia entre sessoes. Isso e intencional (privacidade + custo), e voce precisa construir memoria explicitamente via Files, Projects ou RAG.</div>
+    <div class="mq-footer" id="mq-foot-memory-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('memory',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-memory-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Qual abordagem de memoria escala para bases de conhecimento com centenas de documentos?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'memory',1,0,1,3)" ><span class="mq-letter">A</span>Project files (anexar todos os docs em cada conversa)</button><button class="mq-option" onclick="mqAnswer(this,'memory',1,1,1,3)" ><span class="mq-letter">B</span>RAG — Retrieval Augmented Generation</button><button class="mq-option" onclick="mqAnswer(this,'memory',1,2,1,3)" ><span class="mq-letter">C</span>System prompt muito longo com todo o conteudo</button></div>
+    <div class="mq-explanation" id="mq-expl-memory-1">RAG busca apenas o trecho relevante no momento da query — escala para milhares de documentos sem explodir o contexto (e o custo). Project files e system prompts longos sao limitados pelo tamanho do contexto.</div>
+    <div class="mq-footer" id="mq-foot-memory-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('memory',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-memory-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Para um analista que precisa que Claude lembre do contexto da empresa entre sessoes, a melhor solucao pratica hoje e:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'memory',2,0,1,3)" ><span class="mq-letter">A</span>Repetir o contexto no inicio de cada conversa</button><button class="mq-option" onclick="mqAnswer(this,'memory',2,1,1,3)" ><span class="mq-letter">B</span>Criar um Project no Claude.ai com arquivos de contexto persistentes</button><button class="mq-option" onclick="mqAnswer(this,'memory',2,2,1,3)" ><span class="mq-letter">C</span>Usar o sistema de memoria automatica do modelo</button></div>
+    <div class="mq-explanation" id="mq-expl-memory-2">Projects no Claude.ai persistem system prompt e arquivos entre sessoes — e a solucao mais pratica sem precisar de engenharia. O modelo nao tem memoria automatica.</div>
+    <div class="mq-footer" id="mq-foot-memory-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('memory',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-memory">
+    <div class="mq-result-score" id="mq-rscore-memory"></div>
+    <div class="mq-result-msg" id="mq-rmsg-memory"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('memory',3)">&#8635; Tentar novamente</button>
+  </div>
+</div>
 </section>
 
 
@@ -2896,6 +3042,36 @@ git revert HEAD                 # undo last commit, keeping history honest</code
     <div style="background:#fff7ed;border-radius:8px;padding:12px;margin-top:12px"><p style="font-size:12px;color:#c2410c;margin:0"><strong>⚠️ The two rules that prevent 90% of disasters:</strong> (1) never commit secrets — API keys live in <code>.env</code> / environment variables, and <code>.gitignore</code> exists to keep files out of the repo (a public repo is <em>public forever</em>, even after you delete the file); (2) commit small and often with messages that say <em>why</em> — "fix" tells future-you nothing.</p></div>
     <p style="font-size:13px;color:var(--gray-600);margin-top:12px"><strong>Your concrete workflow with this dashboard:</strong> local edits → <code>bash publish.sh</code> (commits + pushes + republishes) · cloud bot commits daily updates → <code>git pull</code> if you want them locally · something broke? → <code>git log</code> to find the last good snapshot. Practice: Lab → E10 already has you pushing to a repo with Actions.</p>
   </div>
+
+<div class="mini-quiz" id="mq-block-infra" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-infra"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-infra-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Qual autenticacao usar para chamadas server-to-server a API Anthropic?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'infra',0,0,1,3)" ><span class="mq-letter">A</span>OAuth 2.0 com refresh token</button><button class="mq-option" onclick="mqAnswer(this,'infra',0,1,1,3)" ><span class="mq-letter">B</span>API Key no header x-api-key</button><button class="mq-option" onclick="mqAnswer(this,'infra',0,2,1,3)" ><span class="mq-letter">C</span>JWT Bearer token</button></div>
+    <div class="mq-explanation" id="mq-expl-infra-0">API Key no header x-api-key e o padrao Anthropic para chamadas backend-to-backend. OAuth e para apps que acessam recursos de usuarios; JWT e padrao de outros provedores.</div>
+    <div class="mq-footer" id="mq-foot-infra-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('infra',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-infra-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; O que e streaming e quando usá-lo?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'infra',1,0,1,3)" ><span class="mq-letter">A</span>Enviar multiplas requisicoes em paralelo para ganhar velocidade</button><button class="mq-option" onclick="mqAnswer(this,'infra',1,1,1,3)" ><span class="mq-letter">B</span>Receber tokens do modelo em tempo real, a medida que sao gerados</button><button class="mq-option" onclick="mqAnswer(this,'infra',1,2,1,3)" ><span class="mq-letter">C</span>Comprimir o payload da requisicao para reduzir latencia</button></div>
+    <div class="mq-explanation" id="mq-expl-infra-1">Streaming envia tokens conforme sao gerados — reduz latencia percebida de 'esperar 5s' para 'ver resposta aparecer em tempo real'. Essencial para qualquer interface conversacional.</div>
+    <div class="mq-footer" id="mq-foot-infra-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('infra',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-infra-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Para rodar modelos localmente (sem API), qual e a restricao principal?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'infra',2,0,1,3)" ><span class="mq-letter">A</span>Modelos locais sao ilegais em producao</button><button class="mq-option" onclick="mqAnswer(this,'infra',2,1,1,3)" ><span class="mq-letter">B</span>Qualidade e capacidade muito inferiores aos frontier models + hardware necessario e caro</button><button class="mq-option" onclick="mqAnswer(this,'infra',2,2,1,3)" ><span class="mq-letter">C</span>Nao e possivel tecnicamente em macOS</button></div>
+    <div class="mq-explanation" id="mq-expl-infra-2">Modelos locais (Llama, Mistral via Ollama) sao otimos para privacidade e PII, mas ficam muito atras dos frontier em raciocinio complexo. O trade-off e qualidade vs custo/privacidade.</div>
+    <div class="mq-footer" id="mq-foot-infra-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('infra',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-infra">
+    <div class="mq-result-score" id="mq-rscore-infra"></div>
+    <div class="mq-result-msg" id="mq-rmsg-infra"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('infra',3)">&#8635; Tentar novamente</button>
+  </div>
+</div>
 </section>
 
 
@@ -4130,8 +4306,6 @@ response = client.messages.create(
 
 
 
-<div class="mini-quiz" id="mq-block-agents" data-total="2" data-score="0">
-<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
 <div class="mq-q" id="mq-agents-0" style="">
 <div class="mq-question">Q1/2 &mdash; No loop de tool use, quem decide quando usar uma ferramenta?</div>
 <div class="mq-options">
@@ -4155,6 +4329,36 @@ response = client.messages.create(
 <div class="mq-nav" id="mq-nav-agents-1" style="display:none">
 <span class="mq-score" id="mq-score-agents"></span>
 </div></div>
+</div>
+
+<div class="mini-quiz" id="mq-block-agents" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-agents"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-agents-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; No loop de tool use, quem decide quando chamar uma ferramenta?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'agents',0,0,1,3)" ><span class="mq-letter">A</span>O programador via logica if/else explicita</button><button class="mq-option" onclick="mqAnswer(this,'agents',0,1,1,3)" ><span class="mq-letter">B</span>O modelo, com base no contexto e nas tools disponiveis</button><button class="mq-option" onclick="mqAnswer(this,'agents',0,2,1,3)" ><span class="mq-letter">C</span>O usuario, clicando num botao na interface</button></div>
+    <div class="mq-explanation" id="mq-expl-agents-0">O modelo analisa o contexto, ve quais tools estao disponiveis (via schema JSON) e decide autonomamente quando e qual chamar — sem logica de controle explicita do programador.</div>
+    <div class="mq-footer" id="mq-foot-agents-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('agents',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-agents-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; MCP (Model Context Protocol) resolve qual problema?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'agents',1,0,1,3)" ><span class="mq-letter">A</span>Compressao de tokens para reduzir custo</button><button class="mq-option" onclick="mqAnswer(this,'agents',1,1,1,3)" ><span class="mq-letter">B</span>Padrao aberto para conectar modelos a sistemas externos (APIs, arquivos, databases)</button><button class="mq-option" onclick="mqAnswer(this,'agents',1,2,1,3)" ><span class="mq-letter">C</span>Avaliacao automatica da qualidade do output</button></div>
+    <div class="mq-explanation" id="mq-expl-agents-1">MCP e um protocolo que padroniza como modelos interagem com ferramentas externas — qualquer servidor MCP funciona com qualquer cliente compativel, sem integracao customizada.</div>
+    <div class="mq-footer" id="mq-foot-agents-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('agents',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-agents-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Qual padrao de agente usar quando voce nao sabe quantos passos a tarefa vai levar?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'agents',2,0,1,3)" ><span class="mq-letter">A</span>Parallelization — executa tudo de uma vez</button><button class="mq-option" onclick="mqAnswer(this,'agents',2,1,1,3)" ><span class="mq-letter">B</span>ReAct loop — raciocina, age e observa ate concluir</button><button class="mq-option" onclick="mqAnswer(this,'agents',2,2,1,3)" ><span class="mq-letter">C</span>Pipeline sequencial com etapas fixas</button></div>
+    <div class="mq-explanation" id="mq-expl-agents-2">ReAct (Reason + Act) permite que o agente decida quantos passos sao necessarios — ideal para tarefas abertas como pesquisa, debugging ou analise exploratorias.</div>
+    <div class="mq-footer" id="mq-foot-agents-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('agents',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-agents">
+    <div class="mq-result-score" id="mq-rscore-agents"></div>
+    <div class="mq-result-msg" id="mq-rmsg-agents"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('agents',3)">&#8635; Tentar novamente</button>
+  </div>
 </div>
 </section>
 
@@ -4500,8 +4704,6 @@ if estimate["input_tokens"] > 10_000:
   </div>
 
 
-<div class="mini-quiz" id="mq-block-tokenmastery" data-total="2" data-score="0">
-<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
 <div class="mq-q" id="mq-tokenmastery-0" style="">
 <div class="mq-question">Q1/2 &mdash; Qual alavanca oferece ~90% de desconto nos tokens de entrada?</div>
 <div class="mq-options">
@@ -4525,6 +4727,36 @@ if estimate["input_tokens"] > 10_000:
 <div class="mq-nav" id="mq-nav-tokenmastery-1" style="display:none">
 <span class="mq-score" id="mq-score-tokenmastery"></span>
 </div></div>
+</div>
+
+<div class="mini-quiz" id="mq-block-tokenmastery" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-tokenmastery"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-tokenmastery-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Qual alavanca oferece ate 90% de desconto nos tokens de entrada?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',0,0,1,3)" ><span class="mq-letter">A</span>Batch API (processamento assincrono)</button><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',0,1,1,3)" ><span class="mq-letter">B</span>Prompt caching (reutilizar contexto ja processado)</button><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',0,2,1,3)" ><span class="mq-letter">C</span>Output caps (limitar tamanho da resposta)</button></div>
+    <div class="mq-explanation" id="mq-expl-tokenmastery-0">Prompt caching armazena o processamento de partes fixas do prompt (system prompt, documentos) e desconta ate 90% nos tokens cached subsequentes. E a maior alavanca de custo disponivel.</div>
+    <div class="mq-footer" id="mq-foot-tokenmastery-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('tokenmastery',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-tokenmastery-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; O routing resolve qual problema de custo?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',1,0,1,3)" ><span class="mq-letter">A</span>Latencia alta em chamadas de API</button><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',1,1,1,3)" ><span class="mq-letter">B</span>COGS excessivo por mandar tudo pro modelo frontier</button><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',1,2,1,3)" ><span class="mq-letter">C</span>Falta de contexto em conversas longas</button></div>
+    <div class="mq-explanation" id="mq-expl-tokenmastery-1">Routing coloca um classificador pequeno e barato na frente: 80% das queries simples vao pro modelo pequeno, frontier so para raciocinio complexo. Pode reduzir COGS em 10-15x.</div>
+    <div class="mq-footer" id="mq-foot-tokenmastery-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('tokenmastery',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-tokenmastery-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Batch API e mais adequado para:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',2,0,1,3)" ><span class="mq-letter">A</span>Chatbots em tempo real que precisam de resposta imediata</button><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',2,1,1,3)" ><span class="mq-letter">B</span>Jobs nao-urgentes como relatorios noturnos e categorizacao em lote</button><button class="mq-option" onclick="mqAnswer(this,'tokenmastery',2,2,1,3)" ><span class="mq-letter">C</span>Streaming de tokens para interfaces conversacionais</button></div>
+    <div class="mq-explanation" id="mq-expl-tokenmastery-2">Batch API processa jobs assincronos com SLA de 24h e 50% de desconto. Perfeito para categorizar transacoes, gerar relatorios semanais ou processar grandes volumes sem urgencia.</div>
+    <div class="mq-footer" id="mq-foot-tokenmastery-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('tokenmastery',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-tokenmastery">
+    <div class="mq-result-score" id="mq-rscore-tokenmastery"></div>
+    <div class="mq-result-msg" id="mq-rmsg-tokenmastery"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('tokenmastery',3)">&#8635; Tentar novamente</button>
+  </div>
 </div>
 </section>
 
@@ -4798,6 +5030,36 @@ print("Deck ready — weekly_brief.pptx")</code></pre>
       </div>
     </div>
   </div>
+
+<div class="mini-quiz" id="mq-block-design" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-design"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-design-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Claude consegue gerar qual tipo de artefato visual?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'design',0,0,1,3)" ><span class="mq-letter">A</span>Apenas texto e markdown formatado</button><button class="mq-option" onclick="mqAnswer(this,'design',0,1,1,3)" ><span class="mq-letter">B</span>HTML/CSS/JS interativo, SVG, wireframes e dashboards com dados</button><button class="mq-option" onclick="mqAnswer(this,'design',0,2,1,3)" ><span class="mq-letter">C</span>Somente imagens estaticas via geracao de imagem</button></div>
+    <div class="mq-explanation" id="mq-expl-design-0">Claude gera HTML funcional com Chart.js, SVGs vetoriais, wireframes anotados e slide copy — diretamente no chat, sem ferramentas externas. Tudo editavel e exportavel.</div>
+    <div class="mq-footer" id="mq-foot-design-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('design',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-design-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Para criar um dashboard executivo com graficos e filtros, a melhor abordagem e:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'design',1,0,1,3)" ><span class="mq-letter">A</span>Pedir uma descricao textual dos dados</button><button class="mq-option" onclick="mqAnswer(this,'design',1,1,1,3)" ><span class="mq-letter">B</span>Pedir HTML self-contained com Chart.js embutido</button><button class="mq-option" onclick="mqAnswer(this,'design',1,2,1,3)" ><span class="mq-letter">C</span>Exportar para PowerPoint e formatar manualmente</button></div>
+    <div class="mq-explanation" id="mq-expl-design-1">HTML com Chart.js (ou D3) permite dashboards interativos, filtros em tempo real e dados atualizaveis — tudo num arquivo unico que abre no browser e pode ser compartilhado.</div>
+    <div class="mq-footer" id="mq-foot-design-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('design',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-design-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Qual e a vantagem de pedir um SVG em vez de HTML para um diagrama?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'design',2,0,1,3)" ><span class="mq-letter">A</span>SVG e mais facil de animar com JavaScript</button><button class="mq-option" onclick="mqAnswer(this,'design',2,1,1,3)" ><span class="mq-letter">B</span>SVG escala infinitamente sem perder qualidade e pode ser editado em Figma/Illustrator</button><button class="mq-option" onclick="mqAnswer(this,'design',2,2,1,3)" ><span class="mq-letter">C</span>SVG tem melhor suporte em emails HTML</button></div>
+    <div class="mq-explanation" id="mq-expl-design-2">SVG e vetorial — escala para qualquer resolucao sem pixelacao e pode ser importado diretamente no Figma ou Illustrator para refinamento. Ideal para diagramas de arquitetura e fluxogramas.</div>
+    <div class="mq-footer" id="mq-foot-design-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('design',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-design">
+    <div class="mq-result-score" id="mq-rscore-design"></div>
+    <div class="mq-result-msg" id="mq-rmsg-design"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('design',3)">&#8635; Tentar novamente</button>
+  </div>
+</div>
 </section>
 
 
@@ -5415,6 +5677,36 @@ print(response.content[0].text)</code></pre>
     <div style="background:#fff7ed;border-radius:8px;padding:12px;margin-top:12px"><p style="font-size:12px;color:#c2410c;margin:0"><strong>⚠️ Honest caveats:</strong> (1) per-token price ≠ cost per task — models that solve in fewer turns can be cheaper at a higher rate (Fable 5's pitch); (2) Perplexity adds per-request search fees on top of tokens; (3) benchmark leaderboards are gamed — trust your golden set, not marketing.</p></div>
   </div>
 
+
+<div class="mini-quiz" id="mq-block-ecosystem" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-ecosystem"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-ecosystem-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; NotebookLM e mais util para:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'ecosystem',0,0,1,3)" ><span class="mq-letter">A</span>Escrever e debugar codigo Python</button><button class="mq-option" onclick="mqAnswer(this,'ecosystem',0,1,1,3)" ><span class="mq-letter">B</span>Gerar podcast, Q&A e resumo a partir de documentos longos como relatorios e papers</button><button class="mq-option" onclick="mqAnswer(this,'ecosystem',0,2,1,3)" ><span class="mq-letter">C</span>Fazer chamadas a APIs externas</button></div>
+    <div class="mq-explanation" id="mq-expl-ecosystem-0">NotebookLM indexa ate 50 fontes (PDFs, docs, links) e gera audio briefing, perguntas frequentes e citacoes — ideal para processar relatorios de earnings, cases e research papers longos.</div>
+    <div class="mq-footer" id="mq-foot-ecosystem-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('ecosystem',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-ecosystem-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Para pesquisa de mercado com dados de hoje (nao de treinamento), qual ferramenta usar antes de jogar no Claude?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'ecosystem',1,0,1,3)" ><span class="mq-letter">A</span>Cursor — melhor IDE de IA</button><button class="mq-option" onclick="mqAnswer(this,'ecosystem',1,1,1,3)" ><span class="mq-letter">B</span>Perplexity — busca na web com fontes e datas</button><button class="mq-option" onclick="mqAnswer(this,'ecosystem',1,2,1,3)" ><span class="mq-letter">C</span>n8n — automacao de workflows</button></div>
+    <div class="mq-explanation" id="mq-expl-ecosystem-1">Perplexity busca na web em tempo real com citacoes — ideal para coletar dados atuais (preco de concorrentes, noticias recentes, metricas publicas) e depois passar para o Claude analisar.</div>
+    <div class="mq-footer" id="mq-foot-ecosystem-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('ecosystem',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-ecosystem-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; n8n e Claude juntos resolvem qual caso de uso?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'ecosystem',2,0,1,3)" ><span class="mq-letter">A</span>Geracao de imagens com IA</button><button class="mq-option" onclick="mqAnswer(this,'ecosystem',2,1,1,3)" ><span class="mq-letter">B</span>Automacao de workflows que combinam multiplos apps (email, planilha, Slack) com processamento de linguagem natural</button><button class="mq-option" onclick="mqAnswer(this,'ecosystem',2,2,1,3)" ><span class="mq-letter">C</span>Fine-tuning de modelos com dados proprios</button></div>
+    <div class="mq-explanation" id="mq-expl-ecosystem-2">n8n orquestra integrações entre sistemas (Gmail, Google Sheets, Slack, Notion) e Claude processa o texto em cada etapa — juntos permitem automacoes como 'resumir emails e postar no Slack'.</div>
+    <div class="mq-footer" id="mq-foot-ecosystem-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('ecosystem',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-ecosystem">
+    <div class="mq-result-score" id="mq-rscore-ecosystem"></div>
+    <div class="mq-result-msg" id="mq-rmsg-ecosystem"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('ecosystem',3)">&#8635; Tentar novamente</button>
+  </div>
+</div>
 </section>
 
 
@@ -5769,8 +6061,6 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
     </div>
   </div>
 
-<div class="mini-quiz" id="mq-block-founder" data-total="2" data-score="0">
-<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
 <div class="mq-q" id="mq-founder-0" style="">
 <div class="mq-question">Q1/2 &mdash; Qual alavanca e mais impactante para reduzir COGS de IA?</div>
 <div class="mq-options">
@@ -5794,6 +6084,36 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
 <div class="mq-nav" id="mq-nav-founder-1" style="display:none">
 <span class="mq-score" id="mq-score-founder"></span>
 </div></div>
+</div>
+
+<div class="mini-quiz" id="mq-block-founder" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-founder"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-founder-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Qual alavanca e mais impactante para reduzir COGS de IA em producao?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'founder',0,0,1,3)" ><span class="mq-letter">A</span>Usar sempre o modelo mais barato disponivel</button><button class="mq-option" onclick="mqAnswer(this,'founder',0,1,1,3)" ><span class="mq-letter">B</span>Routing: classificador pequeno na frente, frontier so para o que exige raciocinio</button><button class="mq-option" onclick="mqAnswer(this,'founder',0,2,1,3)" ><span class="mq-letter">C</span>Limitar o numero de usuarios ativos</button></div>
+    <div class="mq-explanation" id="mq-expl-founder-0">Routing 80/20 (80% small model, 20% frontier) pode reduzir COGS em 10-15x vs mandar tudo pro frontier. E a primeira coisa a implementar depois de validar o produto.</div>
+    <div class="mq-footer" id="mq-foot-founder-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('founder',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-founder-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; No GTM para fintech SMB brasileira, qual canal combina menor CAC com maior defensibilidade?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'founder',1,0,1,3)" ><span class="mq-letter">A</span>Direct-to-SMB via performance marketing</button><button class="mq-option" onclick="mqAnswer(this,'founder',1,1,1,3)" ><span class="mq-letter">B</span>Canal do contador — cada contabilista distribui para 80-150 clientes</button><button class="mq-option" onclick="mqAnswer(this,'founder',1,2,1,3)" ><span class="mq-letter">C</span>Embedded B2B2B via banco parceiro</button></div>
+    <div class="mq-explanation" id="mq-expl-founder-1">O contador e o SDR mais barato que existe para SMB: com 500k contabilistas no Brasil, um que adota sua plataforma traz dezenas de clientes. O risco: churn segue o relacionamento com o contador.</div>
+    <div class="mq-footer" id="mq-foot-founder-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('founder',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-founder-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Para um AI fintech em fundraising, o que diferencia a narrativa de 'usamos IA' para 'somos AI-native'?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'founder',2,0,1,3)" ><span class="mq-letter">A</span>Ter mais features de IA que a concorrencia</button><button class="mq-option" onclick="mqAnswer(this,'founder',2,1,1,3)" ><span class="mq-letter">B</span>Dado proprietario + arquitetura pensada para IA desde o inicio + metricas especificas (attachment rate, AI COGS)</button><button class="mq-option" onclick="mqAnswer(this,'founder',2,2,1,3)" ><span class="mq-letter">C</span>Usar os modelos mais recentes e caros</button></div>
+    <div class="mq-explanation" id="mq-expl-founder-2">AI-native = arquitetura, dados e metricas projetados para IA desde o inicio. 'Usamos IA' e commodity — qualquer concorrente replica. O moat e o corpus de dados proprietario e o data flywheel que ele cria.</div>
+    <div class="mq-footer" id="mq-foot-founder-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('founder',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-founder">
+    <div class="mq-result-score" id="mq-rscore-founder"></div>
+    <div class="mq-result-msg" id="mq-rmsg-founder"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('founder',3)">&#8635; Tentar novamente</button>
+  </div>
 </div>
 </section>
 
@@ -6145,8 +6465,6 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
     </div>
   </div>
 
-<div class="mini-quiz" id="mq-block-produto" data-total="2" data-score="0">
-<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
 <div class="mq-q" id="mq-produto-0" style="">
 <div class="mq-question">Q1/2 &mdash; A diferenca central entre AI PM e PM tradicional e:</div>
 <div class="mq-options">
@@ -6170,6 +6488,36 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
 <div class="mq-nav" id="mq-nav-produto-1" style="display:none">
 <span class="mq-score" id="mq-score-produto"></span>
 </div></div>
+</div>
+
+<div class="mini-quiz" id="mq-block-produto" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-produto"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-produto-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; A diferenca central entre AI PM e PM tradicional e:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'produto',0,0,1,3)" ><span class="mq-letter">A</span>AI PM nao precisa fazer discovery com usuarios reais</button><button class="mq-option" onclick="mqAnswer(this,'produto',0,1,1,3)" ><span class="mq-letter">B</span>AI PM especifica resultado desejado; PM tradicional especifica comportamento deterministico</button><button class="mq-option" onclick="mqAnswer(this,'produto',0,2,1,3)" ><span class="mq-letter">C</span>AI PM gerencia equipes maiores de engenharia</button></div>
+    <div class="mq-explanation" id="mq-expl-produto-0">PM tradicional: 'ao clicar no botao, vai para tela X' — deterministico. AI PM: 'classifique esta transacao corretamente' — o modelo decide como. Isso muda discovery, QA, evals e comunicacao com eng.</div>
+    <div class="mq-footer" id="mq-foot-produto-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('produto',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-produto-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Acceptance Rate abaixo de 60% e um sinal de:</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'produto',1,0,1,3)" ><span class="mq-letter">A</span>Feature subutilizada — precisa de mais marketing interno</button><button class="mq-option" onclick="mqAnswer(this,'produto',1,1,1,3)" ><span class="mq-letter">B</span>Modelo ou contexto inadequado — usuarios rejeitam/editam mais de 40% das sugestoes</button><button class="mq-option" onclick="mqAnswer(this,'produto',1,2,1,3)" ><span class="mq-letter">C</span>Custo de IA muito alto para o segmento</button></div>
+    <div class="mq-explanation" id="mq-expl-produto-1">Se usuarios editam ou rejeitam mais de 40% dos outputs, o modelo nao esta entendendo o contexto. Cheque: o prompt tem contexto suficiente? O modelo e adequado para o caso de uso? Os dados de treino sao relevantes?</div>
+    <div class="mq-footer" id="mq-foot-produto-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('produto',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-produto-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Para um assistente de categorizacao de despesas, qual tipo de eval usar?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'produto',2,0,1,3)" ><span class="mq-letter">A</span>Rubric-based com LLM-as-judge avaliando tom e clareza</button><button class="mq-option" onclick="mqAnswer(this,'produto',2,1,1,3)" ><span class="mq-letter">B</span>Classificacao com golden set: acuracia target > 90%, zero erros em categorias fiscais</button><button class="mq-option" onclick="mqAnswer(this,'produto',2,2,1,3)" ><span class="mq-letter">C</span>A/B test de satisfacao do usuario</button></div>
+    <div class="mq-explanation" id="mq-expl-produto-2">Categorizacao e um problema de classificacao — voce tem ground truth (categorias corretas). Golden set com exemplos rotulados por especialistas fiscais + acuracia target e o padrao correto. LLM-as-judge e para outputs subjetivos como tom e qualidade de texto.</div>
+    <div class="mq-footer" id="mq-foot-produto-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('produto',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-produto">
+    <div class="mq-result-score" id="mq-rscore-produto"></div>
+    <div class="mq-result-msg" id="mq-rmsg-produto"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('produto',3)">&#8635; Tentar novamente</button>
+  </div>
 </div>
 </section>
 
@@ -8751,8 +9099,6 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
   </div>
 
 
-<div class="mini-quiz" id="mq-block-responsible" data-total="1" data-score="0">
-<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
 <div class="mq-q" id="mq-responsible-0" style="">
 <div class="mq-question">Q1/1 &mdash; Como mitigar alucinacoes em outputs financeiros?</div>
 <div class="mq-options">
@@ -8764,6 +9110,36 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
 <div class="mq-nav" id="mq-nav-responsible-0" style="display:none">
 <span class="mq-score" id="mq-score-responsible"></span>
 </div></div>
+</div>
+
+<div class="mini-quiz" id="mq-block-responsible" data-score="0">
+  <div class="mq-header">
+    <div class="mq-label">&#127919; Mini-Quiz</div>
+    <div class="mq-progress-wrap"><div class="mq-dots" id="mq-dots-responsible"><span class="current"></span><span class=""></span><span class=""></span></div></div>
+  </div>
+  <div id="mq-q-responsible-0" style="">
+    <div class="mq-question">Q1 de 3 &mdash; Como mitigar alucinacoes em outputs com numeros financeiros?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'responsible',0,0,1,3)" ><span class="mq-letter">A</span>Usar sempre o modelo maior e mais caro</button><button class="mq-option" onclick="mqAnswer(this,'responsible',0,1,1,3)" ><span class="mq-letter">B</span>Fornecer os dados na fonte + pedir citacao explicita + verificar numeros independentemente</button><button class="mq-option" onclick="mqAnswer(this,'responsible',0,2,1,3)" ><span class="mq-letter">C</span>Pedir respostas mais curtas para reduzir risco de erro</button></div>
+    <div class="mq-explanation" id="mq-expl-responsible-0">Factual grounding: forneca os dados (extrato, relatorio) na mensagem, peca ao modelo citar a linha exata, e NUNCA aceite um numero sem verificar na fonte original. Tamanho de modelo nao elimina alucinacao.</div>
+    <div class="mq-footer" id="mq-foot-responsible-0" style="display:none"><button class="mq-next-btn" onclick="mqNext('responsible',0,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-responsible-1" style="display:none;">
+    <div class="mq-question">Q2 de 3 &mdash; Qual habito separa power users seguros de usuarios que criam risco?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'responsible',1,0,1,3)" ><span class="mq-letter">A</span>Usar Claude apenas para tarefas criativas, nunca para analise de dados</button><button class="mq-option" onclick="mqAnswer(this,'responsible',1,1,1,3)" ><span class="mq-letter">B</span>Tratar todo output como rascunho e verificar fatos criticos antes de usar</button><button class="mq-option" onclick="mqAnswer(this,'responsible',1,2,1,3)" ><span class="mq-letter">C</span>Limitar o uso a perguntas simples sem ambiguidade</button></div>
+    <div class="mq-explanation" id="mq-expl-responsible-1">Claude e um colaborador, nao um oraculo. Outputs de alta consequencia (numeros em apresentacao para board, recomendacoes de M&A, analise juridica) precisam de verificacao independente antes de usar.</div>
+    <div class="mq-footer" id="mq-foot-responsible-1" style="display:none"><button class="mq-next-btn" onclick="mqNext('responsible',1,3)">Proxima &rarr;</button></div>
+  </div>
+  <div id="mq-q-responsible-2" style="display:none;">
+    <div class="mq-question">Q3 de 3 &mdash; Ao usar Claude para analisar documentos confidenciais da empresa, o que verificar primeiro?</div>
+    <div class="mq-options"><button class="mq-option" onclick="mqAnswer(this,'responsible',2,0,1,3)" ><span class="mq-letter">A</span>Se o modelo suporta arquivos grandes o suficiente</button><button class="mq-option" onclick="mqAnswer(this,'responsible',2,1,1,3)" ><span class="mq-letter">B</span>A politica de uso de dados da sua empresa e os termos da API/produto que esta usando</button><button class="mq-option" onclick="mqAnswer(this,'responsible',2,2,1,3)" ><span class="mq-letter">C</span>Se o modelo tem conhecimento do setor</button></div>
+    <div class="mq-explanation" id="mq-expl-responsible-2">Politica de uso de dados varia por produto: API (dados nao usados para treino por padrao), Claude.ai Pro (verificar configuracoes), Enterprise (DPA customizado). Sempre confirme antes de subir dados sensiveis.</div>
+    <div class="mq-footer" id="mq-foot-responsible-2" style="display:none"><button class="mq-next-btn" onclick="mqNext('responsible',2,3)">Ver resultado</button></div>
+  </div>
+  <div class="mq-result" id="mq-result-responsible">
+    <div class="mq-result-score" id="mq-rscore-responsible"></div>
+    <div class="mq-result-msg" id="mq-rmsg-responsible"></div>
+    <button class="mq-restart-btn" onclick="mqRestart('responsible',3)">&#8635; Tentar novamente</button>
+  </div>
 </div>
 </section>
 
@@ -10527,21 +10903,6 @@ document.addEventListener('keydown', e => {
 });
 
 
-// -- MINI QUIZ --
-function mqAnswer(btn, secId, qi, chosen, correct) {
-  var block = document.getElementById('mq-block-' + secId);
-  var qDiv = document.getElementById('mq-' + secId + '-' + qi);
-  qDiv.querySelectorAll('.mq-option').forEach(function(b, i) {
-    b.disabled = true;
-    if (i === correct) b.classList.add('correct');
-    else if (i === chosen && chosen !== correct) b.classList.add('wrong');
-  });
-  document.getElementById('mq-expl-' + secId + '-' + qi).classList.add('show');
-  document.getElementById('mq-nav-' + secId + '-' + qi).style.display = 'flex';
-  if (chosen === correct) {
-    var s = parseInt(block.dataset.score || 0) + 1;
-    block.dataset.score = s;
-  }
   var total = parseInt(block.dataset.total);
   var score = parseInt(block.dataset.score);
   var scoreEl = document.getElementById('mq-score-' + secId);
@@ -10551,6 +10912,63 @@ function mqNext(secId, qi, total) {
   document.getElementById('mq-' + secId + '-' + qi).style.display = 'none';
   var next = document.getElementById('mq-' + secId + '-' + (qi + 1));
   if (next) next.style.display = 'block';
+}
+
+
+// == MINI QUIZ ==
+function mqAnswer(btn, secId, qi, chosen, correct, total) {
+  var qDiv = document.getElementById('mq-q-' + secId + '-' + qi);
+  var block = document.getElementById('mq-block-' + secId);
+  qDiv.querySelectorAll('.mq-option').forEach(function(b, i) {
+    b.disabled = true;
+    if (i === correct) b.classList.add('correct');
+    else if (i === chosen && chosen !== correct) b.classList.add('wrong');
+  });
+  document.getElementById('mq-expl-' + secId + '-' + qi).classList.add('show');
+  if (chosen === correct) block.dataset.score = String(parseInt(block.dataset.score || '0') + 1);
+  // update dot
+  var dots = document.querySelectorAll('#mq-dots-' + secId + ' span');
+  if (dots[qi]) { dots[qi].classList.remove('current'); dots[qi].classList.add('done'); }
+  // show footer
+  document.getElementById('mq-foot-' + secId + '-' + qi).style.display = 'flex';
+}
+function mqNext(secId, qi, total) {
+  document.getElementById('mq-q-' + secId + '-' + qi).style.display = 'none';
+  var next = qi + 1;
+  if (next < total) {
+    var nd = document.getElementById('mq-q-' + secId + '-' + String(next));
+    if (nd) { nd.style.display = 'block'; }
+    var dots = document.querySelectorAll('#mq-dots-' + secId + ' span');
+    if (dots[next]) dots[next].classList.add('current');
+  } else {
+    var score = parseInt(document.getElementById('mq-block-' + secId).dataset.score || '0');
+    var resEl = document.getElementById('mq-result-' + secId);
+    var sc = document.getElementById('mq-rscore-' + secId);
+    var msg = document.getElementById('mq-rmsg-' + secId);
+    sc.textContent = score + '/' + total;
+    if (score === total) { sc.className = 'mq-result-score good'; msg.textContent = 'Perfeito! Voce domina essa secao.'; }
+    else if (score >= Math.ceil(total / 2)) { sc.className = 'mq-result-score ok'; msg.textContent = 'Bom! Revise os que errou antes de seguir.'; }
+    else { sc.className = 'mq-result-score retry'; msg.textContent = 'Releia a secao e tente novamente.'; }
+    resEl.classList.add('show');
+  }
+}
+function mqRestart(secId, total) {
+  var block = document.getElementById('mq-block-' + secId);
+  block.dataset.score = '0';
+  document.getElementById('mq-result-' + secId).classList.remove('show');
+  for (var i = 0; i < total; i++) {
+    var qd = document.getElementById('mq-q-' + secId + '-' + String(i));
+    if (!qd) continue;
+    qd.style.display = i === 0 ? 'block' : 'none';
+    qd.querySelectorAll('.mq-option').forEach(function(b) {
+      b.disabled = false; b.classList.remove('correct','wrong');
+    });
+    var ex = document.getElementById('mq-expl-' + secId + '-' + String(i));
+    if (ex) ex.classList.remove('show');
+    document.getElementById('mq-foot-' + secId + '-' + String(i)).style.display = 'none';
+  }
+  var dots = document.querySelectorAll('#mq-dots-' + secId + ' span');
+  dots.forEach(function(d, i) { d.className = i === 0 ? 'current' : ''; });
 }
 
 </script>
