@@ -558,6 +558,129 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
   background: var(--gray-100); border: 1px solid var(--gray-200);
   border-radius: 4px; padding: 1px 5px; font-size: 10px; color: var(--gray-600);
 }
+
+/* ── Mini-Quiz ─────────────────────────────────────────────────────────────── */
+.mini-quiz {
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin: 28px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.mini-quiz h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mq-progress-wrap { margin-bottom: 14px; }
+.mq-dots { display: flex; gap: 6px; }
+.mq-dots span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gray-200);
+  transition: background .2s;
+}
+.mq-dots span.current { background: var(--primary); }
+.mq-dots span.done    { background: #22c55e; }
+.mq-dots span.wrong   { background: #ef4444; }
+.mq-question {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 14px;
+  line-height: 1.45;
+}
+.mq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mq-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--gray-50);
+  border: 1.5px solid var(--gray-200);
+  border-radius: 10px;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--gray-800);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .15s, background .15s;
+  width: 100%;
+}
+.mq-option:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: rgba(99,102,241,.06);
+}
+.mq-option.correct  { border-color: #22c55e; background: #f0fdf4; color: #15803d; }
+.mq-option.wrong    { border-color: #ef4444; background: #fef2f2; color: #b91c1c; }
+.mq-option:disabled { cursor: default; }
+.mq-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  background: var(--gray-200);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray-700);
+  flex-shrink: 0;
+}
+.mq-option.correct .mq-letter { background: #bbf7d0; color: #15803d; }
+.mq-option.wrong   .mq-letter { background: #fecaca; color: #b91c1c; }
+.mq-explanation {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--gray-50);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+.mq-result {
+  text-align: center;
+  padding: 20px 0 4px;
+}
+.mq-result-score {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.mq-result-msg {
+  font-size: 15px;
+  color: var(--gray-700);
+  margin-bottom: 16px;
+}
+.mq-restart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity .15s;
+}
+.mq-restart-btn:hover { opacity: .85; }
 </style>
 </head>
 <body>
@@ -5660,8 +5783,8 @@ print(response.content[0].text)</code></pre>
 <section id="founder" class="section">
   <div class="section-header">
     <div class="section-label">Section · Founder Track</div>
-    <h1 class="section-title">🚀 Fundando uma Fintech com IA</h1>
-    <p class="section-subtitle">GTM, pricing de features, MVP, casos brasileiros, arquitetura e fundraising — para a empresa que você vai construir depois do HBS.</p>
+    <h1 class="section-title">🚀 Building an AI Fintech</h1>
+    <p class="section-subtitle">GTM, feature pricing, MVP, Brazilian cases, architecture and fundraising — for the company you'll build after HBS.</p>
   </div>
 <div style="background:linear-gradient(135deg,#f0f9ff,#f8fafc);border:1px solid #bae6fd;border-radius:10px;padding:14px 18px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start">
     <div style="font-size:26px;line-height:1;flex-shrink:0">🚀</div>
@@ -5674,14 +5797,14 @@ print(response.content[0].text)</code></pre>
     </div>
   </div>
 
-  <div class="info-box"><p>Tudo no resto deste dashboard te faz melhor <em>usuária</em> de Claude. Esta aba é sobre ser <strong>builder</strong>: quando um feature de IA entra num produto, tokens viram COGS, latência vira UX, e fluxos de dados viram exposição regulatória. As habilidades de analista e as de fundadora são as mesmas — com stakes diferentes.</p></div>
+  <div class="info-box"><p>Tudo no resto deste dashboard te faz melhor <em>usuária</em> de Claude. Esta aba é sobre ser <strong>builder</strong>: when an AI feature enters a product, tokens become COGS, latency becomes UX, and data flows become regulatory exposure. Analyst skills and founder skills are the same — with different stakes.</p></div>
 
   <!-- ─── UNIT ECONOMICS ─────────────────────────────────── -->
-  <h2 class="subsec">💸 Unit Economics de um Feature de IA</h2>
+  <h2 class="subsec">💸 Unit Economics of an AI Feature</h2>
   <div class="card">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">A pergunta nunca é "quanto custa a API?" — é <strong>custo por usuário por mês vs o quanto o feature permite cobrar a mais</strong>. Trabalhe de trás pra frente:</p>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">The question is never "how much does the API cost?" — it's <strong>cost per user per month vs how much more the feature lets you charge</strong>. Work backwards:</p>
     <div class="code-wrap">
-      <pre><code class="language-text">Exemplo: assistente de bookkeeping em uma fintech SMB brasileira
+      <pre><code class="language-text">Example: bookkeeping assistant in a Brazilian SMB fintech
 
 Premissa de uso:    30 interações/usuário/mês
 Tokens por call:    2k in + 500 out (após compressão de prompt)
@@ -5697,56 +5820,56 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px">
       <div style="background:#f0f9ff;border-radius:8px;padding:12px;border-left:3px solid #0284c7">
         <div style="font-weight:700;font-size:12px;color:#0284c7;margin-bottom:4px">Lever 1 — Routing</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0">Classifier pequeno na frente: 80% das queries vão pro Haiku/Flash. Fronteir só para raciocínio complexo.</p>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Small classifier up front: 80% of queries go to Haiku/Flash. Frontier only for complex reasoning.</p>
       </div>
       <div style="background:#f0fdf4;border-radius:8px;padding:12px;border-left:3px solid #16a34a">
         <div style="font-weight:700;font-size:12px;color:#16a34a;margin-bottom:4px">Lever 2 — Caching</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0">System prompt + contexto de produto = ~90% de desconto nos tokens cached. Projeta pra usar prompt caching desde o dia 1.</p>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">System prompt + product context = ~90% discount on cached tokens. Design to use prompt caching from day 1.</p>
       </div>
       <div style="background:#fef9c3;border-radius:8px;padding:12px;border-left:3px solid #ca8a04">
         <div style="font-weight:700;font-size:12px;color:#ca8a04;margin-bottom:4px">Lever 3 — Output caps</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0">Respostas mais curtas = menos tokens de saída (caro). "Responda em até 3 linhas" pode cortar 50% do output cost.</p>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Shorter responses = fewer output tokens (expensive). "Answer in up to 3 lines" can cut 50% of output cost.</p>
       </div>
       <div style="background:#fdf4ff;border-radius:8px;padding:12px;border-left:3px solid #9333ea">
         <div style="font-weight:700;font-size:12px;color:#9333ea;margin-bottom:4px">Lever 4 — Batch API</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0">Jobs não-urgentes (categorização noturna, relatórios semanais) → 50% off. Muita fintech paga preço cheio desnecessariamente.</p>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Non-urgent jobs (nightly categorization, weekly reports) → 50% off. Many fintechs pay full price unnecessarily.</p>
       </div>
     </div>
   </div>
 
   <!-- ─── GTM ──────────────────────────────────────────────── -->
-  <h2 class="subsec">🎯 GTM — Go-to-Market para AI Fintech no Brasil</h2>
+  <h2 class="subsec">🎯 GTM — Go-to-Market for AI Fintech in Brazil</h2>
   <div class="card">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">A maior decisão de GTM não é "qual canal de marketing" — é <strong>quem é o seu buyer real</strong>. Em fintech SMB brasileira há três modelos com perfis de custo e defensibilidade muito diferentes:</p>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">The biggest GTM decision isn't "which marketing channel" — it's <strong>who is your real buyer</strong>. In Brazilian SMB fintech there are three models with very different cost and defensibility profiles:</p>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:12px">
         <thead>
           <tr style="background:var(--gray-100)">
-            <th style="padding:10px 12px;text-align:left;font-weight:700">Modelo GTM</th>
-            <th style="padding:10px 12px;text-align:left;font-weight:700">Buyer / Influenciador</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">GTM Model</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">Buyer / Influencer</th>
             <th style="padding:10px 12px;text-align:left;font-weight:700">CAC</th>
-            <th style="padding:10px 12px;text-align:left;font-weight:700">Defensibilidade</th>
-            <th style="padding:10px 12px;text-align:left;font-weight:700">Quem usa hoje</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">Defensibility</th>
+            <th style="padding:10px 12px;text-align:left;font-weight:700">Who uses it today</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--gray-200)">
-            <td style="padding:10px 12px;font-weight:600">Canal do Contador</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Contabilistas indicam / vendem para SMBs</td>
+            <td style="padding:10px 12px;font-weight:600">Accountant Channel</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Accountants refer / sell to SMBs</td>
             <td style="padding:10px 12px;color:#16a34a;font-weight:600">Baixo</td>
             <td style="padding:10px 12px;color:#16a34a;font-weight:600">Alta</td>
             <td style="padding:10px 12px;color:var(--gray-600)">QuickBooks, Conta Azul, Omie</td>
           </tr>
           <tr style="border-bottom:1px solid var(--gray-200)">
             <td style="padding:10px 12px;font-weight:600">Direct-to-SMB (PLG)</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Dono do negócio adota sozinho</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Business owner adopts independently</td>
             <td style="padding:10px 12px;color:#ca8a04;font-weight:600">Médio</td>
             <td style="padding:10px 12px;color:#ca8a04;font-weight:600">Média</td>
             <td style="padding:10px 12px;color:var(--gray-600)">Wave, Nibo free tier</td>
           </tr>
           <tr>
             <td style="padding:10px 12px;font-weight:600">Embedded B2B2B</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Banco/adquirente distribui seu produto</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Bank/acquirer distributes your product</td>
             <td style="padding:10px 12px;color:#dc2626;font-weight:600">Alto setup</td>
             <td style="padding:10px 12px;color:#16a34a;font-weight:600">Altíssima</td>
             <td style="padding:10px 12px;color:var(--gray-600)">Stone Conta, Inter Empresas</td>
@@ -5755,18 +5878,18 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
       </table>
     </div>
     <div style="background:#eff6ff;border-radius:8px;padding:12px;margin-top:14px">
-      <div style="font-weight:700;font-size:12px;color:#1d4ed8;margin-bottom:6px">💡 O canal do contador é sub-explorado para AI fintech</div>
+      <div style="font-weight:700;font-size:12px;color:#1d4ed8;margin-bottom:6px">💡 The accountant channel is underexplored for AI fintech</div>
       <p style="font-size:12px;color:var(--gray-600);margin:0">Há ~500 mil contabilistas no Brasil (CFC). Um contador com 100 clientes SMB que adota sua plataforma = 100 contratos sem custo de ads. O feature de IA que resolve a dor do <em>contador</em> (reconciliação, NOF de clientes, geração de balancete) tem distribuição natural pelo canal — muito mais barato que B2C. O risco: churn segue o contador, não o SMB.</p>
     </div>
   </div>
 
   <!-- ─── PRICING ────────────────────────────────────────── -->
-  <h2 class="subsec">💰 Pricing de Features de IA</h2>
+  <h2 class="subsec">💰 Pricing AI Features</h2>
   <div class="card">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">Três modelos dominam fintech SaaS. A escolha define seu modelo de COGS e o sinal de valor que você entrega ao usuário:</p>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">Three models dominate fintech SaaS. The choice defines your COGS model and the value signal you send users:</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px">
       <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #0284c7">
-        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📦 Bundle (incluído no plano)</div>
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📦 Bundle (included in plan)</div>
         <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">IA como feature, não produto. "Categorização automática inclusa". Custo de IA entra no COGS do plano.</p>
         <div style="font-size:11px;font-weight:600;color:#0284c7">Pros: adoção alta, menos fricção<br>Cons: custo variável num modelo fixo</div>
         <div style="font-size:11px;color:var(--gray-500);margin-top:6px">Ex: Nubank Roxinho, Conta Azul categorização</div>
@@ -5819,7 +5942,7 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
       <table style="width:100%;border-collapse:collapse;font-size:12px">
         <thead>
           <tr style="background:var(--gray-100)">
-            <th style="padding:8px 12px;text-align:left">Dimensão</th>
+            <th style="padding:8px 12px;text-align:left">Dimension</th>
             <th style="padding:8px 12px;text-align:left">Build (próprio/open-source)</th>
             <th style="padding:8px 12px;text-align:left">Buy (API frontier)</th>
           </tr>
@@ -5950,52 +6073,52 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
         </div>
       </div>
       <div style="background:#f0fdf4;border-radius:8px;padding:12px">
-        <div style="font-weight:700;font-size:12px;color:#16a34a;margin-bottom:6px">✅ Posicionamento que funciona</div>
+        <div style="font-weight:700;font-size:12px;color:#16a34a;margin-bottom:6px">✅ Positioning that works</div>
         <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--gray-600)">
           <div>• <strong>"Somos AI-native"</strong> — arquitetura pensada para IA, não IA parafusada em cima de produto legacy</div>
-          <div>• <strong>Dado proprietário como moat</strong> — "nosso modelo de categorização é treinado em X transações/mês do nosso corpus; nenhum player externo tem acesso"</div>
-          <div>• <strong>Regulação como vantagem, não risco</strong> — "nosso design de LGPD/BACEN é um filtro competitivo; novos entrantes levam 18 meses para aprovar"</div>
-          <div>• <strong>Contador como força multiplicadora</strong> — "cada contabilista é um SDR que distribui por 80–150 SMBs sem custo de aquisição nosso"</div>
+          <div>• <strong>Proprietary data as moat</strong> — "our categorization model is trained on X transactions/month from our corpus; no external player has access"</div>
+          <div>• <strong>Regulation as advantage, not risk</strong> — "our LGPD/BACEN design is a competitive filter; new entrants take 18 months to get approved"</div>
+          <div>• <strong>Accountant as force multiplier</strong> — "each accountant is an SDR who distributes to 80–150 SMBs at zero acquisition cost to us"</div>
         </div>
       </div>
       <div style="background:#fef2f2;border-radius:8px;padding:12px">
-        <div style="font-weight:700;font-size:12px;color:#b91c1c;margin-bottom:6px">❌ Red flags no pitch (o que evitar)</div>
+        <div style="font-weight:700;font-size:12px;color:#b91c1c;margin-bottom:6px">❌ Red flags in the pitch (what to avoid)</div>
         <div style="display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--gray-600)">
-          <div>• "Usamos ChatGPT" — nenhuma defensibilidade, qualquer concorrente replica amanhã</div>
-          <div>• IA como diferenciador sem métricas — "nossa IA é melhor" sem benchmark ou eval data</div>
-          <div>• Mercado definido como "todos os SMBs do Brasil" — sem segmento claro = sem GTM claro</div>
+          <div>• "We use ChatGPT" — no defensibility, any competitor replicates tomorrow</div>
+          <div>• AI as differentiator without metrics — "our AI is better" without benchmark or eval data</div>
+          <div>• Market defined as "all SMBs in Brazil" — no clear segment = no clear GTM</div>
         </div>
       </div>
     </div>
-    <h3 style="font-size:13px;font-weight:700;margin-bottom:10px">📊 Métricas que investidores de AI fintech rastreiam</h3>
+    <h3 style="font-size:13px;font-weight:700;margin-bottom:10px">📊 Metrics AI fintech investors track</h3>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:12px">
         <thead>
           <tr style="background:var(--gray-100)">
-            <th style="padding:8px 12px;text-align:left">Métrica</th>
-            <th style="padding:8px 12px;text-align:left">O que mede</th>
-            <th style="padding:8px 12px;text-align:left">Benchmark saudável</th>
+            <th style="padding:8px 12px;text-align:left">Metric</th>
+            <th style="padding:8px 12px;text-align:left">What it measures</th>
+            <th style="padding:8px 12px;text-align:left">Healthy benchmark</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--gray-100)">
             <td style="padding:8px 12px;font-weight:600">AI Attachment Rate</td>
-            <td style="padding:8px 12px;color:var(--gray-600)">% de usuários ativos que usam features de IA</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">% of active users using AI features</td>
             <td style="padding:8px 12px;color:#16a34a">≥ 40% early-stage</td>
           </tr>
           <tr style="border-bottom:1px solid var(--gray-100)">
             <td style="padding:8px 12px;font-weight:600">AI Cost per MAU</td>
-            <td style="padding:8px 12px;color:var(--gray-600)">Custo de IA por usuário ativo/mês (COGS de IA)</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">AI cost per active user/month (AI COGS)</td>
             <td style="padding:8px 12px;color:#16a34a">&lt; 15% do ARPU</td>
           </tr>
           <tr style="border-bottom:1px solid var(--gray-100)">
             <td style="padding:8px 12px;font-weight:600">AI Feature NPS</td>
-            <td style="padding:8px 12px;color:var(--gray-600)">NPS específico do feature de IA (separado do produto)</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">AI feature-specific NPS (separate from product)</td>
             <td style="padding:8px 12px;color:#16a34a">≥ 40</td>
           </tr>
           <tr>
             <td style="padding:8px 12px;font-weight:600">AI-attributed Retention</td>
-            <td style="padding:8px 12px;color:var(--gray-600)">Delta de churn entre usuários de IA vs não-usuários</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Churn delta between AI users vs non-users</td>
             <td style="padding:8px 12px;color:#16a34a">≥ 20pp de diferença</td>
           </tr>
         </tbody>
@@ -6040,9 +6163,9 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
 
 <section id="produto" class="section">
   <div class="section-header">
-    <div class="section-label">Section · Produto & AI PM</div>
-    <h1 class="section-title">🎯 Produto com IA</h1>
-    <p class="section-subtitle">Discovery, métricas, UX patterns, evals e roadmapping — o que separa um AI PM mediocre de um excelente, e o que você precisa saber como fundadora.</p>
+    <div class="section-label">Section · Product & AI PM</div>
+    <h1 class="section-title">🎯 Product with AI</h1>
+    <p class="section-subtitle">Discovery, metrics, UX patterns, evals and roadmapping — what separates a mediocre AI PM from an excellent one, and what you need to know as a founder.</p>
   </div>
 <div style="background:linear-gradient(135deg,#f0f9ff,#f8fafc);border:1px solid #bae6fd;border-radius:10px;padding:14px 18px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start">
     <div style="font-size:26px;line-height:1;flex-shrink:0">🎯</div>
@@ -6057,63 +6180,63 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
 
   
 
-  <div class="info-box"><p>PM tradicional e AI PM têm uma diferença central: em produto convencional, você especifica <em>o que</em> o sistema faz. Em AI PM, você especifica <em>o resultado desejado</em> e o modelo decide como chegar lá. Isso muda radicalmente discovery, evals, QA e comunicação com engenharia. Como fundadora, você vai fazer os dois — entender essa distinção é o ponto de partida.</p></div>
+  <div class="info-box"><p>Traditional PM and AI PM have a core difference: in conventional product, you specify <em>what</em> the system does. In AI PM, you specify <em>the desired outcome</em> and the model decides how to get there. This radically changes discovery, evals, QA and engineering communication. As a founder, you'll do both — understanding this distinction is the starting point.</p></div>
 
   <!-- ─── O QUE É AI PM ─────────────────────────────────── -->
-  <h2 class="subsec">🤔 AI PM vs PM Tradicional — A Diferença Que Importa</h2>
+  <h2 class="subsec">🤔 AI PM vs Traditional PM — The Difference That Matters</h2>
   <div class="card">
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:12px">
         <thead>
           <tr style="background:var(--gray-100)">
-            <th style="padding:10px 12px;text-align:left">Dimensão</th>
-            <th style="padding:10px 12px;text-align:left">PM Tradicional</th>
+            <th style="padding:10px 12px;text-align:left">Dimension</th>
+            <th style="padding:10px 12px;text-align:left">Traditional PM</th>
             <th style="padding:10px 12px;text-align:left">AI PM</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid var(--gray-100)">
-            <td style="padding:10px 12px;font-weight:600">O que você especifica</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Comportamento determinístico: "botão leva para tela X"</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Resultado desejado: "classifique esta despesa corretamente"</td>
+            <td style="padding:10px 12px;font-weight:600">What you specify</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Deterministic behavior: "button goes to screen X"</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Desired outcome: "classify this expense correctly"</td>
           </tr>
           <tr style="border-bottom:1px solid var(--gray-100)">
-            <td style="padding:10px 12px;font-weight:600">Definição de "pronto"</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Critérios de aceite binários</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Taxa de acerto em golden set de evals</td>
+            <td style="padding:10px 12px;font-weight:600">Definition of "done"</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Binary acceptance criteria</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Accuracy on golden set of evals</td>
           </tr>
           <tr style="border-bottom:1px solid var(--gray-100)">
-            <td style="padding:10px 12px;font-weight:600">Falha em produção</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Bug reproduzível, fix pontual</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Falha probabilística, requer novo dado ou prompt</td>
+            <td style="padding:10px 12px;font-weight:600">Production failure</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Reproducible bug, point fix</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Probabilistic failure, requires new data or prompt</td>
           </tr>
           <tr style="border-bottom:1px solid var(--gray-100)">
             <td style="padding:10px 12px;font-weight:600">QA</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Testes automatizados + QA manual</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Evals contínuos, human-in-the-loop, red teaming</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Automated tests + manual QA</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Continuous evals, human-in-the-loop, red teaming</td>
           </tr>
           <tr>
-            <td style="padding:10px 12px;font-weight:600">Iteração</td>
-            <td style="padding:10px 12px;color:var(--gray-600)">Sprint de eng → ship</td>
+            <td style="padding:10px 12px;font-weight:600">Iteration</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Eng sprint → ship</td>
             <td style="padding:10px 12px;color:var(--gray-600)">Prompt tuning → eval → ship → monitor → retrain</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div style="background:#fef9c3;border-radius:8px;padding:12px;margin-top:12px">
-      <div style="font-weight:700;font-size:12px;color:#92400e;margin-bottom:4px">⚠️ Erro mais comum de AI PM iniciante</div>
-      <p style="font-size:12px;color:var(--gray-600);margin:0">Tratar o modelo como um desenvolvedor que vai "implementar os requisitos". IA não executa spec — ela interpreta intenção. Seu trabalho como PM é tornar a intenção inequívoca via prompt design, exemplos e evals.</p>
+      <div style="font-weight:700;font-size:12px;color:#92400e;margin-bottom:4px">⚠️ Most common mistake for a new AI PM</div>
+      <p style="font-size:12px;color:var(--gray-600);margin:0">Treating the model like a developer who will "implement requirements". AI doesn't execute specs — it interprets intent. Your job as PM is to make intent unambiguous through prompt design, examples and evals.</p>
     </div>
   </div>
 
   <!-- ─── DISCOVERY ─────────────────────────────────────── -->
-  <h2 class="subsec">🔍 Discovery com IA — Pesquisa 5× Mais Rápida</h2>
+  <h2 class="subsec">🔍 Discovery with AI — Research 5× Faster</h2>
   <div class="card">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">IA não substitui falar com usuários — ela acelera a síntese e amplia o escopo do que você consegue analisar:</p>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">AI doesn't replace talking to users — it accelerates synthesis and expands the scope of what you can analyze:</p>
     <div style="display:flex;flex-direction:column;gap:10px">
       <div style="background:var(--gray-50);border-radius:8px;padding:14px">
-        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📝 Síntese de entrevistas</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Transcreva entrevistas com Whisper (gratuito, local) → jogue no Claude com o prompt abaixo → extraia temas, quotes e insights em minutos:</p>
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📝 Interview synthesis</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Transcribe interviews with Whisper (free, local) → feed into Claude with the prompt below → extract themes, quotes and insights in minutes:</p>
         <div class="code-wrap"><pre><code class="language-text">Você é um pesquisador de UX. Analise as transcrições abaixo de entrevistas
 com usuários de [produto]. Extraia:
 1. Top 5 dores ordenadas por frequência (cite o trecho exato)
@@ -6125,8 +6248,8 @@ Formato: markdown com quotes em itálico.</code></pre>
         </div>
       </div>
       <div style="background:var(--gray-50);border-radius:8px;padding:14px">
-        <div style="font-weight:700;font-size:13px;margin-bottom:8px">⭐ Análise de reviews de concorrentes</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Raspe reviews do App Store/G2/Capterra dos concorrentes → Claude categoriza dores e desejos que você pode capturar:</p>
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">⭐ Competitor review analysis</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Scrape competitor App Store/G2/Capterra reviews → Claude categorizes pains and desires you can capture:</p>
         <div class="code-wrap"><pre><code class="language-text">Analise os reviews abaixo de [concorrente]. Para cada review:
 - Classifique: Dor / Elogio / Feature request / Bug
 - Identifique o Job-to-be-done subjacente
@@ -6136,8 +6259,8 @@ Ignore reclamações de preço — foque em produto.</code></pre>
         </div>
       </div>
       <div style="background:var(--gray-50);border-radius:8px;padding:14px">
-        <div style="font-weight:700;font-size:13px;margin-bottom:8px">🎯 Geração de hipóteses de oportunidade</div>
-        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Depois da síntese, use Claude para gerar hipóteses testáveis — não features:</p>
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">🎯 Opportunity hypothesis generation</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">After synthesis, use Claude to generate testable hypotheses — not features:</p>
         <div class="code-wrap"><pre><code class="language-text">Com base nessas dores de usuário: [cole síntese]
 Gere 10 hipóteses de oportunidade no formato:
 "Acreditamos que [segmento] tem dificuldade de [job] porque [causa raiz].
@@ -6153,15 +6276,15 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
   </div>
 
   <!-- ─── MÉTRICAS ───────────────────────────────────────── -->
-  <h2 class="subsec">📊 Métricas Certas para Features de IA</h2>
+  <h2 class="subsec">📊 Metrics Certas para Features de IA</h2>
   <div class="card">
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">A maioria dos times mede features de IA com métricas de produto tradicional (DAU, conversion). Isso esconde problemas críticos. Use as métricas abaixo em paralelo:</p>
     <div style="overflow-x:auto">
       <table style="width:100%;border-collapse:collapse;font-size:12px">
         <thead>
           <tr style="background:var(--gray-100)">
-            <th style="padding:10px 12px;text-align:left">Métrica</th>
-            <th style="padding:10px 12px;text-align:left">O que mede</th>
+            <th style="padding:10px 12px;text-align:left">Metric</th>
+            <th style="padding:10px 12px;text-align:left">What it measures</th>
             <th style="padding:10px 12px;text-align:left">Como calcular</th>
             <th style="padding:10px 12px;text-align:left">Red flag</th>
           </tr>
@@ -6251,7 +6374,7 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
   </div>
 
   <!-- ─── EVALS ─────────────────────────────────────────── -->
-  <h2 class="subsec">✅ Evals como Disciplina de Produto</h2>
+  <h2 class="subsec">✅ Evals as Product Discipline</h2>
   <div class="card">
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">Eval é o "teste unitário" de uma feature de IA. Sem golden set, você não sabe se uma mudança de prompt melhorou ou piorou o produto.</p>
     <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
@@ -6277,7 +6400,7 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
           <tr style="background:var(--gray-100)">
             <th style="padding:8px 12px;text-align:left">Feature</th>
             <th style="padding:8px 12px;text-align:left">Tipo de Eval</th>
-            <th style="padding:8px 12px;text-align:left">Métrica de sucesso</th>
+            <th style="padding:8px 12px;text-align:left">Metric de sucesso</th>
           </tr>
         </thead>
         <tbody>
@@ -6331,8 +6454,8 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
     <div style="background:#eff6ff;border-radius:8px;padding:12px">
       <div style="font-weight:700;font-size:12px;color:#1d4ed8;margin-bottom:6px">📐 Framework de priorização para AI features</div>
       <div style="font-size:12px;color:var(--gray-600)">
-        Score = <strong>(Frequência da dor × Disposição a pagar)</strong> ÷ <strong>(Risco técnico × Custo de IA por usuário)</strong><br>
-        <span style="color:var(--gray-500);margin-top:4px;display:block">Risco técnico = 1 (modelo já resolve bem) a 5 (R&D necessário). Faz o spike antes de estimar.</span>
+        Score = <strong>(Frequência da dor × Disposição a pagar)</strong> ÷ <strong>(Risk técnico × Custo de IA por usuário)</strong><br>
+        <span style="color:var(--gray-500);margin-top:4px;display:block">Risk técnico = 1 (model already solves well) to 5 (R&D needed). Run the spike before estimating.</span>
       </div>
     </div>
   </div>
@@ -6340,46 +6463,46 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
   <!-- ─── COMUNICAÇÃO ───────────────────────────────────── -->
   <h2 class="subsec">💬 Comunicando IA para Stakeholders</h2>
   <div class="card">
-    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">As perguntas que C-suite, Board e investidores fazem sobre IA — e as respostas que um AI PM precisa ter:</p>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">The questions C-suite, Board and investors ask about AI — and the answers an AI PM needs to have:</p>
     <div style="display:flex;flex-direction:column;gap:8px">
       <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div>
-          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
-          <div style="font-size:12px;color:var(--gray-700)">"Por que não usamos só o ChatGPT?"</div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">TYPICAL QUESTION</div>
+          <div style="font-size:12px;color:var(--gray-700)">"Why don't we just use ChatGPT?"</div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
-          <div style="font-size:12px;color:var(--gray-600)">"Usamos API do modelo X porque dá controle de prompt, dados, compliance e custo. ChatGPT é consumer — não tem SLA, DPA ou pricing previsível para nosso volume."</div>
-        </div>
-      </div>
-      <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-        <div>
-          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
-          <div style="font-size:12px;color:var(--gray-700)">"Quanto custa? E vai escalar?"</div>
-        </div>
-        <div>
-          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
-          <div style="font-size:12px;color:var(--gray-600)">"Hoje custa R$X/MAU, que é Y% do ARPU. Com routing implementado no Q2, projetamos reduzir para Z%. O custo cresce sublinearmente com usuários por causa do caching."</div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">AI PM ANSWER</div>
+          <div style="font-size:12px;color:var(--gray-600)">"We use model X API because it gives us control over prompt, data, compliance and cost. ChatGPT is consumer — it has no SLA, DPA or predictable pricing for our volume."</div>
         </div>
       </div>
       <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div>
-          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
-          <div style="font-size:12px;color:var(--gray-700)">"E se a IA errar e o cliente reclamar?"</div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">TYPICAL QUESTION</div>
+          <div style="font-size:12px;color:var(--gray-700)">"How much does it cost? And will it scale?"</div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
-          <div style="font-size:12px;color:var(--gray-600)">"Temos human-in-the-loop para ações irreversíveis, eval contínuo com golden set de 500 casos, e fallback determinístico. Taxa de erro atual é X%, abaixo do threshold de Y% definido com Jurídico."</div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">AI PM ANSWER</div>
+          <div style="font-size:12px;color:var(--gray-600)">"Today it costs R$X/MAU, which is Y% of ARPU. With routing implemented in Q2, we project reducing to Z%. Cost grows sublinearly with users due to caching."</div>
         </div>
       </div>
       <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
         <div>
-          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
-          <div style="font-size:12px;color:var(--gray-700)">"Qual o nosso diferencial vs concorrente que também usa IA?"</div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">TYPICAL QUESTION</div>
+          <div style="font-size:12px;color:var(--gray-700)">"What if AI makes a mistake and the customer complains?"</div>
         </div>
         <div>
-          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
-          <div style="font-size:12px;color:var(--gray-600)">"O modelo base é commodity — o diferencial é dado proprietário e fine-tuning. Nosso corpus de X transações/mês permite acurácia de Y% em categorização vs Z% dos concorrentes sem esse dado."</div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">AI PM ANSWER</div>
+          <div style="font-size:12px;color:var(--gray-600)">"We have human-in-the-loop for irreversible actions, continuous eval with a golden set of 500 cases, and a deterministic fallback. Current error rate is X%, below the Y% threshold defined with Legal."</div>
+        </div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">TYPICAL QUESTION</div>
+          <div style="font-size:12px;color:var(--gray-700)">"What's our edge vs a competitor who also uses AI?"</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">AI PM ANSWER</div>
+          <div style="font-size:12px;color:var(--gray-600)">"The base model is a commodity — the edge is proprietary data and fine-tuning. Our corpus of X transactions/month enables Y% accuracy in categorization vs Z% for competitors without that data."</div>
         </div>
       </div>
     </div>
@@ -6589,7 +6712,7 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
         <div style="padding:16px">
           <div style="overflow-x:auto">
             <table style="width:100%;border-collapse:collapse;font-size:12px">
-              <thead><tr style="background:var(--gray-50)"><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Métrica</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">O que é</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Bom (escala)</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Your company ~</th></tr></thead>
+              <thead><tr style="background:var(--gray-50)"><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Metric</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">O que é</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Bom (escala)</th><th style="text-align:left;padding:8px;border-bottom:2px solid var(--gray-200)">Your company ~</th></tr></thead>
               <tbody>
                 <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">NRR (Net Revenue Retention)</td><td style="padding:8px;color:var(--gray-600)">Revenue from last year still retained + expansion</td><td style="padding:8px;color:#16a34a">≥110%</td><td style="padding:8px">~108-115%</td></tr>
                 <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">GRR (Gross Revenue Retention)</td><td style="padding:8px;color:var(--gray-600)">% de receita mantida sem considerar expansão</td><td style="padding:8px;color:#16a34a">≥90%</td><td style="padding:8px">~92%</td></tr>
@@ -8570,7 +8693,7 @@ MÓDULO 4 — brief_generator.py (Sonnet):
     2. Top 3 Issues (tema, frequência, quote real do cliente, impacto estimado)
     3. Emerging trends (what is growing and why)
     4. 1 quick win que o time poderia implementar esta sprint
-    5. Métrica de saúde: NPS implícito desta semana (% positivo - % negativo)
+    5. Metric de saúde: NPS implícito desta semana (% positivo - % negativo)
 
     Tom: direto para PM sênior. Sem floreios."
 
@@ -8658,7 +8781,7 @@ MÓDULO 3 — scorer.py (Haiku como juiz):
     6. Integration complexity (tech stack, culture)
     7. Valuation atratividade (EV/Revenue vs peers)
     8. Time de fundadores (LinkedIn scrape)
-    9. Riscos regulatórios
+    9. Risks regulatórios
     10. Execution speed (how fast your company could integrate)
 
   Prompt per dimension: "Score 0-10: {dimension} for your company acquiring {company}.
