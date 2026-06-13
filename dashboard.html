@@ -1472,6 +1472,21 @@ all market data comes from me.&lt;/role&gt;
     </div>
     <div style="background:#fef2f2;border-radius:8px;padding:12px;margin-top:10px"><p style="font-size:12px;color:#b91c1c;margin:0"><strong>⚠️ Never</strong> let Claude supply TAM figures, market shares, or growth rates from memory. They sound precise and are frequently wrong or stale. Numbers in, logic out. See Responsible Use → Hallucination.</p></div>
   </div>
+
+<div class="mini-quiz" id="mq-block-strategy" data-total="1" data-score="0">
+<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
+<div class="mq-q" id="mq-strategy-0" style="">
+<div class="mq-question">Q1/1 &mdash; Qual pipeline e mais adequado para screening de M&A?</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'strategy',0,0,1)">Pipeline 1 - Competitive Intel</button>
+<button class="mq-option" onclick="mqAnswer(this,'strategy',0,1,1)">Pipeline 2 - M&A Screening</button>
+<button class="mq-option" onclick="mqAnswer(this,'strategy',0,2,1)">Pipeline 3 - Market Sizing</button>
+</div>
+<div class="mq-explanation" id="mq-expl-strategy-0">O Pipeline 2 foi desenhado para screening de targets: criterios, scoring e analise de fit estrategico.</div>
+<div class="mq-nav" id="mq-nav-strategy-0" style="display:none">
+<span class="mq-score" id="mq-score-strategy"></span>
+</div></div>
+</div>
 </section>
 
 <section id="prompting" class="section">
@@ -2436,6 +2451,33 @@ Context and constraints:
     </div>
   </div>
 
+
+<div class="mini-quiz" id="mq-block-prompting" data-total="2" data-score="0">
+<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
+<div class="mq-q" id="mq-prompting-0" style="">
+<div class="mq-question">Q1/2 &mdash; O framework RCTF significa:</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'prompting',0,0,0)">Role, Context, Task, Format</button>
+<button class="mq-option" onclick="mqAnswer(this,'prompting',0,1,0)">Reason, Chain, Tool, Flow</button>
+<button class="mq-option" onclick="mqAnswer(this,'prompting',0,2,0)">Role, Content, Type, Function</button>
+</div>
+<div class="mq-explanation" id="mq-expl-prompting-0">RCTF = Role, Context, Task, Format. A estrutura de qualquer bom prompt.</div>
+<div class="mq-nav" id="mq-nav-prompting-0" style="display:none">
+<button onclick="mqNext('prompting',0,2)">Proxima &rarr;</button>
+<span class="mq-score" id="mq-score-prompting"></span>
+</div></div>
+<div class="mq-q" id="mq-prompting-1" style="display:none;">
+<div class="mq-question">Q2/2 &mdash; Chain-of-thought prompting serve para:</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'prompting',1,0,1)">Fazer o modelo responder mais rapido</button>
+<button class="mq-option" onclick="mqAnswer(this,'prompting',1,1,1)">Forcar raciocinio passo a passo antes da resposta</button>
+<button class="mq-option" onclick="mqAnswer(this,'prompting',1,2,1)">Reduzir o numero de tokens</button>
+</div>
+<div class="mq-explanation" id="mq-expl-prompting-1">CoT pede que o modelo pense em voz alta antes de concluir — melhora acuracia em tarefas complexas.</div>
+<div class="mq-nav" id="mq-nav-prompting-1" style="display:none">
+<span class="mq-score" id="mq-score-prompting"></span>
+</div></div>
+</div>
 </section>
 
 
@@ -4087,6 +4129,33 @@ response = client.messages.create(
   </div>
 
 
+
+<div class="mini-quiz" id="mq-block-agents" data-total="2" data-score="0">
+<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
+<div class="mq-q" id="mq-agents-0" style="">
+<div class="mq-question">Q1/2 &mdash; No loop de tool use, quem decide quando usar uma ferramenta?</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'agents',0,0,1)">O programador via if/else</button>
+<button class="mq-option" onclick="mqAnswer(this,'agents',0,1,1)">O modelo com base no contexto</button>
+<button class="mq-option" onclick="mqAnswer(this,'agents',0,2,1)">O usuario explicitamente</button>
+</div>
+<div class="mq-explanation" id="mq-expl-agents-0">O modelo analisa o contexto e decide qual tool chamar — voce apenas define quais tools estao disponiveis.</div>
+<div class="mq-nav" id="mq-nav-agents-0" style="display:none">
+<button onclick="mqNext('agents',0,2)">Proxima &rarr;</button>
+<span class="mq-score" id="mq-score-agents"></span>
+</div></div>
+<div class="mq-q" id="mq-agents-1" style="display:none;">
+<div class="mq-question">Q2/2 &mdash; MCP serve para:</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'agents',1,0,1)">Comprimir prompts</button>
+<button class="mq-option" onclick="mqAnswer(this,'agents',1,1,1)">Conectar o modelo a sistemas externos de forma padronizada</button>
+<button class="mq-option" onclick="mqAnswer(this,'agents',1,2,1)">Avaliar qualidade do output</button>
+</div>
+<div class="mq-explanation" id="mq-expl-agents-1">MCP e um protocolo aberto que permite ao modelo interagir com APIs, arquivos e servicos externos.</div>
+<div class="mq-nav" id="mq-nav-agents-1" style="display:none">
+<span class="mq-score" id="mq-score-agents"></span>
+</div></div>
+</div>
 </section>
 
 
@@ -4430,6 +4499,33 @@ if estimate["input_tokens"] > 10_000:
     </div>
   </div>
 
+
+<div class="mini-quiz" id="mq-block-tokenmastery" data-total="2" data-score="0">
+<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
+<div class="mq-q" id="mq-tokenmastery-0" style="">
+<div class="mq-question">Q1/2 &mdash; Qual alavanca oferece ~90% de desconto nos tokens de entrada?</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'tokenmastery',0,0,1)">Batch API</button>
+<button class="mq-option" onclick="mqAnswer(this,'tokenmastery',0,1,1)">Prompt caching</button>
+<button class="mq-option" onclick="mqAnswer(this,'tokenmastery',0,2,1)">Output caps</button>
+</div>
+<div class="mq-explanation" id="mq-expl-tokenmastery-0">Prompt caching desconta tokens ja processados — ate 90% off nos cached tokens.</div>
+<div class="mq-nav" id="mq-nav-tokenmastery-0" style="display:none">
+<button onclick="mqNext('tokenmastery',0,2)">Proxima &rarr;</button>
+<span class="mq-score" id="mq-score-tokenmastery"></span>
+</div></div>
+<div class="mq-q" id="mq-tokenmastery-1" style="display:none;">
+<div class="mq-question">Q2/2 &mdash; O routing resolve qual problema principal?</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'tokenmastery',1,0,1)">Latencia alta</button>
+<button class="mq-option" onclick="mqAnswer(this,'tokenmastery',1,1,1)">COGS excessivo por usar frontier em tudo</button>
+<button class="mq-option" onclick="mqAnswer(this,'tokenmastery',1,2,1)">Falta de contexto</button>
+</div>
+<div class="mq-explanation" id="mq-expl-tokenmastery-1">Routing direciona queries simples para modelos menores e baratos, guardando o frontier para raciocinio complexo.</div>
+<div class="mq-nav" id="mq-nav-tokenmastery-1" style="display:none">
+<span class="mq-score" id="mq-score-tokenmastery"></span>
+</div></div>
+</div>
 </section>
 
 
@@ -5672,6 +5768,33 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
       </table>
     </div>
   </div>
+
+<div class="mini-quiz" id="mq-block-founder" data-total="2" data-score="0">
+<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
+<div class="mq-q" id="mq-founder-0" style="">
+<div class="mq-question">Q1/2 &mdash; Qual alavanca e mais impactante para reduzir COGS de IA?</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'founder',0,0,1)">Usar sempre o modelo mais barato</button>
+<button class="mq-option" onclick="mqAnswer(this,'founder',0,1,1)">Routing: frontier so para o que precisa</button>
+<button class="mq-option" onclick="mqAnswer(this,'founder',0,2,1)">Reduzir numero de usuarios</button>
+</div>
+<div class="mq-explanation" id="mq-expl-founder-0">Routing correto (80% small / 20% frontier) pode reduzir COGS em 10-15x vs mandar tudo pro frontier.</div>
+<div class="mq-nav" id="mq-nav-founder-0" style="display:none">
+<button onclick="mqNext('founder',0,2)">Proxima &rarr;</button>
+<span class="mq-score" id="mq-score-founder"></span>
+</div></div>
+<div class="mq-q" id="mq-founder-1" style="display:none;">
+<div class="mq-question">Q2/2 &mdash; No GTM para fintech SMB brasileira, qual canal tem menor CAC?</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'founder',1,0,1)">Direct-to-SMB via ads</button>
+<button class="mq-option" onclick="mqAnswer(this,'founder',1,1,1)">Canal do contador</button>
+<button class="mq-option" onclick="mqAnswer(this,'founder',1,2,1)">Embedded B2B2B via banco</button>
+</div>
+<div class="mq-explanation" id="mq-expl-founder-1">O contador distribui para 80-150 SMBs sem custo de aquisicao — CAC baixo e altissima defensibilidade.</div>
+<div class="mq-nav" id="mq-nav-founder-1" style="display:none">
+<span class="mq-score" id="mq-score-founder"></span>
+</div></div>
+</div>
 </section>
 
 
@@ -6021,6 +6144,33 @@ Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code><
       </div>
     </div>
   </div>
+
+<div class="mini-quiz" id="mq-block-produto" data-total="2" data-score="0">
+<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
+<div class="mq-q" id="mq-produto-0" style="">
+<div class="mq-question">Q1/2 &mdash; A diferenca central entre AI PM e PM tradicional e:</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'produto',0,0,1)">AI PM nao precisa falar com usuarios</button>
+<button class="mq-option" onclick="mqAnswer(this,'produto',0,1,1)">AI PM especifica resultado desejado, nao comportamento deterministico</button>
+<button class="mq-option" onclick="mqAnswer(this,'produto',0,2,1)">AI PM gerencia mais pessoas</button>
+</div>
+<div class="mq-explanation" id="mq-expl-produto-0">Em produto convencional voce diz botao vai para tela X. Em AI, voce diz classifique corretamente — o modelo decide como.</div>
+<div class="mq-nav" id="mq-nav-produto-0" style="display:none">
+<button onclick="mqNext('produto',0,2)">Proxima &rarr;</button>
+<span class="mq-score" id="mq-score-produto"></span>
+</div></div>
+<div class="mq-q" id="mq-produto-1" style="display:none;">
+<div class="mq-question">Q2/2 &mdash; Acceptance Rate abaixo de 60% indica:</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'produto',1,0,1)">Feature nao e usada</button>
+<button class="mq-option" onclick="mqAnswer(this,'produto',1,1,1)">Modelo errado ou contexto insuficiente</button>
+<button class="mq-option" onclick="mqAnswer(this,'produto',1,2,1)">Custo de IA alto</button>
+</div>
+<div class="mq-explanation" id="mq-expl-produto-1">Se usuarios rejeitam/editam mais de 40% das sugestoes, o modelo nao esta entendendo o contexto bem o suficiente.</div>
+<div class="mq-nav" id="mq-nav-produto-1" style="display:none">
+<span class="mq-score" id="mq-score-produto"></span>
+</div></div>
+</div>
 </section>
 
 
@@ -8600,6 +8750,21 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
     <p style="color:#94a3b8;font-size:14px;line-height:1.8;margin:0">Think of Claude as an extremely capable intern who has read everything ever published — but has never worked at your company, has no real-time information, and can confidently say something wrong. Your job is to be the senior who <strong style="color:white">supplies context</strong>, <strong style="color:white">reviews the output</strong>, and <strong style="color:white">owns the result</strong>. The intern amplifies your thinking. The work is still yours.</p>
   </div>
 
+
+<div class="mini-quiz" id="mq-block-responsible" data-total="1" data-score="0">
+<div class="mini-quiz-title">&#127919; Mini-Quiz — teste rapido</div>
+<div class="mq-q" id="mq-responsible-0" style="">
+<div class="mq-question">Q1/1 &mdash; Como mitigar alucinacoes em outputs financeiros?</div>
+<div class="mq-options">
+<button class="mq-option" onclick="mqAnswer(this,'responsible',0,0,1)">Usar sempre o modelo maior</button>
+<button class="mq-option" onclick="mqAnswer(this,'responsible',0,1,1)">Grounding em fonte + pedir citacao + verificar numeros</button>
+<button class="mq-option" onclick="mqAnswer(this,'responsible',0,2,1)">Pedir resposta mais curta</button>
+</div>
+<div class="mq-explanation" id="mq-expl-responsible-0">Factual grounding: forneca os dados na fonte, peca citacao explicita e nunca aceite numeros sem verificar.</div>
+<div class="mq-nav" id="mq-nav-responsible-0" style="display:none">
+<span class="mq-score" id="mq-score-responsible"></span>
+</div></div>
+</div>
 </section>
 
 <section id="tips" class="section">
@@ -10360,6 +10525,33 @@ document.addEventListener('keydown', e => {
   if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
   if (e.key === 'Escape' && document.getElementById('search-overlay').classList.contains('open')) closeSearch();
 });
+
+
+// -- MINI QUIZ --
+function mqAnswer(btn, secId, qi, chosen, correct) {
+  var block = document.getElementById('mq-block-' + secId);
+  var qDiv = document.getElementById('mq-' + secId + '-' + qi);
+  qDiv.querySelectorAll('.mq-option').forEach(function(b, i) {
+    b.disabled = true;
+    if (i === correct) b.classList.add('correct');
+    else if (i === chosen && chosen !== correct) b.classList.add('wrong');
+  });
+  document.getElementById('mq-expl-' + secId + '-' + qi).classList.add('show');
+  document.getElementById('mq-nav-' + secId + '-' + qi).style.display = 'flex';
+  if (chosen === correct) {
+    var s = parseInt(block.dataset.score || 0) + 1;
+    block.dataset.score = s;
+  }
+  var total = parseInt(block.dataset.total);
+  var score = parseInt(block.dataset.score);
+  var scoreEl = document.getElementById('mq-score-' + secId);
+  if (scoreEl && qi + 1 >= total) { scoreEl.textContent = score + '/' + total + ' corretas'; }
+}
+function mqNext(secId, qi, total) {
+  document.getElementById('mq-' + secId + '-' + qi).style.display = 'none';
+  var next = document.getElementById('mq-' + secId + '-' + (qi + 1));
+  if (next) next.style.display = 'block';
+}
 
 </script>
 </body>
