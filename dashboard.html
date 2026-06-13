@@ -79,6 +79,12 @@ nav::-webkit-scrollbar { display: none; }
 .nav-btn.nav-founder-top:hover, .nav-btn.nav-founder-top.active {
   background: #ca8a04; color: white; border-color: transparent;
 }
+.nav-btn.nav-produto-top {
+  background: #fdf4ff; border: 1.5px solid #9333ea; color: #7e22ce; font-weight: 700;
+}
+.nav-btn.nav-produto-top:hover, .nav-btn.nav-produto-top.active {
+  background: #9333ea; color: white; border-color: transparent;
+}
 
 /* GROUPED NAV */
 nav { overflow: visible; }
@@ -589,9 +595,10 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
 .restart-btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; border: 1.5px solid var(--primary); background: var(--white); color: var(--primary); font-size: 14px; font-weight: 600; cursor: pointer; transition: all .15s; }
 .restart-btn:hover { background: var(--primary); color: white; }
 </style>
-<!-- NAV -->
+
 <nav>
   <div class="nav-brand"><span>🤖</span> Claude Mastery</div>
+  <button id="search-trigger" onclick="openSearch()" title="Buscar (Ctrl+K)" style="background:var(--gray-100);border:1.5px solid var(--gray-200);color:var(--gray-600);font-size:13px;padding:6px 14px;display:flex;align-items:center;gap:6px" class="nav-btn">🔍 <span style='font-size:11px;color:var(--gray-400)'>Ctrl+K</span></button>
   <button class="nav-btn nav-expert" data-sec="expert" onclick="showSection('expert')">🧠 Expert</button>
   <div class="nav-group">
     <button class="nav-group-btn" type="button" onclick="toggleNavGroup(this)">🚀 Work Smart</button>
@@ -621,6 +628,7 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
     </div>
   </div>
   <button class="nav-btn nav-founder-top" data-sec="founder" onclick="showSection('founder')">🚀 Founder</button>
+  <button class="nav-btn nav-produto-top" data-sec="produto" onclick="showSection('produto')">🎯 Produto</button>
   <div class="nav-group">
     <button class="nav-group-btn" type="button" onclick="toggleNavGroup(this)">🏋️ Practice</button>
     <div class="nav-dropdown">
@@ -637,6 +645,22 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
     </div>
   </div>
 </nav>
+
+<!-- SEARCH OVERLAY (Cmd/Ctrl+K) -->
+<div id="search-overlay" onclick="if(event.target===this)closeSearch()">
+  <div id="search-box">
+    <input id="search-input" type="text" placeholder="🔍  Buscar no dashboard…" autocomplete="off"
+           oninput="runSearch(this.value)" onkeydown="searchKeydown(event)">
+    <div id="search-results"></div>
+    <div id="search-footer">
+      <span class="search-hint"><kbd>↑</kbd><kbd>↓</kbd> navegar</span>
+      <span class="search-hint"><kbd>Enter</kbd> abrir</span>
+      <span class="search-hint"><kbd>Esc</kbd> fechar</span>
+      <span style="margin-left:auto">Ctrl+K / ⌘K para abrir</span>
+    </div>
+  </div>
+</div>
+
 
 <div id="progress-bar"><div id="progress-fill"></div></div>
 
@@ -5651,6 +5675,355 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
 </section>
 
 
+<section id="produto" class="section">
+  <div class="section-header">
+    <div class="section-label">Section · Produto & AI PM</div>
+    <h1 class="section-title">🎯 Produto com IA</h1>
+    <p class="section-subtitle">Discovery, métricas, UX patterns, evals e roadmapping — o que separa um AI PM mediocre de um excelente, e o que você precisa saber como fundadora.</p>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#f0f9ff,#f8fafc);border:1px solid #bae6fd;border-radius:10px;padding:14px 18px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start">
+    <div style="font-size:26px;line-height:1;flex-shrink:0">🎯</div>
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;flex-wrap:wrap">
+        <span style="font-weight:700;font-size:13px;color:#0369a1">Objetivo</span>
+        <span style="font-size:12px;color:#0369a1;background:#e0f2fe;border-radius:99px;padding:1px 8px">Pensar e medir produto com IA</span>
+        <span style="font-size:11px;color:#64748b;background:var(--gray-100);border-radius:99px;padding:1px 8px">⏱ 35 min</span>
+      </div>
+      <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.6">Discovery com IA, métricas certas para features de IA, UX de confiança, evals como disciplina de produto e como roadmapar sob incerteza.</p>
+    </div>
+  </div>
+
+  <div class="info-box"><p>PM tradicional e AI PM têm uma diferença central: em produto convencional, você especifica <em>o que</em> o sistema faz. Em AI PM, você especifica <em>o resultado desejado</em> e o modelo decide como chegar lá. Isso muda radicalmente discovery, evals, QA e comunicação com engenharia. Como fundadora, você vai fazer os dois — entender essa distinção é o ponto de partida.</p></div>
+
+  <!-- ─── O QUE É AI PM ─────────────────────────────────── -->
+  <h2 class="subsec">🤔 AI PM vs PM Tradicional — A Diferença Que Importa</h2>
+  <div class="card">
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--gray-100)">
+            <th style="padding:10px 12px;text-align:left">Dimensão</th>
+            <th style="padding:10px 12px;text-align:left">PM Tradicional</th>
+            <th style="padding:10px 12px;text-align:left">AI PM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">O que você especifica</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Comportamento determinístico: "botão leva para tela X"</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Resultado desejado: "classifique esta despesa corretamente"</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">Definição de "pronto"</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Critérios de aceite binários</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Taxa de acerto em golden set de evals</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">Falha em produção</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Bug reproduzível, fix pontual</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Falha probabilística, requer novo dado ou prompt</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">QA</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Testes automatizados + QA manual</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Evals contínuos, human-in-the-loop, red teaming</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;font-weight:600">Iteração</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Sprint de eng → ship</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Prompt tuning → eval → ship → monitor → retrain</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#fef9c3;border-radius:8px;padding:12px;margin-top:12px">
+      <div style="font-weight:700;font-size:12px;color:#92400e;margin-bottom:4px">⚠️ Erro mais comum de AI PM iniciante</div>
+      <p style="font-size:12px;color:var(--gray-600);margin:0">Tratar o modelo como um desenvolvedor que vai "implementar os requisitos". IA não executa spec — ela interpreta intenção. Seu trabalho como PM é tornar a intenção inequívoca via prompt design, exemplos e evals.</p>
+    </div>
+  </div>
+
+  <!-- ─── DISCOVERY ─────────────────────────────────────── -->
+  <h2 class="subsec">🔍 Discovery com IA — Pesquisa 5× Mais Rápida</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">IA não substitui falar com usuários — ela acelera a síntese e amplia o escopo do que você consegue analisar:</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">📝 Síntese de entrevistas</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Transcreva entrevistas com Whisper (gratuito, local) → jogue no Claude com o prompt abaixo → extraia temas, quotes e insights em minutos:</p>
+        <div class="code-wrap"><pre><code class="language-text">Você é um pesquisador de UX. Analise as transcrições abaixo de entrevistas
+com usuários de [produto]. Extraia:
+1. Top 5 dores ordenadas por frequência (cite o trecho exato)
+2. Comportamentos inesperados (o que surpreendeu?)
+3. Jobs-to-be-done implícitos (o que eles realmente querem fazer?)
+4. Gaps entre o que dizem e o que descrevem fazer
+Formato: markdown com quotes em itálico.</code></pre>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">⭐ Análise de reviews de concorrentes</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Raspe reviews do App Store/G2/Capterra dos concorrentes → Claude categoriza dores e desejos que você pode capturar:</p>
+        <div class="code-wrap"><pre><code class="language-text">Analise os reviews abaixo de [concorrente]. Para cada review:
+- Classifique: Dor / Elogio / Feature request / Bug
+- Identifique o Job-to-be-done subjacente
+Ao final, liste: Top 5 dores não resolvidas + Top 3 features mais pedidas.
+Ignore reclamações de preço — foque em produto.</code></pre>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">🎯 Geração de hipóteses de oportunidade</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 8px">Depois da síntese, use Claude para gerar hipóteses testáveis — não features:</p>
+        <div class="code-wrap"><pre><code class="language-text">Com base nessas dores de usuário: [cole síntese]
+Gere 10 hipóteses de oportunidade no formato:
+"Acreditamos que [segmento] tem dificuldade de [job] porque [causa raiz].
+Se resolvermos isso, esperamos [resultado mensurável]."
+Ordene por: (a) frequência da dor × (b) dificuldade atual de resolver.</code></pre>
+          <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+      </div>
+    </div>
+    <div style="background:#f0fdf4;border-radius:8px;padding:12px;margin-top:12px">
+      <p style="font-size:12px;color:#15803d;margin:0"><strong>💡 No estágio Intuit:</strong> use essas técnicas para analisar reviews públicos do QuickBooks vs Xero no G2/Capterra. Em 2h você tem um mapa de dores comparativo que levaria uma semana fazendo manualmente — e vira um entregável real de Corp Strategy.</p>
+    </div>
+  </div>
+
+  <!-- ─── MÉTRICAS ───────────────────────────────────────── -->
+  <h2 class="subsec">📊 Métricas Certas para Features de IA</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">A maioria dos times mede features de IA com métricas de produto tradicional (DAU, conversion). Isso esconde problemas críticos. Use as métricas abaixo em paralelo:</p>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--gray-100)">
+            <th style="padding:10px 12px;text-align:left">Métrica</th>
+            <th style="padding:10px 12px;text-align:left">O que mede</th>
+            <th style="padding:10px 12px;text-align:left">Como calcular</th>
+            <th style="padding:10px 12px;text-align:left">Red flag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">AI Attachment Rate</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Usuários que usam IA / MAU</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Eventos de uso do feature ÷ sessões ativas</td>
+            <td style="padding:10px 12px;color:#dc2626">&lt; 20% após 90 dias</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">Acceptance Rate</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Sugestões aceitas vs rejeitadas/editadas</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Aceitos ÷ (aceitos + rejeitados)</td>
+            <td style="padding:10px 12px;color:#dc2626">&lt; 60% = modelo errado ou contexto insuficiente</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">AI Cost per MAU</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">COGS de IA por usuário ativo</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Total API cost ÷ MAU</td>
+            <td style="padding:10px 12px;color:#dc2626">&gt; 20% do ARPU</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">Correction Rate</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Usuário editou o output do modelo</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Edições pós-aceite ÷ outputs gerados</td>
+            <td style="padding:10px 12px;color:#dc2626">&gt; 30% = qualidade baixa ou UX mal calibrada</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:10px 12px;font-weight:600">AI-attributed Retention</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Delta de churn entre usuários de IA vs não</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Churn(sem IA) − Churn(com IA)</td>
+            <td style="padding:10px 12px;color:#dc2626">&lt; 5pp = IA não está criando hábito</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 12px;font-weight:600">Time-to-value</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Tempo entre ativar feature e primeiro uso com sucesso</td>
+            <td style="padding:10px 12px;color:var(--gray-600)">Mediana de minutos até acceptance rate &gt; 0</td>
+            <td style="padding:10px 12px;color:#dc2626">&gt; 5 min = onboarding quebrado</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#eff6ff;border-radius:8px;padding:12px;margin-top:12px">
+      <div style="font-weight:700;font-size:12px;color:#1d4ed8;margin-bottom:4px">💡 A métrica que todo mundo esquece</div>
+      <p style="font-size:12px;color:var(--gray-600);margin:0"><strong>Power user distribution:</strong> plote o histograma de interações com IA por usuário/mês. Se 5% dos usuários consomem 50% do custo de IA, você tem um problema de pricing — não de produto. Esse dado decide se você muda o modelo de bundle para consumo.</p>
+    </div>
+  </div>
+
+  <!-- ─── UX PATTERNS ───────────────────────────────────── -->
+  <h2 class="subsec">🎨 UX Patterns para IA — Design de Confiança</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">Usuário que não confia no modelo não usa o feature. Usuário que confia demais cria risco. O design de IA calibra confiança:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:14px">
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #0284c7">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🎚 Progressive Disclosure</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px">Mostre o resultado primeiro, detalhes do raciocínio sob demanda. "A IA categorizou como Alimentação ↓ ver por quê" é melhor que mostrar a chain of thought por padrão.</p>
+        <div style="font-size:11px;color:#0284c7;font-weight:600">Nubank Roxinho usa bem isso</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #7c3aed">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🔄 Human-in-the-loop</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px">Para ações irreversíveis (pagamento, cancelamento, envio de doc fiscal), sempre confirme com o usuário antes de executar. O modelo não sabe o que ele não sabe.</p>
+        <div style="font-size:11px;color:#7c3aed;font-weight:600">Regra: consequência alta = confirmação humana</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #059669">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">📊 Confidence Signals</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px">Quando o modelo está incerto, sinalize — não esconda. "Não tenho certeza sobre essa categoria, quer revisar?" aumenta confiança a longo prazo mais do que fingir certeza.</p>
+        <div style="font-size:11px;color:#059669;font-weight:600">Evita a "surpresa de erro" que mata retention</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #ca8a04">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">⚡ Latência como UX</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px">Usuário tolera 200ms. Acima de 1s, adicione skeleton/loading com contexto ("Analisando suas últimas 30 transações…"). Acima de 3s para tarefas síncronas, repense a arquitetura.</p>
+        <div style="font-size:11px;color:#ca8a04;font-weight:600">Streaming resolve muito disso no chat</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #dc2626">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">🛡 Estados de Erro</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px">Projete para falha. "Não consegui processar — tente de novo" é melhor que spinner infinito. Ter fallback determinístico (regra + LLM) é melhor que falha total.</p>
+        <div style="font-size:11px;color:#dc2626;font-weight:600">Ver: Degrada com graciosidade (Founder Track)</div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px;border-top:3px solid #0f766e">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">✏️ Editabilidade</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0 0 6px">Toda sugestão de IA deve ser editável inline. Isso: (a) aumenta adoção, (b) captura correction data para melhorar o modelo, (c) mantém o usuário no controle.</p>
+        <div style="font-size:11px;color:#0f766e;font-weight:600">Correction data = seu dataset de fine-tuning</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── EVALS ─────────────────────────────────────────── -->
+  <h2 class="subsec">✅ Evals como Disciplina de Produto</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px">Eval é o "teste unitário" de uma feature de IA. Sem golden set, você não sabe se uma mudança de prompt melhorou ou piorou o produto.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px">
+      <div style="background:#f0fdf4;border-radius:8px;padding:12px">
+        <div style="font-weight:700;font-size:12px;color:#16a34a;margin-bottom:6px">Como montar um golden set de evals</div>
+        <ol style="font-size:12px;color:var(--gray-600);padding-left:16px;line-height:2;margin:0">
+          <li>Pegue 50–100 inputs reais de produção (anonimize PII)</li>
+          <li>Rotule o output correto esperado (com especialista de domínio, não só eng)</li>
+          <li>Defina critérios de sucesso: acurácia &gt; X%, sem erros categoria Y</li>
+          <li>Rode o eval antes e depois de cada mudança de prompt ou modelo</li>
+          <li>Expanda o golden set com casos de falha encontrados em produção</li>
+        </ol>
+      </div>
+      <div style="background:#fef2f2;border-radius:8px;padding:12px">
+        <div style="font-weight:700;font-size:12px;color:#b91c1c;margin-bottom:6px">❌ O que não é eval</div>
+        <div style="font-size:12px;color:var(--gray-600)">"Achei que ficou melhor" — opinião sem dado. "Testei em 3 exemplos e funcionou" — amostra insuficiente. "Comparei manualmente os outputs" — não escalável e não reproduzível.</div>
+      </div>
+    </div>
+    <h3 style="font-size:13px;font-weight:700;margin-bottom:10px">Tipos de eval por caso de uso em fintech</h3>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="background:var(--gray-100)">
+            <th style="padding:8px 12px;text-align:left">Feature</th>
+            <th style="padding:8px 12px;text-align:left">Tipo de Eval</th>
+            <th style="padding:8px 12px;text-align:left">Métrica de sucesso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">Categorização de despesas</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Classificação multi-label</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Accuracy &gt; 90%, sem erros em categorias fiscais</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">Resumo de extrato</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Factual grounding</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">0 números inventados, cobre top 3 padrões</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--gray-100)">
+            <td style="padding:8px 12px;font-weight:600">Detecção de anomalia</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Precision/Recall</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Recall &gt; 85%, Precision &gt; 70% (falso positivo aceitável)</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 12px;font-weight:600">Assistente de suporte</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Rubric-based (LLM-as-judge)</td>
+            <td style="padding:8px 12px;color:var(--gray-600)">Score médio &gt; 4/5 em tom, precisão, completude</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ─── ROADMAPPING ───────────────────────────────────── -->
+  <h2 class="subsec">🗓 Roadmapping de IA — Priorizando sob Incerteza</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">Features de IA têm um risco adicional: você não sabe se o modelo vai funcionar bem o suficiente antes de construir. Isso muda a priorização:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:14px">
+      <div style="background:#f0fdf4;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">✅ Prototype-first</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Antes de colocar no roadmap, faça um spike de 1–2 dias: o modelo consegue fazer isso com acurácia aceitável? Se não, a feature não entra.</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">✅ Fallback sempre</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Toda feature de IA no roadmap precisa de um fallback determinístico. "O que acontece se o modelo falhar?" não pode ser "a feature some".</p>
+      </div>
+      <div style="background:#f0fdf4;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">✅ Data flywheel explícito</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">Cada feature que você lança deve gerar dados que melhoram a próxima. Se não gera, é um feature isolado — não uma vantagem composta.</p>
+      </div>
+      <div style="background:#fef2f2;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">❌ Não faça</div>
+        <p style="font-size:12px;color:var(--gray-600);margin:0">"Vamos adicionar IA nessa feature" sem problema específico. IA por IA não é produto — é demo. Comece sempre pela dor do usuário.</p>
+      </div>
+    </div>
+    <div style="background:#eff6ff;border-radius:8px;padding:12px">
+      <div style="font-weight:700;font-size:12px;color:#1d4ed8;margin-bottom:6px">📐 Framework de priorização para AI features</div>
+      <div style="font-size:12px;color:var(--gray-600)">
+        Score = <strong>(Frequência da dor × Disposição a pagar)</strong> ÷ <strong>(Risco técnico × Custo de IA por usuário)</strong><br>
+        <span style="color:var(--gray-500);margin-top:4px;display:block">Risco técnico = 1 (modelo já resolve bem) a 5 (R&D necessário). Faz o spike antes de estimar.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── COMUNICAÇÃO ───────────────────────────────────── -->
+  <h2 class="subsec">💬 Comunicando IA para Stakeholders</h2>
+  <div class="card">
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">As perguntas que C-suite, Board e investidores fazem sobre IA — e as respostas que um AI PM precisa ter:</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
+          <div style="font-size:12px;color:var(--gray-700)">"Por que não usamos só o ChatGPT?"</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
+          <div style="font-size:12px;color:var(--gray-600)">"Usamos API do modelo X porque dá controle de prompt, dados, compliance e custo. ChatGPT é consumer — não tem SLA, DPA ou pricing previsível para nosso volume."</div>
+        </div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
+          <div style="font-size:12px;color:var(--gray-700)">"Quanto custa? E vai escalar?"</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
+          <div style="font-size:12px;color:var(--gray-600)">"Hoje custa R$X/MAU, que é Y% do ARPU. Com routing implementado no Q2, projetamos reduzir para Z%. O custo cresce sublinearmente com usuários por causa do caching."</div>
+        </div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
+          <div style="font-size:12px;color:var(--gray-700)">"E se a IA errar e o cliente reclamar?"</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
+          <div style="font-size:12px;color:var(--gray-600)">"Temos human-in-the-loop para ações irreversíveis, eval contínuo com golden set de 500 casos, e fallback determinístico. Taxa de erro atual é X%, abaixo do threshold de Y% definido com Jurídico."</div>
+        </div>
+      </div>
+      <div style="background:var(--gray-50);border-radius:8px;padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px">PERGUNTA TÍPICA</div>
+          <div style="font-size:12px;color:var(--gray-700)">"Qual o nosso diferencial vs concorrente que também usa IA?"</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:#0369a1;margin-bottom:4px">RESPOSTA AI PM</div>
+          <div style="font-size:12px;color:var(--gray-600)">"O modelo base é commodity — o diferencial é dado proprietário e fine-tuning. Nosso corpus de X transações/mês permite acurácia de Y% em categorização vs Z% dos concorrentes sem esse dado."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section id="reading" class="section">
   <div class="section-header">
     <div class="section-label">Section · Reading Room</div>
@@ -5703,59 +6076,64 @@ O que te mata:      mandar tudo pro frontier "por qualidade"
 <!-- AUTO:DIGEST:BEGIN -->
 
 <div class="card" style="border-left:4px solid #0369a1;margin-bottom:12px">
-  <div style="font-weight:700;font-size:14px;color:#0369a1;margin-bottom:10px">🏦 SMB Fintech Watch <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· week of Jun 13, 2026</span></div>
+  <div style="font-weight:700;font-size:14px;color:#0369a1;margin-bottom:10px">🏦 SMB Fintech Watch <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· Jun 13, 2026</span></div>
   <div style="display:flex;flex-direction:column;gap:8px">
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Intuit Stock Under Pressure Amid Valuation Reset</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Intuit (INTU) has experienced a steep multi-month share price decline, triggering a 20% stock drop and a securities fraud investigation related to pricing issues. The selloff has prompted investor re-evaluation of the company's valuation metrics.</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Intuit's market weakness may create competitive opening for Wave, FreshBooks, and Xero to capture SMB market share as confidence in the incumbent leader erodes.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">QuickBooks Time Fully Unified Into QuickBooks Online</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Intuit completed the consolidation of QuickBooks Time into QuickBooks Online, meaning all timekeeping functionality is now accessible directly within QBO with no need to switch between apps. Scheduled maintenance for the updated system runs June 14, 9–10 PM PT. The move reduces friction for SMB users managing time and payroll data in one platform.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Platform unification is a classic retention tactic—fewer reasons to switch to FreshBooks or Harvest for time tracking. A corporate strategy analyst covering this market should watch whether Xero and FreshBooks respond with similar consolidation of companion tools.</div>
     </div>
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Xero Adds Free Standard ACH; Leadership Seeks Pay Boost</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Xero has introduced free standard ACH capability for customers while the company's board courts investors for CEO pay approval amid a 60% stock plunge. The platform continues product expansion despite shareholder pressure and internal organizational changes including new staff rating systems.</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Xero's dual push—product enhancement plus governance negotiation—signals confidence in long-term positioning but may face retention headwinds; the ACH move directly competes on cost with QuickBooks &amp; Wave.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">UK Banks Back Cosine's Lumen Sovereign AI for Financial Services</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">HSBC, Lloyds Banking Group, NatWest, BT, BAE Systems, PwC, and others signed MOUs to co-design Lumen Sovereign—pitched as Britain's first sovereign frontier AI model. CEO Alistair Pullen says it will be "fully trained on UK soil," air-gapped compatible, and priced below OpenAI and Anthropic alternatives, with deployment readiness targeted by end of 2026.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Financial incumbents hedging AI vendor dependency signals the market is maturing—an important signal for SMB accounting platforms evaluating their own AI stack choices; sovereign/regional AI alternatives may become a procurement criterion in regulated markets.</div>
     </div>
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Cegid Acquires Shine for AI-Driven European SMB Platform</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Cegid closed its acquisition of Shine, creating what the company claims is Europe's first complete AI-driven accounting platform for SMBs and accountants. The deal signals consolidation around AI-native tooling in the European mid-market.</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Cegid's move establishes a regional AI-first accounting stack; U.S.-focused vendors (QuickBooks, Xero, FreshBooks) must accelerate AI integration to remain competitive in enterprise &amp; institutional buying decisions.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Visa Embeds Payment Rails Directly Into ChatGPT</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Visa wired its payment network into ChatGPT, allowing the AI assistant to browse, shop, and complete purchases at nearly any Visa-accepting merchant. Visa handles fraud checks and transaction approval before money moves, creating a new AI-native commerce layer on top of existing card rails.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 AI-native payment flows could shift SMB purchasing and expense categorization behavior; accounting platforms that don't integrate with agentic commerce interfaces risk becoming a downstream reconciliation tool rather than a real-time financial hub.</div>
     </div>
   </div>
 </div>
 
 <div class="card" style="border-left:4px solid #7c3aed;margin-bottom:12px">
-  <div style="font-weight:700;font-size:14px;color:#7c3aed;margin-bottom:10px">🤖 AI — What Changed <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· week of Jun 13, 2026</span></div>
+  <div style="font-weight:700;font-size:14px;color:#7c3aed;margin-bottom:10px">🤖 AI — What Changed <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· Jun 13, 2026</span></div>
   <div style="display:flex;flex-direction:column;gap:8px">
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Anthropic's Safety Warnings Trigger U.S. Government Model Suspension</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">The U.S. government has ordered Anthropic to disable Claude Fable 5 and Mythos 5 AI models for all foreign nationals following discovery of a narrow potential jailbreak. Anthropic publicly disagreed with the directive, stating the security finding should not justify recalling models deployed to hundreds of millions of users. The company also blocked foreigner access to comply with the order.</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Regulatory intervention in AI safety sets precedent for government-mandated model rollbacks; Anthropic's vocal resistance signals tension between safety claims &amp; commercial deployment—critical for enterprise customers evaluating Claude integration risk.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">OpenAI Simplifies Model Tier Names to Instant / Medium / High / Extra High</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">OpenAI replaced its confusing Thinking Light, Standard, Extended, and Heavy model labels with four plain tiers: Instant, Medium, High, and Extra High. The change targets developers and enterprise buyers who found the previous nomenclature opaque, reducing decision friction when selecting compute levels for different task types.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Simplified pricing tiers lower the barrier to enterprise adoption—a competitive move that could accelerate OpenAI API integration among mid-market SaaS vendors; SMB accounting platforms building AI features should benchmark whether Anthropic or OpenAI offers better value at the Medium/High tiers for financial use cases.</div>
     </div>
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Mistral Fundraising at €20B Valuation; IPO Market Heating</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Mistral is reportedly raising €3B at a €20B valuation, nearly double its Series C valuation of €11.7B. Simultaneously, SpaceX, Anthropic, and OpenAI are anticipated to conduct IPOs this summer—dubbed the "MANGOS" era (Meta/Microsoft, Anthropic, Nvidia, Google, OpenAI, SpaceX).</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 AI vendor consolidation &amp; public market access now open; SMB accounting platforms relying on third-party LLM APIs face pricing/availability risk as frontier AI labs prioritize enterprise &amp; infrastructure customers over SMB integrators.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Google Rebuilds NotebookLM on Gemini 3.5 with Secure Cloud Compute</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Google rebuilt its NotebookLM tool on Gemini 3.5, giving every notebook its own secure cloud computer that can write and execute code, backed by 100+ ready-made skills. The upgrade transforms NotebookLM from a document Q&amp;A tool into an agentic workspace capable of multi-step data analysis, research automation, and structured outputs.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Google's push into agentic workspaces with embedded compute narrows the gap with dedicated AI coding and analysis tools; for a corporate strategy analyst covering this market, it signals that hyperscaler AI products are moving up the value chain toward workflow automation—directly competing with verticalized fintech AI tools.</div>
     </div>
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Xero Partners Anthropic to Embed Claude in Accounting Workflow</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Xero has partnered with Anthropic to integrate Claude AI directly into its SMB accounting platform, adding financial data &amp; tools to Claude's capabilities. This follows Anthropic's government directives on model access restrictions.</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Xero's Claude integration becomes a key product differentiator; however, regulatory limits on Anthropic's model access (foreign users, jailbreak concerns) may create uncertainty for Xero's international expansion &amp; customer support.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Anthropic Files Confidential S-1 with SEC; IPO Path Formalized</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Anthropic submitted a confidential draft S-1 registration statement to the SEC on June 1, 2026, formally initiating its public listing process. The filing marks a structural shift for the company—from a research-focused safety lab to a publicly accountable corporation—and sets the stage for a potential IPO later in 2026 alongside OpenAI and SpaceX.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 A public Anthropic changes the risk profile for enterprise Claude integrations: public shareholders will demand growth over safety caution, potentially altering product roadmap priorities; enterprise buyers—including SMB software vendors building on Claude—should reassess lock-in risk as IPO incentives reshape the company's strategic behavior.</div>
     </div>
   </div>
 </div>
 
 <div class="card" style="border-left:4px solid #059669;margin-bottom:12px">
-  <div style="font-weight:700;font-size:14px;color:#059669;margin-bottom:10px">⚔️ Strategy &amp; M&amp;A <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· week of Jun 13, 2026</span></div>
+  <div style="font-weight:700;font-size:14px;color:#059669;margin-bottom:10px">⚔️ Strategy &amp; M&amp;A <span style="font-weight:400;font-size:11px;color:var(--gray-400)">· Jun 13, 2026</span></div>
   <div style="display:flex;flex-direction:column;gap:8px">
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Sage Acquires Doyen AI for ERP Data Migration Acceleration</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Sage has acquired Doyen AI to streamline SMB ERP data migration &amp; go-live processes. The deal reflects Sage's strategic focus on reducing implementation friction—a key pain point in mid-market accounting software transitions.</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Sage's acquisition signals that migration automation &amp; data integrity tooling are now table-stakes competitive advantages; QuickBooks &amp; Xero must match or exceed go-live efficiency or risk customer defection during switching windows.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Intesa Sanpaolo Launches €30bn Bid for Banca Monte dei Paschi — Largest Italian Banking Deal Ever</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Italy's Intesa Sanpaolo launched an acquisition bid for Banca Monte dei Paschi di Siena (MPS) valued at approximately €30 billion (~$35bn), which would be the largest transaction in Italian banking history. The combined entity would hold roughly €1.7 trillion in assets, serve over 27 million clients, and operate ~3,000 branches nationwide, with Intesa citing European wealth management leadership as the strategic goal.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 European banking consolidation at scale signals regulators are green-lighting mega-mergers again; for a corporate strategy analyst covering this market, the deal raises competitive pressure on mid-market fintech players serving European SMBs, as larger banking groups can now afford to build or acquire SMB accounting integrations in-house.</div>
     </div>
     <div style="background:var(--gray-50);border-radius:6px;padding:12px">
-      <div style="font-weight:600;font-size:13px;margin-bottom:4px">AI-Driven Cybercrime Threatens SMB User Trust</div>
-      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Google has sued a Chinese cybercrime operation ("Outsider Enterprise") for using AI to conduct large-scale SMS scams targeting hundreds of thousands of victims, sending 2.5 million text messages over two weeks. The incident demonstrates AI-enabled fraud at scale.</div>
-      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 SMB accounting vendors must bolster fraud detection &amp; user education around AI-driven social engineering; compliance &amp; security certifications (SOC 2, etc.) become stronger competitive moats as SMB confidence in fintech erodes.</div>
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Temenos Acquires Additiv to Build Out Wealth Management SaaS Stack</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Switzerland-based core banking technology company Temenos agreed to acquire SaaS fintech Additiv via an equal split of cash and equity. Additiv's platform enables banks, insurers, and wealth managers to launch digital banking, credit, insurance, and wealth products; the combined entity expects to close in early Q3 2026. Additiv's 200-person team will remain under founder Michael Stemmle and CEO Nils Frowein as a standalone unit.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Core banking vendors embedding wealth management SaaS signals vertical integration is accelerating across financial software; accounting software players like QuickBooks and Xero should monitor whether core banking consolidators begin targeting the SMB accounting layer next as a natural adjacency.</div>
+    </div>
+    <div style="background:var(--gray-50);border-radius:6px;padding:12px">
+      <div style="font-weight:600;font-size:13px;margin-bottom:4px">Digital Asset Raises $355m Led by a16z Crypto for Canton Network Blockchain</div>
+      <div style="font-size:12px;color:var(--gray-600);margin-bottom:6px">Software company Digital Asset secured $355 million in new funding led by Andreessen Horowitz's a16z crypto fund (with a $100m first-time investment), alongside HSBC, BNP Paribas, ABN Amro, Broadridge, S&amp;P Global, and the Abu Dhabi Investment Authority. The capital will drive growth for Canton Network, a public Layer-1 blockchain targeting financial institution infrastructure and tokenized asset settlement.</div>
+      <div style="font-size:11px;color:#0369a1;font-weight:600">💡 Institutional-grade blockchain infrastructure attracting top-tier VC and bank capital signals the tokenized asset layer is becoming real infrastructure—not just a pilot; SMB accounting platforms should track whether tokenized transaction settlement eventually requires new reconciliation and reporting standards that alter core product requirements.</div>
     </div>
   </div>
 </div>
@@ -8333,7 +8711,7 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
 // ══════════════════════════════════════════════
 // NAVIGATION
 // ══════════════════════════════════════════════
-const SECTIONS = ['expert','playbook','toolmap','strategy','prompting','memory','infra','agents','tokenmastery','design','ecosystem','founder','reading','videos','studyplan','quiz','lab','responsible','tips'];
+const SECTIONS = ['expert','playbook','toolmap','strategy','prompting','memory','infra','agents','tokenmastery','design','ecosystem','founder','produto','reading','videos','studyplan','quiz','lab','responsible','tips'];
 
 function showSection(id) {
   SECTIONS.forEach(s => {
@@ -9881,6 +10259,108 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCalc();
   updateProgress();
 });
+
+// ══════════════════════════════════════════════
+// SEARCH (Cmd/Ctrl+K)
+// ══════════════════════════════════════════════
+let searchIndex = [];
+let searchCursor = -1;
+
+function buildSearchIndex() {
+  searchIndex = [];
+  SECTIONS.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const navBtn = document.querySelector(`.nav-btn[data-sec="${id}"]`);
+    const label = navBtn ? navBtn.textContent.trim() : id;
+    // Collect h2 subsections + their text content
+    el.querySelectorAll('h2.subsec').forEach(h2 => {
+      const title = h2.textContent.trim();
+      // Grab up to 200 chars of following text
+      let snippet = '';
+      let next = h2.nextElementSibling;
+      while (next && snippet.length < 200) {
+        snippet += next.textContent.replace(/\s+/g, ' ').trim() + ' ';
+        next = next.nextElementSibling;
+      }
+      searchIndex.push({ id, label, title, snippet: snippet.slice(0, 180) });
+    });
+    // Also index the section itself
+    const sectionTitle = el.querySelector('h1.section-title');
+    const sectionSub = el.querySelector('p.section-subtitle');
+    if (sectionTitle) {
+      searchIndex.push({
+        id, label,
+        title: sectionTitle.textContent.trim(),
+        snippet: sectionSub ? sectionSub.textContent.trim() : ''
+      });
+    }
+  });
+}
+
+function openSearch() {
+  if (!searchIndex.length) buildSearchIndex();
+  document.getElementById('search-overlay').classList.add('open');
+  const inp = document.getElementById('search-input');
+  inp.value = '';
+  inp.focus();
+  runSearch('');
+}
+
+function closeSearch() {
+  document.getElementById('search-overlay').classList.remove('open');
+  searchCursor = -1;
+}
+
+function runSearch(q) {
+  const container = document.getElementById('search-results');
+  searchCursor = -1;
+  q = q.trim().toLowerCase();
+  let results = q
+    ? searchIndex.filter(r =>
+        r.title.toLowerCase().includes(q) ||
+        r.snippet.toLowerCase().includes(q) ||
+        r.label.toLowerCase().includes(q)
+      ).slice(0, 8)
+    : searchIndex.slice(0, 6);
+
+  if (!results.length) {
+    container.innerHTML = '<div class="sr-empty">Nenhum resultado para "' + q + '"</div>';
+    return;
+  }
+  container.innerHTML = results.map((r, i) =>
+    `<div class="sr-item" data-sec="${r.id}" onclick="searchGo('${r.id}')">
+       <span class="sr-badge">${r.label}</span>
+       <div><div class="sr-title">${highlight(r.title, q)}</div>
+       <div class="sr-snippet">${highlight(r.snippet.slice(0,120), q)}…</div></div>
+     </div>`
+  ).join('');
+}
+
+function highlight(text, q) {
+  if (!q) return text;
+  return text.replace(new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'),
+    '<mark style="background:#fef08a;border-radius:2px;padding:0 1px">$1</mark>');
+}
+
+function searchKeydown(e) {
+  const items = document.querySelectorAll('.sr-item');
+  if (e.key === 'ArrowDown') { e.preventDefault(); searchCursor = Math.min(searchCursor+1, items.length-1); items.forEach((el,i) => el.classList.toggle('selected', i===searchCursor)); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); searchCursor = Math.max(searchCursor-1, 0); items.forEach((el,i) => el.classList.toggle('selected', i===searchCursor)); }
+  else if (e.key === 'Enter') { if (searchCursor >= 0 && items[searchCursor]) searchGo(items[searchCursor].dataset.sec); }
+  else if (e.key === 'Escape') closeSearch();
+}
+
+function searchGo(id) {
+  closeSearch();
+  showSection(id);
+}
+
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape' && document.getElementById('search-overlay').classList.contains('open')) closeSearch();
+});
+
 </script>
 </body>
 </html>
