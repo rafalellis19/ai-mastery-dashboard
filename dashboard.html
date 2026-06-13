@@ -10908,16 +10908,7 @@ document.addEventListener('keydown', e => {
 });
 
 
-  var total = parseInt(block.dataset.total);
-  var score = parseInt(block.dataset.score);
-  var scoreEl = document.getElementById('mq-score-' + secId);
-  if (scoreEl && qi + 1 >= total) { scoreEl.textContent = score + '/' + total + ' corretas'; }
-}
-function mqNext(secId, qi, total) {
-  document.getElementById('mq-' + secId + '-' + qi).style.display = 'none';
-  var next = document.getElementById('mq-' + secId + '-' + (qi + 1));
-  if (next) next.style.display = 'block';
-}
+
 
 
 // == MINI QUIZ ==
@@ -10951,7 +10942,7 @@ function mqNext(secId, qi, total) {
     var sc = document.getElementById('mq-rscore-' + secId);
     var msg = document.getElementById('mq-rmsg-' + secId);
     sc.textContent = score + '/' + total;
-    if (score === total) { sc.className = 'mq-result-score good'; msg.textContent = 'Perfect! You've mastered this section.'; }
+    if (score === total) { sc.className = 'mq-result-score good'; msg.textContent = 'Perfect! You have mastered this section.'; }
     else if (score >= Math.ceil(total / 2)) { sc.className = 'mq-result-score ok'; msg.textContent = 'Good! Review the ones you missed before moving on.'; }
     else { sc.className = 'mq-result-score retry'; msg.textContent = 'Re-read the section and try again.'; }
     resEl.classList.add('show');
