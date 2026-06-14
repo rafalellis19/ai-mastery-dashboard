@@ -53,14 +53,24 @@ def main() -> int:
             check("market-data JSON valid", False, str(e))
 
     # 3. News digest freshness — badge date must be within 2 days
-    b = re.search(r'id="reading-lastupdate"[^>]*>Today:\s*(\d{1,2} \w{3} \d{4})<', s)
+    # Accepts ISO format (2026-06-14) or human format (14 Jun 2026)
+    b = re.search(r'id="reading-lastupdate"[^>]*>Today:\s*([\d\w\- ]+?)<', s)
     if b:
+        raw = b.group(1).strip()
         try:
-            badge = datetime.datetime.strptime(b.group(1), "%d %b %Y").date()
+            badge = None
+            for fmt in ("%Y-%m-%d", "%d %b %Y", "%d %B %Y"):
+                try:
+                    badge = datetime.datetime.strptime(raw, fmt).date()
+                    break
+                except ValueError:
+                    continue
+            if badge is None:
+                raise ValueError(f"unrecognized date format: {raw!r}")
             age = (today - badge).days
             check("news digest updated in the last 2 days", age <= 2, f"badge={badge} ({age}d ago)")
-        except ValueError:
-            check("news badge parseable", False, b.group(1))
+        except ValueError as e:
+            check("news badge parseable", False, str(e))
     else:
         check("news badge present", False)
 

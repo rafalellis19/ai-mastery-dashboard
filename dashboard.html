@@ -806,6 +806,7 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
       <button class="nav-btn" data-sec="studyplan" onclick="showSection('studyplan')">📅 Study Plan</button>
       <button class="nav-btn" data-sec="quiz" onclick="showSection('quiz')">🎯 Quiz</button>
       <button class="nav-btn" data-sec="lab" onclick="showSection('lab')">🛠️ Hands-On Lab</button>
+      <button class="nav-btn" data-sec="devworkflow" onclick="showSection('devworkflow')">🔧 Git & CI/CD</button>
     </div>
   </div>
   <div class="nav-group">
@@ -895,6 +896,28 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
 
   <div class="info-box" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#3b82f6">
     <p>Everything else in this dashboard teaches you <em>how</em> the tools work. This section answers <strong>what do I actually do today?</strong> — organized by your real schedule at your company.</p>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — How the best AI-native interns operate differently</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">They batch cognitive work</div>
+        Instead of switching between tasks all day, they block 2 hours in the morning with Claude to produce a week's worth of first drafts — analyses, memos, follow-up emails. The rest of the day is refinement and judgment.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">They give Claude persistent context</div>
+        Every Monday: update the Project Knowledge with last week's meeting notes, new competitor moves, and any strategic shifts. Claude's output quality is directly proportional to the context it has.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">They use AI to prep for conversations, not replace them</div>
+        Before every 1:1, they run a "what should I ask / not ask / be careful about?" prompt. The value isn't in the answer — it's in the thinking it forces.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">They keep a "prompt wins" log</div>
+        A simple doc tracking: which prompt worked, for which task, what the output was. After 4 weeks, this becomes a personal library worth more than any template library.
+      </div>
+    </div>
   </div>
 
   <!-- ── FIRST WEEK ── -->
@@ -1626,6 +1649,28 @@ For each answer:
 
   <div class="info-box"><p>Everything else in this dashboard teaches <em>capabilities</em>. This section maps them to your <strong>actual job</strong>: the three deliverable types that Corp Strategy &amp; Dev produces weekly. Each pipeline names the pattern it uses (chain, loop, batch) so you know where to go deeper.</p></div>
 
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:8px">🎓 Expert Insight — What separates good from great AI-assisted strategy work</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#dc2626;margin-bottom:4px">❌ Beginner mistake</div>
+        Asking Claude "what should our strategy be?" or "is this a good acquisition?" — outsourcing the judgment. Claude doesn't know your internal constraints, political context, or risk tolerance.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#16a34a;margin-bottom:4px">✅ Expert approach</div>
+        You define the criteria, hypotheses, and scoring logic. Claude executes the analysis consistently at scale. You make the judgment call. Think: Claude is your analyst, not your partner.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#dc2626;margin-bottom:4px">❌ Common error</div>
+        Running one pipeline output directly into a slide. AI-generated analysis almost always needs a "so what for us specifically" layer that only you can add.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;color:#16a34a;margin-bottom:4px">✅ What actually impresses</div>
+        Bring AI output + your own "implications for Intuit's Q4 SMB push" synthesis. The AI did 80% of the grunt work; you added the 20% that required being in the room.
+      </div>
+    </div>
+  </div>
+
   <h2 class="subsec">📡 Pipeline 1 — Weekly Competitive Intel Brief</h2>
   <div class="card">
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px"><strong>Pattern:</strong> prompt chain (Haiku extract → Sonnet analyze → Sonnet write) · <strong>Cadence:</strong> weekly · <strong>Targets:</strong> Xero, FreshBooks, Wave, Sage</p>
@@ -1748,6 +1793,27 @@ all market data comes from me.&lt;/role&gt;
   </div>
 
   <div class="info-box"><p>The RCTF framework: <strong>Role → Context → Task → Format</strong>. Think of it like briefing a consultant: who are they, what do they need to know, what do you need, and in what format?</p></div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — The 3 Levels of Prompting (most people get stuck at Level 1)</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px">
+      <div style="background:white;border-radius:8px;padding:10px;display:flex;gap:10px;align-items:flex-start">
+        <div style="background:#fee2e2;color:#dc2626;font-weight:700;font-size:11px;padding:3px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0">Level 1</div>
+        <div><strong>Single-turn prompting</strong> — one question, one answer. Works for quick lookups ("what's Xero's pricing model?"). Doesn't work for complex deliverables. Most beginners stay here forever.</div>
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px;display:flex;gap:10px;align-items:flex-start">
+        <div style="background:#fef9c3;color:#92400e;font-weight:700;font-size:11px;padding:3px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0">Level 2</div>
+        <div><strong>Structured prompting</strong> — RCTF framework, few-shot examples, explicit output format. 10× better output quality. What this builder teaches. Takes 2–3 weeks of practice to become instinctive.</div>
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px;display:flex;gap:10px;align-items:flex-start">
+        <div style="background:#dcfce7;color:#166534;font-weight:700;font-size:11px;padding:3px 8px;border-radius:99px;white-space:nowrap;flex-shrink:0">Level 3</div>
+        <div><strong>System-level prompting</strong> — persistent system prompts (CLAUDE.md, Project Knowledge), multi-turn workflows, evaluator loops, tool use. Transforms Claude from a chatbot into infrastructure. See the Infra &amp; Agents sections.</div>
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ Most impactful thing to do today:</strong> Pick one deliverable you produce weekly (a brief, an email, a model). Write a reusable RCTF prompt template for it. Test it 5 times. Save to CLAUDE.md. That template will save you 30+ minutes every week for the next 10 weeks.
+    </div>
+  </div>
 
   <h2 class="subsec">🏗️ Interactive Prompt Builder</h2>
   <div class="prompt-builder card">
@@ -5805,6 +5871,27 @@ print(response.content[0].text)</code></pre>
 
   <div class="info-box"><p>Everything else in this dashboard makes you a better <em>user</em> of Claude. This tab is about being a <strong>builder</strong>: when an AI feature enters a product, tokens become COGS, latency becomes UX, and data flows become regulatory exposure. Analyst skills and founder skills are the same — with different stakes.</p></div>
 
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — AI as your founding team member (not a tool)</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Use AI to compress the time between idea and informed decision</div>
+        A solo founder with Claude can do in 1 day what a McKinsey team does in a week: market sizing, competitive landscape, unit economics model, first-draft pitch narrative. The constraint is no longer research capacity — it's the quality of your hypotheses.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The three AI leverage points in an early-stage fintech</div>
+        <ol style="padding-left:16px;line-height:2;margin:0">
+          <li><strong>Product speed:</strong> AI writes 80% of your boilerplate; you write the differentiated logic. First version in weeks, not months.</li>
+          <li><strong>Customer insight:</strong> Feed interview transcripts to Claude. Get synthesized themes, hypotheses, follow-up questions — in 10 minutes.</li>
+          <li><strong>Investor prep:</strong> AI drafts your pitch, financial model, and FAQ. You stress-test it by asking Claude to argue against it. You walk in knowing the hard questions.</li>
+        </ol>
+      </div>
+      <div style="background:#fff7ed;border-radius:8px;padding:10px">
+        <strong>⚠️ The trap:</strong> Founders who use AI to avoid thinking rather than to think faster. Investors fund judgment and insight — not beautiful AI-polished decks with weak hypotheses underneath.
+      </div>
+    </div>
+  </div>
+
   <!-- ─── UNIT ECONOMICS ─────────────────────────────────── -->
   <h2 class="subsec">💸 Unit Economics of an AI Feature</h2>
   <div class="card">
@@ -9167,6 +9254,481 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════════════
+     GIT & CI/CD — Dev Workflow
+     Built from real patterns used to ship this dashboard
+════════════════════════════════════════════════════════════════ -->
+<section id="devworkflow" class="section">
+  <div class="section-header">
+    <div class="section-label">Section · Dev Workflow</div>
+    <h1 class="section-title">Git & CI/CD — Ship Code Like a Dev</h1>
+    <p class="section-subtitle">Everything you need to version-control a project, automate updates via GitHub Actions, and stop being afraid of the terminal. Built from patterns we actually used to build this dashboard.</p>
+  </div>
+
+  <div class="info-box">
+    <p><strong>TL;DR:</strong> Git = version control (snapshots of your files). GitHub = cloud storage + collaboration. GitHub Actions = your personal cron job in the cloud, free, no server needed. Once wired up, your AI scripts run on autopilot.</p>
+    <p style="margin-top:8px;font-size:12px;color:var(--gray-600)"><strong>Recommended path:</strong> Build a script in the <button onclick="showSection('lab')" style="background:none;border:none;color:var(--primary);font-weight:600;cursor:pointer;padding:0;font-size:12px">🛠️ Hands-On Lab</button> → come here to ship + automate it. Part 4 is the real pipeline behind the <button onclick="showSection('reading')" style="background:none;border:none;color:var(--primary);font-weight:600;cursor:pointer;padding:0;font-size:12px">📚 Reading Room</button>.</p>
+    <p style="margin-top:8px;font-size:12px;color:var(--gray-600)"><strong>AI shortcut:</strong> You can describe git tasks to Claude in plain English — <em>"commit my changes and push, resolving any conflicts by keeping my version"</em> — and Claude Code runs the right commands. Learn the concepts here; let AI handle the syntax.</p>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="card" style="margin-bottom:8px">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:14px">🗺️ Mental Model — 3 Places Your Code Lives</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <div style="background:var(--gray-50);border-radius:10px;padding:14px;border-left:4px solid var(--primary)">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">1. Your computer (working directory)</div>
+        <p style="font-size:12px;color:var(--gray-600)">Where you edit files. Changes here are <strong>invisible to anyone else</strong> until you commit + push.</p>
+      </div>
+      <div style="background:var(--gray-50);border-radius:10px;padding:14px;border-left:4px solid var(--blue)">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">2. Local git repo (.git folder)</div>
+        <p style="font-size:12px;color:var(--gray-600)">Git's snapshot history, stored on your machine. Commits land here first. Still private.</p>
+      </div>
+      <div style="background:var(--gray-50);border-radius:10px;padding:14px;border-left:4px solid var(--orange)">
+        <div style="font-weight:700;font-size:13px;margin-bottom:6px">3. GitHub (remote — origin)</div>
+        <p style="font-size:12px;color:var(--gray-600)">Cloud copy. Shared with collaborators, accessible anywhere, triggers GitHub Actions. Push = sync local → cloud.</p>
+      </div>
+    </div>
+    <div style="margin-top:14px;background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;line-height:2">
+      <span style="color:#94a3b8"># The basic loop — memorize this</span><br>
+      <span style="color:#86efac">git add</span> <span style="color:#fbbf24">file.txt</span>          <span style="color:#64748b"># stage: mark this file for the next snapshot</span><br>
+      <span style="color:#86efac">git commit</span> <span style="color:#fbbf24">-m "what I did"</span>  <span style="color:#64748b"># snapshot: save to local history</span><br>
+      <span style="color:#86efac">git push</span>                   <span style="color:#64748b"># sync: upload to GitHub</span>
+    </div>
+  </div>
+
+  <!-- PART 1: GIT BASICS -->
+  <div class="card" style="margin-bottom:8px">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:14px">Part 1 — Git Basics (commands you'll use every day)</h3>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Starting a new project from scratch</div>
+        <div style="background:#0f172a;border-radius:6px;padding:12px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-init">mkdir my-project && cd my-project
+
+git init                          # create the .git folder (one time per project)
+git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
+
+# Create your first file and push
+echo "# My Project" > README.md
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git push -u origin main           # -u links local main → origin main (only needed once)</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-init').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--primary);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+      </div>
+
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Daily workflow — edit, commit, push</div>
+        <div style="background:#0f172a;border-radius:6px;padding:12px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-daily">git status                        # see what changed
+git diff                          # see exactly what changed (line by line)
+
+git add -A                        # stage ALL changed files
+# or: git add file1.py file2.py  # stage specific files only
+
+git commit -m "fix: update revenue figure to $17B"
+git push</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-daily').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--primary);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+      </div>
+
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Pulling changes (someone else pushed, or a bot auto-committed)</div>
+        <div style="background:#0f172a;border-radius:6px;padding:12px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-pull">git pull --rebase origin main
+
+# --rebase means: "put my new commits on TOP of theirs"
+# cleaner history than a plain git pull (which creates a merge commit)
+
+# If you have unstaged changes when trying to pull:
+git stash                         # save your changes temporarily
+git pull --rebase origin main
+git stash pop                     # restore your changes on top</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-pull').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--primary);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+      </div>
+
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">History and inspection</div>
+        <div style="background:#0f172a;border-radius:6px;padding:12px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-log">git log --oneline                 # list of commits (short)
+git log --oneline -10             # last 10 commits
+git show abc1234                  # see what a specific commit changed
+git diff HEAD~1 HEAD              # compare last commit vs the one before it</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-log').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--primary);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PART 2: COMMON ERRORS -->
+  <div class="card" style="margin-bottom:8px;border-left:4px solid var(--red)">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:6px">🚨 Part 2 — Error Field Guide</h3>
+    <p style="font-size:12px;color:var(--gray-600);margin-bottom:14px">99% of git errors come from 3 root causes: <strong>(A) diverged history</strong> — you and someone else both pushed, <strong>(B) unstaged changes</strong> — you edited files but didn't commit, <strong>(C) lock files</strong> — a process crashed mid-operation. Once you recognize the pattern, you always know the fix.</p>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div style="background:#fef2f2;border-radius:8px;padding:14px">
+        <div style="font-size:10px;font-weight:700;color:#dc2626;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Root cause A — Diverged history</div>
+        <div style="font-weight:700;font-size:13px;color:#dc2626;margin-bottom:6px">error: failed to push some refs — remote contains work you do not have</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Why:</strong> Someone (or a bot — like this dashboard's GitHub Action) pushed a commit to GitHub since you last pulled. Your local history and remote diverged.</p>
+        <div style="background:#0f172a;border-radius:6px;padding:10px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-fix1">git pull --rebase origin main
+git push
+
+# If rebase fails due to conflicts:
+git rebase --abort                # undo the rebase
+git merge origin/main -X ours    # merge, preferring YOUR changes on conflicts
+git push</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-fix1').innerText)" style="margin-top:8px;padding:5px 12px;background:#dc2626;color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy fix</button>
+      </div>
+
+      <div style="background:#fef2f2;border-radius:8px;padding:14px">
+        <div style="font-size:10px;font-weight:700;color:#dc2626;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Root cause B — Unstaged changes</div>
+        <div style="font-weight:700;font-size:13px;color:#dc2626;margin-bottom:6px">error: cannot pull with rebase: You have unstaged changes</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Why:</strong> You edited files but didn't commit them. Git refuses to pull because it could overwrite your edits.</p>
+        <div style="background:#0f172a;border-radius:6px;padding:10px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-fix2"># Option A — stash (save temporarily, restore after)
+git stash && git pull --rebase origin main && git stash pop && git push
+
+# Option B — discard local changes (they're already on GitHub — nothing lost)
+git checkout -- .
+git pull --rebase origin main && git push</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-fix2').innerText)" style="margin-top:8px;padding:5px 12px;background:#dc2626;color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy fix</button>
+      </div>
+
+      <div style="background:#fef2f2;border-radius:8px;padding:14px">
+        <div style="font-size:10px;font-weight:700;color:#dc2626;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Root cause C — Lock file</div>
+        <div style="font-weight:700;font-size:13px;color:#dc2626;margin-bottom:6px">error: could not write index / unable to unlink .git/index.lock</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Why:</strong> A previous git process crashed and left a lock file behind. Git won't run while a lock exists (safety mechanism to prevent two processes writing simultaneously).</p>
+        <div style="background:#0f172a;border-radius:6px;padding:10px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-fix3">rm -f .git/index.lock .git/HEAD.lock
+
+# Then retry whatever you were doing
+git pull --rebase origin main && git push</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-fix3').innerText)" style="margin-top:8px;padding:5px 12px;background:#dc2626;color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy fix</button>
+      </div>
+
+      <div style="background:#fef2f2;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;color:#dc2626;margin-bottom:6px">CONFLICT (content): Merge conflict in dashboard.html</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px"><strong>Why:</strong> Both you and the bot edited the same file (e.g. dashboard.html) in the same place. Git doesn't know which version to keep.</p>
+        <div style="background:#0f172a;border-radius:6px;padding:10px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-fix4"># The conflict looks like this inside the file:
+# <<<<<<< HEAD
+# your version
+# =======
+# their version
+# >>>>>>> origin/main
+
+# If you want YOUR version to win (no manual editing):
+git rebase --abort
+git merge origin/main -X ours    # "ours" = your local commits win
+git push
+
+# If you want to inspect and choose line by line:
+# open the file, delete the <<<<<< ======= >>>>>>> markers manually
+# keep whichever version you want, save, then:
+git add dashboard.html
+git rebase --continue</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-fix4').innerText)" style="margin-top:8px;padding:5px 12px;background:#dc2626;color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy fix</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PART 2B: AI + VERSION CONTROL -->
+  <div class="card" style="margin-bottom:8px;border-left:4px solid var(--purple)">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:6px">🤖 Part 2B — AI + Version Control: Keeping Humans in the Loop</h3>
+    <p style="font-size:12px;color:var(--gray-600);margin-bottom:14px">When AI writes or edits your code, the risk isn't that the AI is wrong — it's that you ship changes you didn't review. Version control is your safety net. Here's how to use git + AI intelligently together.</p>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+
+      <div style="background:#faf5ff;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">1. Always review before committing — use <code>git diff</code></div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px">After AI edits a file, run <code>git diff</code> to see exactly what changed — line by line, additions in green, deletions in red. Never commit AI output without reading the diff.</p>
+        <div style="background:#0f172a;border-radius:6px;padding:10px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-diff">git diff                          # changes not yet staged
+git diff --staged                 # changes already staged (after git add)
+git diff HEAD~1                   # compare current state vs last commit
+
+# See diff of a specific file only:
+git diff dashboard.html</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-diff').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--purple);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+      </div>
+
+      <div style="background:#faf5ff;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">2. Ask Claude to explain the diff before you approve it</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px">Copy the output of <code>git diff</code> and paste it to Claude with this prompt:</p>
+        <div style="background:#1e1b4b;border-radius:8px;padding:12px;font-size:12px;color:#e2e8f0;line-height:1.8" id="dw-diffprompt">You edited this file. Here's the git diff output:
+
+[paste diff here]
+
+Review this before I commit. Tell me:
+1. What changed and why (in plain English)
+2. Anything that looks unintentional or risky
+3. Whether it's safe to push as-is, or what I should verify first</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-diffprompt').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--purple);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy prompt</button>
+      </div>
+
+      <div style="background:#faf5ff;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">3. Write commit messages that explain intent, not just what changed</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px">When AI writes code, the <em>why</em> is in your head, not in the diff. Put it in the commit message so future-you knows what was intentional.</p>
+        <div style="background:#0f172a;border-radius:6px;padding:10px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap">❌  git commit -m "update dashboard"          # tells you nothing
+✅  git commit -m "fix: Prompt Builder examples now Intuit-specific (was generic)"
+✅  git commit -m "feat: AI version control section added to devworkflow tab"
+✅  git commit -m "auto: bot daily update (reading_updater.py --daily)"</div>
+      </div>
+
+      <div style="background:#faf5ff;border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">4. Use branches when AI is doing risky experiments</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px">For exploratory work (AI doing a big refactor, new section, untested feature), work on a branch. If it breaks, you just delete the branch — main is untouched.</p>
+        <div style="background:#0f172a;border-radius:6px;padding:10px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-branch">git checkout -b ai-experiment      # create new branch and switch to it
+
+# ... let AI do its thing, make commits ...
+
+git diff main                       # compare experiment vs main
+git checkout main                   # go back to main
+git merge ai-experiment             # merge if you're happy with it
+# or:
+git branch -D ai-experiment         # delete if it was a bad idea</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-branch').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--purple);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+      </div>
+
+      <div style="background:#ede9fe;border-radius:8px;padding:12px;font-size:12px;color:#4c1d95">
+        <strong>🧠 Mental model:</strong> AI is like a very capable junior who implements fast but doesn't know your constraints. Git is the review process. <code>git diff</code> is your code review. Commit = you approved it. Push = you published it. Every push is a decision, not an accident.
+      </div>
+    </div>
+  </div>
+
+  <!-- PART 2C: BEYOND GIT -->
+  <div class="card" style="margin-bottom:8px">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:6px">🗂️ Beyond Git — When to Use Other Versioning Tools</h3>
+    <p style="font-size:12px;color:var(--gray-600);margin-bottom:14px">Git is the right tool for code and text files. But AI workflows involve more than code — prompts, datasets, experiments, documents. Here's what to use when.</p>
+
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <thead>
+        <tr style="background:var(--gray-100)">
+          <th style="padding:8px 10px;text-align:left;font-weight:700">What you're versioning</th>
+          <th style="padding:8px 10px;text-align:left;font-weight:700">Best tool</th>
+          <th style="padding:8px 10px;text-align:left;font-weight:700">Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--gray-100)">
+          <td style="padding:8px 10px">Code, scripts, HTML, YAML</td>
+          <td style="padding:8px 10px;font-weight:600;color:var(--primary)">Git + GitHub</td>
+          <td style="padding:8px 10px;color:var(--gray-600)">Line-level diffs, branches, automation</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--gray-100)">
+          <td style="padding:8px 10px">Prompts you're iterating on</td>
+          <td style="padding:8px 10px;font-weight:600;color:var(--purple)">Git (prompts as .txt files) or <a href="https://langsmith.langchain.com" target="_blank" style="color:var(--purple)">LangSmith</a></td>
+          <td style="padding:8px 10px;color:var(--gray-600)">Git for simplicity; LangSmith if you need to track which prompt produced which output</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--gray-100)">
+          <td style="padding:8px 10px">Documents, reports, memos</td>
+          <td style="padding:8px 10px;font-weight:600;color:var(--blue)">Google Drive / Notion</td>
+          <td style="padding:8px 10px;color:var(--gray-600)">Auto-saves every edit, easy to share, no terminal needed</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--gray-100)">
+          <td style="padding:8px 10px">Large data files (CSVs, JSONs &gt;50MB)</td>
+          <td style="padding:8px 10px;font-weight:600;color:var(--orange)"><a href="https://dvc.org" target="_blank" style="color:var(--orange)">DVC</a> (alongside git)</td>
+          <td style="padding:8px 10px;color:var(--gray-600)">Git tracks the pointer; DVC stores the actual file in S3/Drive</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--gray-100)">
+          <td style="padding:8px 10px">ML experiments (hyperparams, metrics)</td>
+          <td style="padding:8px 10px;font-weight:600;color:var(--red)"><a href="https://mlflow.org" target="_blank" style="color:var(--red)">MLflow</a> or <a href="https://wandb.ai" target="_blank" style="color:var(--red)">Weights & Biases</a></td>
+          <td style="padding:8px 10px;color:var(--gray-600)">Designed for tracking experiment runs, not file changes</td>
+        </tr>
+        <tr>
+          <td style="padding:8px 10px">Quick personal experiments</td>
+          <td style="padding:8px 10px;font-weight:600;color:var(--gray-700)">Folder copy (v1/, v2/, v3/)</td>
+          <td style="padding:8px 10px;color:var(--gray-600)">Sometimes the simplest thing works. No shame.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="background:var(--primary-light);border-radius:8px;padding:12px;margin-top:12px;font-size:12px;color:var(--primary-dark)">
+      <strong>💡 Practical rule:</strong> If a human wrote it and it'll go to production → git. If it's a living document that gets edited constantly by multiple people → Google Drive. If it's prompts you're A/B testing → store in git as <code>prompts/</code> folder with version numbers. If you're doing serious ML → use a proper experiment tracker.
+    </div>
+  </div>
+
+  <!-- PART 3: GITHUB ACTIONS -->
+  <div class="card" style="margin-bottom:8px">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:14px">⚙️ Part 3 — GitHub Actions: Automating Everything</h3>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">GitHub Actions runs scripts on GitHub's servers — no computer needed, no cron job on your Mac, nothing to maintain locally. This is how the dashboard auto-updates every morning.</p>
+
+    <div style="display:flex;flex-direction:column;gap:12px">
+
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Anatomy of a workflow file</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px">Every workflow is a <code>.yml</code> file inside <code>.github/workflows/</code>. Git auto-detects them.</p>
+        <div style="background:#0f172a;border-radius:6px;padding:12px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-workflow">name: Update dashboard          # name shown in the GitHub UI
+
+on:
+  schedule:
+    - cron: "0 7 * * *"          # daily at 07:00 UTC (4am São Paulo)
+    - cron: "0 6 * * 1"          # Mondays at 06:00 UTC (weekly deep run)
+  workflow_dispatch:              # also lets you run it manually from GitHub UI
+
+jobs:
+  update:
+    runs-on: ubuntu-latest        # fresh Linux VM every run
+
+    permissions:
+      contents: write             # needed if the job commits back to the repo
+
+    steps:
+      - uses: actions/checkout@v4          # clone your repo into the VM
+      - uses: actions/setup-python@v5      # install Python
+        with:
+          python-version: "3.12"
+
+      - run: pip install anthropic requests yfinance   # install dependencies
+
+      - name: Run the script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # secret from GitHub
+        run: python3 reading_updater.py --daily
+
+      - name: Commit changes back
+        run: |
+          git config user.name "dashboard-bot"
+          git config user.email "actions@github.com"
+          git add dashboard.html
+          git diff --cached --quiet || git commit -m "auto: daily update"
+          git push</div>
+        <button onclick="navigator.clipboard.writeText(document.getElementById('dw-workflow').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--primary);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+      </div>
+
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Cron syntax cheat sheet</div>
+        <table style="width:100%;border-collapse:collapse;font-size:12px">
+          <thead>
+            <tr style="background:var(--gray-200)">
+              <th style="padding:6px 10px;text-align:left">Expression</th>
+              <th style="padding:6px 10px;text-align:left">Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:6px 10px;font-family:monospace">0 7 * * *</td><td style="padding:6px 10px">Every day at 07:00 UTC</td></tr>
+            <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:6px 10px;font-family:monospace">0 6 * * 1</td><td style="padding:6px 10px">Every Monday at 06:00 UTC</td></tr>
+            <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:6px 10px;font-family:monospace">0 */6 * * *</td><td style="padding:6px 10px">Every 6 hours</td></tr>
+            <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:6px 10px;font-family:monospace">0 9 * * 1-5</td><td style="padding:6px 10px">Weekdays at 09:00 UTC</td></tr>
+            <tr><td style="padding:6px 10px;font-family:monospace">30 8 1 * *</td><td style="padding:6px 10px">1st of every month at 08:30 UTC</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:11px;color:var(--gray-500);margin-top:8px">Format: <code>minute hour day-of-month month day-of-week</code>. Use <a href="https://crontab.guru" target="_blank" style="color:var(--primary)">crontab.guru</a> to test expressions.</p>
+      </div>
+
+      <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+        <div style="font-weight:700;font-size:13px;margin-bottom:8px">Setting up GitHub Secrets (API keys, tokens)</div>
+        <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px">Never put API keys in your code. Store them as Secrets on GitHub and reference them as <code>${{ secrets.YOUR_SECRET_NAME }}</code> in the workflow.</p>
+        <ol style="font-size:12px;color:var(--gray-700);padding-left:20px;line-height:2">
+          <li>Go to your repo on GitHub.com</li>
+          <li>Click <strong>Settings → Secrets and variables → Actions</strong></li>
+          <li>Click <strong>New repository secret</strong></li>
+          <li>Name: <code>ANTHROPIC_API_KEY</code> — Value: paste your key (starts with <code>sk-ant-</code>)</li>
+          <li>Reference in workflow: <code>env: ANTHROPIC_API_KEY: ${{ '{{' }} secrets.ANTHROPIC_API_KEY {{ '}}' }}</code></li>
+        </ol>
+        <div style="background:#f0fdf4;border-radius:6px;padding:10px;margin-top:10px;font-size:12px;color:#166534">
+          <strong>You also need a GH_TOKEN secret</strong> if your script calls the GitHub API (e.g., to push from within the action). Go to <strong>GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)</strong> → generate one with <code>repo</code> scope → save it as <code>GH_TOKEN</code>.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PART 4: THE DASHBOARD PIPELINE -->
+  <div class="card" style="margin-bottom:8px;border-left:4px solid var(--primary)">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:14px">🚀 Part 4 — This Dashboard's Auto-Update Pipeline (real example)</h3>
+    <p style="font-size:13px;color:var(--gray-600);margin-bottom:14px">This is the actual architecture behind the "Auto-update active" badge you see in the Reading Room.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+      <div style="background:var(--primary-light);border-radius:8px;padding:12px">
+        <div style="font-weight:700;font-size:12px;color:var(--primary);margin-bottom:6px">Daily (07:00 UTC)</div>
+        <ol style="font-size:12px;color:var(--gray-700);padding-left:16px;line-height:1.8">
+          <li>Fetch news from NewsAPI (4 queries)</li>
+          <li>Fetch newsletters via RSS (Fintech Takes, etc.)</li>
+          <li>Fetch latest Intuit 8-K from SEC EDGAR</li>
+          <li>Filter with Claude Haiku (cheap, fast)</li>
+          <li>Build HTML cards</li>
+          <li>Inject into <code>dashboard.html</code> between markers</li>
+          <li>Commit + push back to GitHub</li>
+        </ol>
+      </div>
+      <div style="background:#eff6ff;border-radius:8px;padding:12px">
+        <div style="font-weight:700;font-size:12px;color:var(--blue);margin-bottom:6px">Weekly Monday (06:00 UTC)</div>
+        <ol style="font-size:12px;color:var(--gray-700);padding-left:16px;line-height:1.8">
+          <li>Read 7-day cache of daily articles</li>
+          <li>Deep analysis via Claude Sonnet</li>
+          <li>Generate strategic digest (themes, implications)</li>
+          <li>Inject weekly section into dashboard</li>
+          <li>Commit + push</li>
+        </ol>
+      </div>
+    </div>
+
+    <div style="background:var(--gray-50);border-radius:8px;padding:14px">
+      <div style="font-weight:700;font-size:13px;margin-bottom:8px">The injection pattern — how the script updates the HTML</div>
+      <p style="font-size:12px;color:var(--gray-600);margin-bottom:8px">The script finds two HTML comment markers and replaces everything between them. The markers are the only thing you need to add to your HTML for this to work.</p>
+      <div style="background:#0f172a;border-radius:6px;padding:12px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap" id="dw-inject"><!-- In your HTML file — place these two markers where content should go -->
+&lt;!-- AUTO:DIGEST:BEGIN --&gt;
+&lt;!-- AUTO:DIGEST:END --&gt;
+
+# In Python (reading_updater.py) — injection logic:
+BEGIN = "&lt;!-- AUTO:DIGEST:BEGIN --&gt;"
+END   = "&lt;!-- AUTO:DIGEST:END --&gt;"
+
+html = open("dashboard.html", encoding="utf-8").read()
+new_block = BEGIN + "\n" + your_generated_html + "\n" + END
+html = re.sub(re.escape(BEGIN) + ".*?" + re.escape(END), new_block, html, flags=re.S)
+open("dashboard.html", "w", encoding="utf-8").write(html)</div>
+      <button onclick="navigator.clipboard.writeText(document.getElementById('dw-inject').innerText)" style="margin-top:8px;padding:5px 12px;background:var(--primary);color:white;border:none;border-radius:5px;font-size:11px;font-weight:600;cursor:pointer">📋 Copy</button>
+    </div>
+
+    <div style="background:#f0fdf4;border-radius:8px;padding:12px;margin-top:10px;font-size:12px;color:#166534">
+      <strong>Why the bot conflicts with your local pushes:</strong> The GitHub Action commits directly to <code>main</code>. If you've also made local commits since your last pull, git refuses your push because your history and GitHub's history diverged. The fix is always: <code>git pull --rebase origin main &amp;&amp; git push</code>.
+    </div>
+  </div>
+
+  <!-- PART 5: CHECKLIST / EXERCISE -->
+  <div class="card" style="border:2px solid var(--primary)">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">✅ Exercise — Build a daily competitor intel auto-updater</h3>
+    <p style="font-size:12px;color:var(--gray-600);margin-bottom:14px">This mirrors exactly what powers this dashboard's Reading Room. By the end you'll have a GitHub repo that fetches fintech news every morning and commits a summary — no manual work.</p>
+
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--gray-50);padding:10px;border-radius:8px">
+        <input type="checkbox" style="margin-top:2px;flex-shrink:0">
+        <div><span style="font-weight:600;font-size:12px">1. Create a GitHub repo</span> — github.com → New repository → name it <code>intuit-intel</code> → clone it locally</div>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--gray-50);padding:10px;border-radius:8px">
+        <input type="checkbox" style="margin-top:2px;flex-shrink:0">
+        <div><span style="font-weight:600;font-size:12px">2. Build the script with Claude</span> — open Claude and say: <em>"Write a Python script that fetches the top 5 articles about QuickBooks or Xero from NewsAPI today and writes a bullet summary to output.md"</em>. Save as <code>fetch.py</code>.</div>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--gray-50);padding:10px;border-radius:8px">
+        <input type="checkbox" style="margin-top:2px;flex-shrink:0">
+        <div><span style="font-weight:600;font-size:12px">3. Test it locally</span> — <code>NEWSAPI_KEY=your-key python3 fetch.py</code> → check <code>output.md</code> looks right</div>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--gray-50);padding:10px;border-radius:8px">
+        <input type="checkbox" style="margin-top:2px;flex-shrink:0">
+        <div><span style="font-weight:600;font-size:12px">4. Create the workflow</span> — <code>mkdir -p .github/workflows</code> → create <code>.github/workflows/daily.yml</code> using the template from Part 3 (run <code>fetch.py</code> daily at 07:00 UTC, commit <code>output.md</code> back)</div>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--gray-50);padding:10px;border-radius:8px">
+        <input type="checkbox" style="margin-top:2px;flex-shrink:0">
+        <div><span style="font-weight:600;font-size:12px">5. Add secrets</span> — repo Settings → Secrets → add <code>NEWSAPI_KEY</code> and <code>ANTHROPIC_API_KEY</code></div>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--gray-50);padding:10px;border-radius:8px">
+        <input type="checkbox" style="margin-top:2px;flex-shrink:0">
+        <div><span style="font-weight:600;font-size:12px">6. Push and trigger manually</span> — <code>git add -A && git commit -m "add auto-intel pipeline" && git push</code> → Actions tab → "Run workflow" → watch logs</div>
+      </label>
+      <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:var(--gray-50);padding:10px;border-radius:8px">
+        <input type="checkbox" style="margin-top:2px;flex-shrink:0">
+        <div><span style="font-weight:600;font-size:12px">7. Confirm the bot commit</span> — after the run, go to the repo's commit history and see the bot's auto-commit appear with today's <code>output.md</code></div>
+      </label>
+    </div>
+
+    <div style="background:#fefce8;border-radius:8px;padding:12px;margin-top:14px;font-size:12px;color:#713f12">
+      <strong>📌 Key mental shift:</strong> Once pushed, GitHub runs the workflow automatically — you do nothing. You only push when <em>you</em> change the code. The bot runs in parallel on its own schedule.
+    </div>
+
+    <div style="background:var(--primary-light);border-radius:8px;padding:12px;margin-top:8px;font-size:12px;color:var(--primary-dark)">
+      <strong>🤖 Use AI to unblock yourself:</strong> At any step, paste the exact error into Claude and say <em>"I'm setting up a GitHub Actions workflow and got this error. Fix it."</em> Claude can debug YAML indentation errors, fix Python import issues, and write the commit step — faster than reading docs.
+    </div>
+  </div>
+
+</section>
+
 </main>
 
 <script id="market-data" type="application/json">
@@ -9204,7 +9766,7 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
 // NAVIGATION
 // ══════════════════════════════════════════════
 console.log('🟢 Dashboard JS loaded OK');
-const SECTIONS = ['expert','playbook','toolmap','strategy','prompting','memory','infra','agents','tokenmastery','design','ecosystem','founder','produto','reading','videos','studyplan','quiz','lab','responsible','tips'];
+const SECTIONS = ['expert','playbook','toolmap','strategy','prompting','memory','infra','agents','tokenmastery','design','ecosystem','founder','produto','reading','videos','studyplan','quiz','lab','devworkflow','responsible','tips'];
 
 function showSection(id) {
   console.log('showSection called:', id);
