@@ -34,7 +34,11 @@ MARKER_BEGIN = "<!-- AUTO:DIGEST:BEGIN -->"
 MARKER_END   = "<!-- AUTO:DIGEST:END -->"
 
 # ── Clients ────────────────────────────────────────────────────────────────────
-client      = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+_api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+if not _api_key:
+    print("ERROR: ANTHROPIC_API_KEY is not set. Add it as a GitHub Secret: Settings → Secrets → Actions → New repository secret")
+    sys.exit(1)
+client      = anthropic.Anthropic(api_key=_api_key)
 NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY", "")
 TODAY       = date.today().isoformat()
 

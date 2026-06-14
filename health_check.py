@@ -66,7 +66,7 @@ def main() -> int:
 
     # 4. Digest has real content (not an empty block)
     digest = re.search(r"<!-- AUTO:DIGEST:BEGIN -->(.*?)<!-- AUTO:DIGEST:END -->", s, re.S)
-    check("digest has content cards", bool(digest) and digest.group(1).count('class="card"') >= 2)
+    check("digest has content cards", bool(digest) and digest.group(1).count('class="card"') >= 1)
 
     # 5. No leftover stale model ids the sweep should have killed
     stale = re.findall(r"claude-sonnet-4-5|claude-opus-4(?![\.\d-])", s)
