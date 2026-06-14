@@ -1363,6 +1363,23 @@ For each answer:
 
   <div class="info-box"><p>Think of these as four levels of a <strong>power amplifier</strong>. Each level gives you more capability — but also more setup. Start where your use case is, not at level 4.</p></div>
 
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — The tool choice is a leverage decision, not a preference</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Most people stay at Level 1 forever</div>
+        Claude.ai chat is the path of least resistance. It works. But every task you do manually in the chat interface that you'll repeat next week is a missed automation opportunity. The test: <em>will I do this exact thing again?</em> If yes → API or Claude Code.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The progression is about scope, not skill</div>
+        You don't need to master each level before moving to the next. Pick the right tool for the job: chat for exploration, Projects for persistent context, Claude Code for files and code, API for automation. Mixing all four in one week is fine — expected, even.
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ This week:</strong> Identify one recurring task (a report, a brief, a research question). Ask yourself: which level would handle this with the least friction? Then use that level — and only that level — for that task.
+    </div>
+  </div>
+
   <div class="tool-ladder">
 
     <!-- CLAUDE.AI -->
@@ -2814,6 +2831,28 @@ Context and constraints:
 
   <div class="info-box"><p>Analogy: Claude's context window is like a <strong>whiteboard</strong>. Everything you write together fits on that board. When it fills up, old things fall off. Projects are like a <strong>pinned notepad</strong> next to the whiteboard — always visible.</p></div>
 
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Your CLAUDE.md is the highest-ROI file you'll ever write</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Most people use it as a README. Experts use it as a system prompt that compounds.</div>
+        A README says "here's how the project works." A real CLAUDE.md says: "here's my preferred output format, here are 3 examples of analysis I approved, here are the terms this company uses internally, here are the 5 prompts I reuse weekly — do not deviate from these without asking." Every addition multiplies the value of every future conversation.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The compounding effect: what a mature CLAUDE.md looks like after 3 months</div>
+        <ul style="padding-left:16px;line-height:1.9;margin:0">
+          <li>10–15 reusable prompt templates (meeting prep, competitive brief, market sizing)</li>
+          <li>Company-specific terminology and acronyms ("ARPU" means X here, "SMB" means companies under Y revenue)</li>
+          <li>3 calibration examples: "this is a 9/10 answer for me, this is a 6/10 — understand the difference"</li>
+          <li>Standing instructions: "always cite sources, never invent figures, flag uncertainty explicitly"</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ This week:</strong> Open your CLAUDE.md. Add one template from a task you did this week where Claude's first answer needed editing. The edit itself is the template — save what you corrected it to.
+    </div>
+  </div>
+
   <div class="card-grid card-grid-3" style="margin:24px 0">
     <div class="card">
       <div style="font-size:28px;margin-bottom:8px">📁</div>
@@ -2950,6 +2989,23 @@ You specialize in competitive intelligence, M&A analysis, and SMB market dynamic
         <span style="font-size:11px;color:#64748b;background:var(--gray-100);border-radius:99px;padding:1px 8px;flex-shrink:0">⏱ 20 min</span>
       </div>
       <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.6">REST, authentication, Python SDK and how to run models locally. Analogies before code.</p>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — APIs are the line between user and builder</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Understanding APIs changes your career ceiling</div>
+        An analyst who can only use chat interfaces hits a ceiling: they can answer questions, but can't build infrastructure. An analyst who understands APIs can automate their own workflows, build internal tools, and pitch ideas with working prototypes. That's a different category of professional.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The 80/20 of what you actually need to know</div>
+        You don't need to be a backend engineer. You need to understand: (1) how to authenticate with an API key, (2) how to structure a POST request, (3) how to parse a JSON response. That's it. Everything else is pattern-matching on top of those three things. Claude Code can write the boilerplate — you just need to understand what it's doing.
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ This week:</strong> Make one API call from your terminal. Use the Python template in this section. Run it, look at the response. That single moment of "oh, it's just sending JSON" de-mystifies the whole thing.
     </div>
   </div>
 
@@ -3287,6 +3343,28 @@ git revert HEAD                 # undo last commit, keeping history honest</code
   </div>
 
   <div class="info-box"><p>Analogy: Tool Use is giving Claude a <strong>toolbox</strong>. You define what tools exist (a hammer, a wrench), when Claude should use them, and what they return. Claude decides <em>which</em> tool to pick and <em>when</em> — you just supply them.</p></div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Agents are powerful and almost always over-engineered</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The agent trap: complexity for its own sake</div>
+        The excitement around "agents" leads most builders to add loops, tool calls, and orchestration layers to problems that a single well-structured prompt could solve in 3 seconds for $0.003. Before reaching for an agent: write the single-prompt version first. If it fails in ways that a loop would fix, then add the loop.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The 3 tasks where agents actually earn their complexity</div>
+        <ol style="padding-left:16px;line-height:2;margin:0">
+          <li><strong>Tasks with real-world tool calls</strong> (fetch data → analyze → write to file → commit)</li>
+          <li><strong>Tasks requiring iteration</strong> (draft → evaluate → revise until quality threshold)</li>
+          <li><strong>Tasks operating on many items</strong> (screen 50 M&amp;A targets against a rubric in parallel)</li>
+        </ol>
+        Everything else: use a prompt chain or a single structured prompt.
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ This week:</strong> Find one multi-step task you do manually. Map out the steps. Ask: which step could Claude do autonomously with tool access? That's your first agent use case — start with just that one step.
+    </div>
+  </div>
 
   <h2 class="subsec">🔁 One Prompt or a Loop? — The Decision That Matters Most</h2>
   <div class="card">
@@ -4552,6 +4630,23 @@ response = client.messages.create(
 
   <div class="info-box"><p>Token cost is the only real constraint on how aggressively you can use AI at work. Master these 7 levers and you'll run 10× more analysis for the same budget — making every experiment cheap enough to try.</p></div>
 
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Token optimization is a product design skill, not a cost-cutting exercise</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The constraint forces clarity</div>
+        When you have to fit a task into 500 tokens instead of 2,000, you're forced to strip out ambiguity and be precise about exactly what you need. That precision usually produces better output — not because shorter prompts are better, but because the act of shortening reveals what's actually essential.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Model routing is the highest-leverage lever</div>
+        Routing simple tasks to Haiku and complex reasoning to Sonnet isn't about saving money — it's about running 5–10× more experiments for the same budget. More experiments = faster learning = better products. The cost reduction is a side effect of good engineering judgment.
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ This week:</strong> Look at your last 5 Claude prompts. Which ones could have used Haiku instead of Sonnet? What was the actual complexity required? Build a personal routing rule: "if the task is X, use Haiku; if it requires Y, use Sonnet."
+    </div>
+  </div>
+
   <!-- ── LEVER OVERVIEW ── -->
   <h2 class="subsec">⚡ The 7 Levers — Overview</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:32px">
@@ -4911,7 +5006,7 @@ if estimate["input_tokens"] > 10_000:
   <div class="section-header">
     <div class="section-label">Section · Design & Artifacts</div>
     <h1 class="section-title">Claude as a Designer</h1>
-    <p class="section-subtitle">Claude gera HTML, SVG, wireframes, dashboards, slide copy e sistemas de design — tudo no chat ou via API.</p>
+    <p class="section-subtitle">Claude generates HTML, SVG, wireframes, dashboards, slide copy, and design systems — all in chat or via API.</p>
   </div>
 <div style="background:linear-gradient(135deg,#f0f9ff,#f8fafc);border:1px solid #bae6fd;border-radius:10px;padding:14px 18px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start">
     <div style="font-size:26px;line-height:1;flex-shrink:0">🎨</div>
@@ -4925,6 +5020,23 @@ if estimate["input_tokens"] > 10_000:
   </div>
 
   <div class="info-box"><p>"Artifacts" are visual outputs Claude generates directly — HTML pages, SVG diagrams, interactive charts, wireframes. No Figma, no design skills required. You describe what you want; Claude builds it and renders it in the chat.</p></div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Artifacts shift you from presenting data to delivering decisions</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The 15-minute slide vs the 2-hour slide</div>
+        A junior analyst spends 2 hours in PowerPoint making a chart look right. An AI-native analyst prompts Claude with the data and says "build a 1-page HTML summary of this competitive landscape with color-coded threat levels." 15 minutes. The output is often better — and the time saved goes into the analysis itself.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The real unlock: interactive deliverables</div>
+        Static slides are one-directional. An HTML dashboard your stakeholder can filter is a conversation. When you deliver an artifact that lets someone explore the data themselves, you stop being the bottleneck in every follow-up question. This changes how you're perceived in a meeting.
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ This week:</strong> Take your next analysis deliverable and ask: "could this be an interactive HTML page instead of a slide?" If yes, build it with Claude. Share it instead of a deck. Watch the reaction.
+    </div>
+  </div>
 
   <h2 class="subsec">🎨 What Claude Can Generate</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:28px">
@@ -5225,6 +5337,29 @@ print("Deck ready — weekly_brief.pptx")</code></pre>
   </div>
 
   <div class="info-box"><p>Claude is strongest when it has <strong>great inputs</strong> (structured data, clean documents, live web results) and <strong>great outputs channels</strong> (slides, automation pipelines, shareable dashboards). These tools close those gaps.</p></div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Build a personal AI stack, not a collection of apps</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The difference between a toolkit and a system</div>
+        Most people collect AI tools. Power users build systems where tools pass information to each other: <em>Claude analyzes → Python scripts it → GitHub stores it → a dashboard surfaces it</em>. The integration between tools is where the real productivity multiplier lives. Each tool is 2× better when it doesn't require you to manually copy-paste between steps.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Your minimum viable AI stack for a Corp Strategy intern</div>
+        <ol style="padding-left:16px;line-height:2;margin:0">
+          <li><strong>Claude.ai</strong> (Projects) — persistent context, all ad-hoc analysis</li>
+          <li><strong>Claude Code</strong> — automated scripts, file editing, git operations</li>
+          <li><strong>GitHub Actions</strong> — scheduled pipeline automation (this dashboard)</li>
+          <li><strong>Python + Anthropic API</strong> — anything that needs to run on a schedule or at scale</li>
+        </ol>
+        That's it. Don't add tools until you've maxed out these four.
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ This week:</strong> Map your current workflow. Identify one step where you manually move information between tools. Ask: how would I automate this handoff? That's your next engineering project.
+    </div>
+  </div>
 
   <!-- ── ECOSYSTEM MAP ── -->
   <h2 class="subsec">🗺️ The Ecosystem Map</h2>
@@ -6274,6 +6409,29 @@ What kills you:     sending everything to frontier "for quality"
   
 
   <div class="info-box"><p>Traditional PM and AI PM have a core difference: in conventional product, you specify <em>what</em> the system does. In AI PM, you specify <em>the desired outcome</em> and the model decides how to get there. This radically changes discovery, evals, QA and engineering communication. As a founder, you'll do both — understanding this distinction is the starting point.</p></div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Evals are the discipline that separates serious AI product work from vibes</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Why "it seems to work" is not a product quality bar</div>
+        In traditional software, QA has clear pass/fail. In AI, outputs are probabilistic — the same prompt produces different outputs, and "good" is subjective. Without evals (structured test cases with expected outputs and scoring), you're shipping on vibes. You can't improve what you can't measure. You can't debug what you didn't define.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The simplest eval framework that actually works</div>
+        <ol style="padding-left:16px;line-height:2;margin:0">
+          <li>Write 20 test cases: input + expected output + what "good" means</li>
+          <li>Run your prompt on all 20</li>
+          <li>Score each on a 1–5 scale</li>
+          <li>Track average score over time as you iterate</li>
+        </ol>
+        That's it. This is more disciplined than 90% of AI teams at Series A companies.
+      </div>
+      <div style="background:#fff7ed;border-radius:8px;padding:10px">
+        <strong>⚡ This week:</strong> Pick one AI feature or prompt you use regularly. Write 10 test cases. Run them. Score them. You now have a baseline — every future change to that prompt has a measurement to beat.
+      </div>
+    </div>
+  </div>
 
   <!-- ─── WHAT IS AN AI PM ─────────────────────────────────── -->
   <h2 class="subsec">🤔 AI PM vs Traditional PM — The Difference That Matters</h2>
@@ -7371,6 +7529,23 @@ Variables: ANTHROPIC_API_KEY, NEWSAPI_KEY, GH_TOKEN</div>
   </div>
 
   <div class="info-box"><p>Do these <strong>in order</strong> — each exercise builds on what you learned in the previous one. Each one ends with a <strong>📦 Setup &amp; Template</strong>: what to install, how to run, and a snippet to save to CLAUDE.md for future reuse.</p></div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Bring real work into the exercises, not synthetic examples</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The fastest way to actually retain this</div>
+        Every exercise has a generic example. Replace it with something from your current work. Instead of "analyze this sample market," use your actual Xero vs FreshBooks competitive data. Instead of "write an email about a meeting," use your next stakeholder communication. The skill transfers 10× faster when the stakes are real.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The CLAUDE.md accumulation is the real product</div>
+        After completing each exercise, the template you save to CLAUDE.md is worth more than the exercise itself. By E10, you'll have a personal prompt library that handles 80% of your recurring work in seconds. Treat the templates as the deliverable — not the exercise completion.
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ Don't do exercises 1–21 in one sitting.</strong> Do 1–2 per day, applied to real tasks. Come back to this section each morning and pick the next exercise that matches what you actually need to do that day.
+    </div>
+  </div>
 
   <!-- SETUP GUIDE -->
   <div class="card" style="border:2px solid var(--primary);margin-bottom:8px">
@@ -8947,6 +9122,27 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
     </div>
   </div>
 
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Responsible use is a workflow design problem, not a values problem</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">Most "AI mistakes" are workflow mistakes</div>
+        Hallucinations, wrong figures, stale data — these almost never happen because the model is "unreliable." They happen because someone didn't build a verification step into the workflow. The analyst who ships AI output without a sanity check isn't being irresponsible — they just don't have a process yet. Build the process.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The 3 habits that separate trustworthy AI users from liabilities</div>
+        <ol style="padding-left:16px;line-height:2;margin:0">
+          <li><strong>Source every number.</strong> If Claude cites a figure, you verify it before putting it in a deliverable. No exceptions. Ever.</li>
+          <li><strong>Say "I used AI to draft this" to yourself first.</strong> Ask: does that change how much I'd stake my reputation on it? If yes, verify more before sending.</li>
+          <li><strong>Build test cases for recurring tasks.</strong> If you use the same prompt weekly, you should have 5 test inputs where you know the correct output. Run them monthly.</li>
+        </ol>
+      </div>
+    </div>
+    <div style="background:#fff7ed;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;color:#7c2d12">
+      <strong>⚡ The reputational calculus:</strong> One AI-sourced factual error in a board deck costs more reputation than a week of productivity gains. The responsible use practices in this section aren't bureaucratic caution — they're professional self-preservation.
+    </div>
+  </div>
+
   <h2 class="subsec">🌀 Hallucination — What It Is & Why It Happens</h2>
   <div class="card">
     <p style="font-size:14px;color:var(--gray-600);margin-bottom:14px">Claude generates the most <em>statistically plausible</em> next token — not necessarily the true one. Confident-sounding output can still be wrong. This is not a bug to be fixed; it's a property of how LLMs work. Your job is to design workflows that catch it.</p>
@@ -9197,6 +9393,26 @@ pip install yfinance requests beautifulsoup4 anthropic</div>
         <span style="font-size:11px;color:#64748b;background:var(--gray-100);border-radius:99px;padding:1px 8px;flex-shrink:0">⏱ 20 min</span>
       </div>
       <p style="font-size:12px;color:var(--gray-600);margin:0;line-height:1.6">Scannable by topic. Save for reference — don't try to read it all at once.</p>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:14px 18px;margin-bottom:20px">
+    <div style="font-weight:700;font-size:13px;color:#92400e;margin-bottom:10px">🎓 Expert Insight — Curation beats collection. 5 applied tips beat 50 bookmarked ones.</div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--gray-700)">
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">How to use this section</div>
+        Don't read all tips at once. Scan the categories, pick 2–3 tips you've never tried, apply them this week. Come back next week. The tips that stick are the ones you applied to real work — not the ones you nodded at while reading.
+      </div>
+      <div style="background:white;border-radius:8px;padding:10px">
+        <div style="font-weight:700;margin-bottom:4px">The 5 that matter most for a Corp Strategy intern right now</div>
+        <ol style="padding-left:16px;line-height:2;margin:0">
+          <li>Use <code>think step by step</code> on any analytical task — it dramatically reduces confident wrong answers</li>
+          <li>Prefill Claude's response with the first sentence of what you want — it steers the entire output</li>
+          <li>For long documents, put your question LAST — Claude reads and "forgets" beginning content</li>
+          <li>Use XML tags to separate context from task — cleaner instructions produce cleaner output</li>
+          <li>Ask Claude to "identify any assumptions in your analysis" at the end of any strategic work</li>
+        </ol>
+      </div>
     </div>
   </div>
 
