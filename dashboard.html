@@ -1759,7 +1759,7 @@ all market data comes from me.&lt;/role&gt;
       </div>
       <div class="field-group">
         <label>Context 📋</label>
-        <textarea id="pb-context" rows="3" placeholder="The company is your company, a $14B fintech. I'm preparing a competitive analysis for a Q3 strategy review..." oninput="updatePreview()"></textarea>
+        <textarea id="pb-context" rows="3" placeholder="The company is Intuit ($17B revenue, QuickBooks + TurboTax + Credit Karma). I'm a Corp Strategy intern preparing a competitive analysis for a Q3 strategy review..." oninput="updatePreview()"></textarea>
         <div class="field-hint">Background info, data, constraints, what Claude needs to know</div>
       </div>
       <div class="field-group">
@@ -1799,7 +1799,7 @@ all market data comes from me.&lt;/role&gt;
         </div>
         <div class="compare-box good">
           <div class="compare-title">✅ Good Prompt</div>
-          <p>"You are a McKinsey strategy analyst. Your company ($14B SaaS, SMB/consumer tax + accounting) is reviewing its competitive moat in the SMB accounting segment. List the 3 fastest-growing competitors, their differentiation strategy, and one strategic threat each poses to your company. Format: 3 sections, each 50-75 words."</p>
+          <p>"You are a McKinsey strategy analyst. Intuit ($17B fintech — QuickBooks, TurboTax, Credit Karma) is reviewing its competitive moat in the SMB accounting segment. List the 3 fastest-growing competitors (Xero, FreshBooks, Wave), their differentiation strategy, and one strategic threat each poses to QuickBooks. Format: 3 sections, each 50-75 words."</p>
         </div>
       </div>
     </div>
@@ -3003,7 +3003,7 @@ def analyze_competitors(company_context: str, competitors: list[str]) -> str:
 
 # Example usage — Intuit Corp Strategy scenario
 result = analyze_competitors(
-    company_context="Intuit QuickBooks, SMB accounting leader, $6B revenue",
+    company_context="Intuit QuickBooks, SMB accounting leader, ~$7B segment revenue, 7M+ customers",
     competitors=["Xero", "Wave", "FreshBooks"]
 )
 print(result)</code></pre>
