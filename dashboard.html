@@ -2398,7 +2398,7 @@ HEADLINE: One sentence — why this deal makes sense strategically (not financia
 
 2. TARGET PROFILE
    - Core product and business model
-   - Costmer base and key metrics (revenue, growth, NPS if known)
+   - Customer base and key metrics (revenue, growth, NPS if known)
    - Unique asset or moat (tech, data, team, distribution)
 
 3. SYNERGIES (be specific — vague synergies are red flags)
@@ -6668,8 +6668,8 @@ Rank by: (a) pain frequency × (b) current difficulty to solve.</code></pre>
               <tbody>
                 <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">NRR (Net Revenue Retention)</td><td style="padding:8px;color:var(--gray-600)">Revenue from last year still retained + expansion</td><td style="padding:8px;color:#16a34a">≥110%</td><td style="padding:8px">~108-115%</td></tr>
                 <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">GRR (Gross Revenue Retention)</td><td style="padding:8px;color:var(--gray-600)">% of revenue retained excluding expansion</td><td style="padding:8px;color:#16a34a">≥90%</td><td style="padding:8px">~92%</td></tr>
-                <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">LTV/CAC</td><td style="padding:8px;color:var(--gray-600)">Costmer value / acquisition cost</td><td style="padding:8px;color:#16a34a">≥3x</td><td style="padding:8px">~5-7x</td></tr>
-                <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">Payback period</td><td style="padding:8px;color:var(--gray-600)">Months to recover CAC</td><td style="padding:8px;color:#16a34a">&lt; 18 months</td><td style="padding:8px">~14 meses</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">LTV/CAC</td><td style="padding:8px;color:var(--gray-600)">Customer value / acquisition cost</td><td style="padding:8px;color:#16a34a">≥3x</td><td style="padding:8px">~5-7x</td></tr>
+                <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">Payback period</td><td style="padding:8px;color:var(--gray-600)">Months to recover CAC</td><td style="padding:8px;color:#16a34a">&lt; 18 months</td><td style="padding:8px">~14 months</td></tr>
                 <tr style="border-bottom:1px solid var(--gray-100)"><td style="padding:8px;font-weight:600">Rule of 40</td><td style="padding:8px;color:var(--gray-600)">Growth % + EBITDA margin % ≥ 40</td><td style="padding:8px;color:#16a34a">≥40</td><td style="padding:8px">~52 (excelente)</td></tr>
                 <tr><td style="padding:8px;font-weight:600">Churn (logo)</td><td style="padding:8px;color:var(--gray-600)">% of customers lost per year</td><td style="padding:8px;color:#16a34a">&lt;5% SMB</td><td style="padding:8px">~4-6%</td></tr>
               </tbody>
@@ -7635,7 +7635,7 @@ def ask_claude(prompt: str, model: str = "claude-haiku-4-5", max_tokens: int = 5
   </div>
 
   <!-- ── E5 ── -->
-  <h2 class="subsec"><span style="background:#f3e8ff;color:#6b21a8;padding:2px 10px;border-radius:20px;font-size:13px;margin-right:8px">E5 · Intermediate · 20 min</span>Costmer Feedback Classifier</h2>
+  <h2 class="subsec"><span style="background:#f3e8ff;color:#6b21a8;padding:2px 10px;border-radius:20px;font-size:13px;margin-right:8px">E5 · Intermediate · 20 min</span>Customer Feedback Classifier</h2>
   <div class="card">
     <p style="font-size:13px;color:var(--gray-600);margin-bottom:12px"><strong>What:</strong> Build a script that automatically classifies customer feedback via API — the type of analysis currently done manually for hours.<br><strong>Where:</strong> Claude Code (already configured in E4)</p>
     <div style="background:#0f172a;border-radius:8px;padding:14px;font-size:12px;font-family:monospace;color:#e2e8f0;white-space:pre-wrap;line-height:1.7" id="e5">Create feedback_classifier.py that:

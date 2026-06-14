@@ -317,7 +317,8 @@ def build_weekly_html(digest_md: str, date_str: str) -> str:
             out.append(f"<li style='margin-bottom:4px'>{md_inline(line[2:])}</li>")
         elif re.match(r"^\d+\.", line):
             close_ul()
-            out.append(f'<p style="font-size:12px;color:var(--gray-700);margin:4px 0">{md_inline(re.sub(r"^\d+\.\s*", "", line))}</p>')
+            text = re.sub(r"^\d+\.\s*", "", line)
+            out.append(f'<p style="font-size:12px;color:var(--gray-700);margin:4px 0">{md_inline(text)}</p>')
         elif any(e in line for e in ("🔥", "📊", "😴")):
             close_ul()
             out.append(f'<div style="font-size:16px;font-weight:700;text-align:center;padding:10px;background:var(--gray-50);border-radius:8px;margin:10px 0">{md_inline(line)}</div>')
@@ -420,25 +421,95 @@ _SEC_COMPANIES = [
     ("0001794783", "Block"),    # Block (Square) CIK
 ]
 
-# ── Earnings calendar (hardcoded, update each quarter) ──────────────────────
-# Format: (company, date_iso, event)
-_EARNINGS_CALENDAR: list[tuple[str, str, str]] = [
-    ("Intuit",  "2026-08-21", "Q4 FY2026 earnings (est.)"),
-    ("Xero",    "2026-11-12", "H1 FY2027 results (est.)"),
-    ("Block",   "2026-08-06", "Q2 2026 earnings (est.)"),
-    ("Toast",   "2026-08-07", "Q2 2026 earnings (est.)"),
+# ── Earnings calendar — auto-fetched via yfinance ───────────────────────────
+_EARNINGS_TICKERS: dict[str, str] = {
+    "Intuit": "INTU",
+    "Block":  "SQ",
+    "Toast":  "TOST",
+    "Xero":   "XRO.AX",
+    "Sage":   "SGE.L",
+}
+
+# Fallback if yfinance is unavailable or returns no data (update each quarter)
+_EARNINGS_FALLBACK: list[tuple[str, str, str]] = [
+    ("Intuit", "2026-08-21", "Q4 FY2026 (est.)"),
+    ("Block",  "2026-08-06", "Q2 2026 (est.)"),
+    ("Toast",  "2026-08-07", "Q2 2026 (est.)"),
+    ("Xero",   "2026-11-12", "H1 FY2027 (est.)"),
 ]
 
 
-def get_upcoming_earnings(days_ahead: int = 21) -> list[dict]:
-    """Return earnings events within the next `days_ahead` days."""
+def _fetch_yfinance_earnings(days_ahead: int) -> list[dict]:
+    """Try yfinance for live earnings dates. Returns [] if unavailable."""
+    try:
+        import yfinance as yf  # optional dependency
+    except ImportError:
+        print("  [SKIP] yfinance not installed — pip install yfinance")
+        return []
+
     today  = date.today()
     cutoff = today + timedelta(days=days_ahead)
-    return [
-        {"company": c, "date": d, "event": e}
-        for c, d, e in _EARNINGS_CALENDAR
+    results: list[dict] = []
+
+    for company, ticker in _EARNINGS_TICKERS.items():
+        try:
+            t   = yf.Ticker(ticker)
+            cal = t.calendar           # dict in newer yfinance
+            if not cal:
+                continue
+            # 'Earnings Date' may be a single value or a list
+            raw_dates = cal.get("Earnings Date", [])
+            if not hasattr(raw_dates, "__iter__") or isinstance(raw_dates, str):
+                raw_dates = [raw_dates]
+            for ed in raw_dates:
+                # normalise to date object
+                if hasattr(ed, "date"):
+                    ed = ed.date()
+                elif isinstance(ed, str):
+                    try:
+                        ed = date.fromisoformat(ed[:10])
+                    except ValueError:
+                        continue
+                if not isinstance(ed, date):
+                    continue
+                if today <= ed <= cutoff:
+                    results.append({
+                        "company": company,
+                        "date":    ed.isoformat(),
+                        "event":   f"{company} earnings ({ticker})",
+                        "source":  "Yahoo Finance",
+                    })
+                    break   # take first upcoming date per company
+        except Exception as e:
+            print(f"  [WARN] yfinance {company} ({ticker}): {e}")
+
+    return results
+
+
+def get_upcoming_earnings(days_ahead: int = 21) -> list[dict]:
+    """Return earnings events within the next `days_ahead` days.
+
+    Priority: yfinance live data → fallback hardcoded list.
+    """
+    print("  Fetching earnings calendar via yfinance…")
+    live = _fetch_yfinance_earnings(days_ahead)
+    if live:
+        print(f"  Earnings (live): {[e['company'] for e in live]}")
+        return live
+
+    # Fallback to hardcoded estimates
+    today  = date.today()
+    cutoff = today + timedelta(days=days_ahead)
+    fallback = [
+        {"company": c, "date": d, "event": e + " — fallback estimate", "source": "hardcoded"}
+        for c, d, e in _EARNINGS_FALLBACK
         if today <= date.fromisoformat(d) <= cutoff
     ]
+    if fallback:
+        print(f"  Earnings (fallback): {[e['company'] for e in fallback]}")
+    else:
+        print("  No earnings in the next 21 days")
+    return fallback
 
 
 def run_daily() -> None:
