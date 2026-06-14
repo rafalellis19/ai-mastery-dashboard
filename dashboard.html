@@ -811,7 +811,7 @@ p.body { font-size: 14px; color: var(--gray-600); line-height: 1.6; max-width: 7
   <div class="nav-group">
     <button class="nav-group-btn" type="button" onclick="toggleNavGroup(this)">📡 Stay Current</button>
     <div class="nav-dropdown">
-      <button class="nav-btn" data-sec="reading" onclick="showSection('reading')">📚 Reading Room</button>
+      <button class="nav-btn" data-sec="reading" onclick="showSection('reading')">📚 Reading Room <span style="background:#16a34a;color:white;font-size:9px;font-weight:700;padding:1px 5px;border-radius:99px;margin-left:4px;vertical-align:middle">LIVE</span></button>
       <button class="nav-btn" data-sec="videos" onclick="showSection('videos')">▶️ Videos</button>
     </div>
   </div>
@@ -6581,7 +6581,7 @@ Rank by: (a) pain frequency × (b) current difficulty to solve.</code></pre>
   <div id="reading-thisweek" class="tab-pane active">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
       <div style="font-size:13px;color:var(--gray-500)">🔄 <strong>News:</strong> updates daily · <strong>Strategic digest:</strong> every Monday — <a href="#" onclick="showSection('reading');switchTab('reading','system',document.querySelector('[onclick*=system]'));return false" style="color:var(--primary)">view script →</a></div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap"><span id="reading-lastupdate" class="badge badge-green">Today: 2026-06-14</span><span class="badge badge-blue">Auto-update ativo</span></div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap"><span id="reading-lastupdate" class="badge badge-green">Today: 2026-06-14</span><span class="badge badge-blue">Auto-update active</span></div>
     </div>
 
     <!-- DAILY + WEEKLY DIGEST — replaced by update script -->
@@ -6639,7 +6639,7 @@ Rank by: (a) pain frequency × (b) current difficulty to solve.</code></pre>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px">
             <div style="background:#eff6ff;border-radius:6px;padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;color:#1d4ed8">~$15B</div><div style="font-size:11px;color:var(--gray-500)">TAM global SMB accounting</div></div>
             <div style="background:#eff6ff;border-radius:6px;padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;color:#1d4ed8">~35%</div><div style="font-size:11px;color:var(--gray-500)">Market share your company (US)</div></div>
-            <div style="background:#eff6ff;border-radius:6px;padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;color:#1d4ed8">8-10%</div><div style="font-size:11px;color:var(--gray-500)">Crescimento anual do mercado</div></div>
+            <div style="background:#eff6ff;border-radius:6px;padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;color:#1d4ed8">8-10%</div><div style="font-size:11px;color:var(--gray-500)">Annual market growth rate</div></div>
             <div style="background:#eff6ff;border-radius:6px;padding:10px;text-align:center"><div style="font-size:20px;font-weight:800;color:#1d4ed8">~30M</div><div style="font-size:11px;color:var(--gray-500)">SMBs in the US (IRS data)</div></div>
           </div>
           <div style="overflow-x:auto">
@@ -6841,10 +6841,24 @@ Rank by: (a) pain frequency × (b) current difficulty to solve.</code></pre>
   <!-- ══ SOURCES ══ -->
   <div id="reading-sources" class="tab-pane">
     <div style="display:flex;flex-direction:column;gap:16px">
+
+      <!-- Auto-fetched sources -->
+      <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);border:1px solid #86efac;border-radius:10px;padding:14px 18px">
+        <div style="font-weight:700;font-size:13px;color:#166534;margin-bottom:8px">⚡ Auto-fetched daily by the updater — appears in Today & This Week tab</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px">
+          <div style="background:white;border-radius:6px;padding:10px;border-left:3px solid #16a34a"><div style="font-weight:600;font-size:12px;margin-bottom:2px"><a href="https://newsletter.fintechtakes.com" target="_blank" style="color:#166534">Fintech Takes ↗</a> <span style="background:#bbf7d0;color:#166534;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px">RSS</span></div><div style="font-size:11px;color:var(--gray-500)">Alex Johnson — best independent SMB fintech analysis. Weekly.</div></div>
+          <div style="background:white;border-radius:6px;padding:10px;border-left:3px solid #16a34a"><div style="font-weight:600;font-size:12px;margin-bottom:2px"><a href="https://fintechbusinessweekly.substack.com" target="_blank" style="color:#166534">Fintech Business Weekly ↗</a> <span style="background:#bbf7d0;color:#166534;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px">RSS</span></div><div style="font-size:11px;color:var(--gray-500)">Jason Mikula — regulatory + M&A focus, very primary-source heavy.</div></div>
+          <div style="background:white;border-radius:6px;padding:10px;border-left:3px solid #16a34a"><div style="font-weight:600;font-size:12px;margin-bottom:2px"><a href="https://www.generalist.com" target="_blank" style="color:#166534">The Generalist ↗</a> <span style="background:#bbf7d0;color:#166534;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px">RSS</span></div><div style="font-size:11px;color:var(--gray-500)">Mario Gabriele — long-form on breakout tech companies + strategy.</div></div>
+          <div style="background:white;border-radius:6px;padding:10px;border-left:3px solid #16a34a"><div style="font-weight:600;font-size:12px;margin-bottom:2px"><a href="https://www.anthropic.com/news" target="_blank" style="color:#166534">Anthropic Blog ↗</a> <span style="background:#bbf7d0;color:#166534;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px">RSS</span></div><div style="font-size:11px;color:var(--gray-500)">Model releases, research, policy. Read every post.</div></div>
+          <div style="background:white;border-radius:6px;padding:10px;border-left:3px solid #16a34a"><div style="font-weight:600;font-size:12px;margin-bottom:2px"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000896878" target="_blank" style="color:#166534">Intuit SEC EDGAR ↗</a> <span style="background:#bbf7d0;color:#166534;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px">API</span></div><div style="font-size:11px;color:var(--gray-500)">8-K and 10-Q filings. Material events flagged as HIGH urgency.</div></div>
+          <div style="background:white;border-radius:6px;padding:10px;border-left:3px solid #16a34a"><div style="font-weight:600;font-size:12px;margin-bottom:2px">NewsAPI <span style="background:#bbf7d0;color:#166534;font-size:9px;font-weight:700;padding:1px 5px;border-radius:4px">API</span></div><div style="font-size:11px;color:var(--gray-500)">Queries: QuickBooks/Xero/FreshBooks/Wave/Sage, fintech M&A, Intuit direct coverage.</div></div>
+        </div>
+      </div>
+
       <div>
-        <h3 style="font-size:13px;font-weight:700;color:#0369a1;margin-bottom:8px">🏦 your company & Fintech SMB — follow weekly</h3>
+        <h3 style="font-size:13px;font-weight:700;color:#0369a1;margin-bottom:8px">🏦 Fintech SMB — read manually, weekly</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px">
-          <div class="card" style="padding:12px;border-left:3px solid #0369a1"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://investor.intuit.com/news-and-events/press-releases" target="_blank" style="color:var(--primary)">Your company IR ↗</a> <span class="badge badge-green" style="font-size:10px">Must</span></div><div style="font-size:11px;color:var(--gray-500)">Press releases + earnings. Set up email alert.</div></div>
+          <div class="card" style="padding:12px;border-left:3px solid #0369a1"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://investor.intuit.com/news-and-events/press-releases" target="_blank" style="color:var(--primary)">Intuit IR ↗</a> <span class="badge badge-green" style="font-size:10px">Must</span></div><div style="font-size:11px;color:var(--gray-500)">Press releases + earnings. Set up email alert.</div></div>
           <div class="card" style="padding:12px;border-left:3px solid #0369a1"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://stratechery.com" target="_blank" style="color:var(--primary)">Stratechery ↗</a> <span class="badge badge-blue" style="font-size:10px">$15/mo</span></div><div style="font-size:11px;color:var(--gray-500)">Best tech strategy analysis. Worth every cent.</div></div>
           <div class="card" style="padding:12px;border-left:3px solid #0369a1"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://www.cbinsights.com/research/fintech/" target="_blank" style="color:var(--primary)">CB Insights Fintech ↗</a> <span class="badge badge-green" style="font-size:10px">Free</span></div><div style="font-size:11px;color:var(--gray-500)">Funding rounds, M&A, SMB fintech trends.</div></div>
           <div class="card" style="padding:12px;border-left:3px solid #0369a1"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://a16z.com/tag/fintech/" target="_blank" style="color:var(--primary)">a16z Fintech ↗</a> <span class="badge badge-green" style="font-size:10px">Free</span></div><div style="font-size:11px;color:var(--gray-500)">Long-form on fintech theses. High quality.</div></div>
@@ -6863,7 +6877,6 @@ Rank by: (a) pain frequency × (b) current difficulty to solve.</code></pre>
       <div>
         <h3 style="font-size:13px;font-weight:700;color:#059669;margin-bottom:8px">🤖 AI — maintain your edge</h3>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px">
-          <div class="card" style="padding:12px;border-left:3px solid #059669"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://www.anthropic.com/news" target="_blank" style="color:var(--primary)">Anthropic Blog ↗</a> <span class="badge badge-green" style="font-size:10px">Free</span></div><div style="font-size:11px;color:var(--gray-500)">Claude updates. Read every post — 10 min each.</div></div>
           <div class="card" style="padding:12px;border-left:3px solid #059669"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://www.oneusefulthing.org" target="_blank" style="color:var(--primary)">One Useful Thing ↗</a> <span class="badge badge-green" style="font-size:10px">Free</span></div><div style="font-size:11px;color:var(--gray-500)">Ethan Mollick — AI in knowledge work. Weekly.</div></div>
           <div class="card" style="padding:12px;border-left:3px solid #059669"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://www.exponentialview.co" target="_blank" style="color:var(--primary)">Exponential View ↗</a> <span class="badge badge-green" style="font-size:10px">Free tier</span></div><div style="font-size:11px;color:var(--gray-500)">AI + business strategy. Cited in boardrooms.</div></div>
           <div class="card" style="padding:12px;border-left:3px solid #059669"><div style="font-weight:600;font-size:12px;margin-bottom:3px"><a href="https://www.ben-evans.com/newsletter" target="_blank" style="color:var(--primary)">Benedict Evans ↗</a> <span class="badge badge-green" style="font-size:10px">Free</span></div><div style="font-size:11px;color:var(--gray-500)">Tech industry structure + AI. Weekly zoom-out.</div></div>
