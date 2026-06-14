@@ -391,23 +391,54 @@ def save_cache(articles: list[dict]) -> None:
 # ══════════════════════════════════════════════════════════════════════════════
 
 _RSS_SOURCES = [
-    ("https://www.anthropic.com/feed.rss",             "Anthropic Blog"),
+    # Tier 1 — must-reads for Corp Strategy / fintech
+    ("https://newsletter.fintechtakes.com/feed",        "Fintech Takes (Alex Johnson)"),
+    ("https://fintechbusinessweekly.substack.com/feed", "Fintech Business Weekly (Jason Mikula)"),
+    ("https://www.generalist.com/feed",                 "The Generalist (Mario Gabriele)"),
+    # Tier 2 — AI & tech strategy
+    ("https://www.anthropic.com/feed.rss",              "Anthropic Blog"),
     ("https://feeds.feedburner.com/TechCrunchFintech",  "TechCrunch Fintech"),
-    # Add Stratechery email RSS here if subscribed:
+    # Optional — add if subscribed:
     # ("https://stratechery.com/feed/", "Stratechery"),
+    # ("https://sytaylor.substack.com/feed", "Fintech Brainfood (Simon Taylor)"),
 ]
 
 _NEWSAPI_QUERIES = [
-    "Intuit OR QuickBooks OR Xero OR FreshBooks OR Wave accounting",
-    "fintech M&A SMB software 2026",
-    "SMB accounting AI assistant",
-    "Anthropic OpenAI Google AI model release",
+    # Tight competitor signal — high precision
+    "QuickBooks OR Xero OR FreshBooks OR Wave OR Sage accounting SMB",
+    # M&A + strategic moves
+    "fintech acquisition merger SMB software 2026",
+    # Intuit direct coverage
+    "Intuit OR TurboTax OR \"Credit Karma\" strategy product",
+    # AI in fintech products
+    "AI assistant accounting bookkeeping SMB",
 ]
 
 _SEC_COMPANIES = [
-    ("0000896878", "Intuit"),   # Intuit CIK (zero-padded to 10 digits)
+    ("0000896878", "Intuit"),   # Intuit CIK
     ("0001843973", "Toast"),    # Toast CIK
+    ("0001794783", "Block"),    # Block (Square) CIK
 ]
+
+# ── Earnings calendar (hardcoded, update each quarter) ──────────────────────
+# Format: (company, date_iso, event)
+_EARNINGS_CALENDAR: list[tuple[str, str, str]] = [
+    ("Intuit",  "2026-08-21", "Q4 FY2026 earnings (est.)"),
+    ("Xero",    "2026-11-12", "H1 FY2027 results (est.)"),
+    ("Block",   "2026-08-06", "Q2 2026 earnings (est.)"),
+    ("Toast",   "2026-08-07", "Q2 2026 earnings (est.)"),
+]
+
+
+def get_upcoming_earnings(days_ahead: int = 21) -> list[dict]:
+    """Return earnings events within the next `days_ahead` days."""
+    today  = date.today()
+    cutoff = today + timedelta(days=days_ahead)
+    return [
+        {"company": c, "date": d, "event": e}
+        for c, d, e in _EARNINGS_CALENDAR
+        if today <= date.fromisoformat(d) <= cutoff
+    ]
 
 
 def run_daily() -> None:
@@ -466,6 +497,9 @@ Analyze this week's fintech/AI news for Intuit's Corp Strategy team.
 ARTICLES (past 7 days):
 {articles_json}
 
+EARNINGS THIS MONTH (next 21 days):
+{earnings_json}
+
 Write the weekly digest in EXACTLY this structure:
 
 ## 1. Most Important Move This Week
@@ -482,7 +516,10 @@ Write the weekly digest in EXACTLY this structure:
 3 articles from the list worth deeper reading.
 **Title** — one sentence on why it's worth your time.
 
-## 5. Competitive Week Rating
+## 5. Earnings Watch (only if EARNINGS THIS MONTH is non-empty)
+For each upcoming earnings event: what metric or signal to watch, and what would be a bullish vs. bearish result for Intuit. Skip this section entirely if no earnings are listed above.
+
+## 6. Competitive Week Rating
 Pick one and justify in 1 sentence:
 🔥 Hot — major moves that shift the landscape
 📊 Normal — steady signals, nothing urgent
@@ -518,11 +555,18 @@ def run_weekly() -> None:
          for a in articles],
         indent=2,
     )
+    upcoming_earnings = get_upcoming_earnings(days_ahead=21)
+    earnings_json = json.dumps(upcoming_earnings, indent=2) if upcoming_earnings else "[]  # no earnings in the next 21 days"
+    if upcoming_earnings:
+        print(f"  Earnings watch: {', '.join(e['company'] for e in upcoming_earnings)}")
     msg = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=2200,
+        max_tokens=2500,
         system=_WEEKLY_SYSTEM,
-        messages=[{"role": "user", "content": _WEEKLY_PROMPT.format(articles_json=articles_json)}],
+        messages=[{"role": "user", "content": _WEEKLY_PROMPT.format(
+            articles_json=articles_json,
+            earnings_json=earnings_json,
+        )}],
     )
     digest_md = msg.content[0].text.strip()
 
